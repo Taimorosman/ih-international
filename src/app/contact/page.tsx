@@ -36,7 +36,7 @@ const branches = [
     hoverBg: "linear-gradient(135deg, var(--color-ih-green) 0%, #126b41 100%)",
     border: "rgba(31, 169, 104, 0.25)",
     borderHover: "rgba(31, 169, 104, 0.55)",
-    shadow: "shadow-ih-green",
+    shadow: "shadow-ih-blue",
     cardImg: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=500&q=80",
     mapUrl: "https://maps.google.com/maps?q=Al%20Badriah%20Towers%20Jeddah%20Saudi%20Arabia&t=&z=16&ie=UTF8&iwloc=&output=embed",
     navigationUrl: "https://www.google.com/maps/search/?api=1&query=Al+Badriah+Towers+Jeddah+Saudi+Arabia"

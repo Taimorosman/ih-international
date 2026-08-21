@@ -151,7 +151,7 @@ const valueColors = [
   { bg: "bg-[#cf1430]/10", border: "border-[#cf1430]/30", icon: "text-[#cf1430]", cardBg: "hover:bg-[#cf1430]/5", hoverBorder: "hover:border-[#cf1430]/50 shadow-[#cf1430]/5" }, // Red
   { bg: "bg-blue-500/10", border: "border-blue-500/30", icon: "text-blue-600", cardBg: "hover:bg-blue-500/5", hoverBorder: "hover:border-blue-500/50 shadow-blue-500/5" }, // Blue
   { bg: "bg-amber-500/10", border: "border-amber-500/30", icon: "text-amber-600", cardBg: "hover:bg-amber-500/5", hoverBorder: "hover:border-amber-500/50 shadow-amber-500/5" }, // Yellow
-  { bg: "bg-teal-500/10", border: "border-teal-500/30", icon: "text-teal-600", cardBg: "hover:bg-teal-500/5", hoverBorder: "hover:border-teal-500/50 shadow-teal-500/5" }, // Green
+  { bg: "bg-teal-500/10", border: "border-teal-500/30", icon: "text-teal-600", cardBg: "hover:bg-teal-500/5", hoverBorder: "hover:border-teal-500/50 shadow-slate-900/5" }, // Green
   { bg: "bg-rose-500/10", border: "border-rose-500/30", icon: "text-rose-600", cardBg: "hover:bg-rose-500/5", hoverBorder: "hover:border-rose-500/50 shadow-rose-500/5" }, // Rose Red
   { bg: "bg-indigo-500/10", border: "border-indigo-500/30", icon: "text-indigo-600", cardBg: "hover:bg-indigo-500/5", hoverBorder: "hover:border-indigo-500/50 shadow-indigo-500/5" }, // Indigo
   { bg: "bg-purple-500/10", border: "border-purple-500/30", icon: "text-purple-600", cardBg: "hover:bg-purple-500/5", hoverBorder: "hover:border-purple-500/50 shadow-purple-500/5" }, // Purple
@@ -159,10 +159,10 @@ const valueColors = [
 
 const statThemes = [
   { border: "border-[#cf1430]/20 hover:border-[#cf1430]/50", numColor: "text-[#cf1430]", glow: "group-hover:bg-[#cf1430]/20", hoverShadow: "hover:shadow-[0_0_20px_rgba(207,20,48,0.15)]" }, // Red
-  { border: "border-[#10b981]/20 hover:border-[#10b981]/50", numColor: "text-[#10b981]", glow: "group-hover:bg-[#10b981]/20", hoverShadow: "hover:shadow-[0_0_20px_rgba(16,185,129,0.15)]" }, // Green
+  { border: "border-[#10b981]/20 hover:border-[#10b981]/50", numColor: "text-[#10b981]", glow: "group-hover:bg-[#10b981]/20", hoverShadow: "hover:shadow-[0_0_20px_rgba(15,23,42,0.15)]" }, // Green
   { border: "border-[#f59e0b]/20 hover:border-[#f59e0b]/50", numColor: "text-[#f59e0b]", glow: "group-hover:bg-[#f59e0b]/20", hoverShadow: "hover:shadow-[0_0_20px_rgba(245,158,11,0.15)]" }, // Yellow
   { border: "border-[#cf1430]/20 hover:border-[#cf1430]/50", numColor: "text-[#cf1430]", glow: "group-hover:bg-[#cf1430]/20", hoverShadow: "hover:shadow-[0_0_20px_rgba(207,20,48,0.15)]" }, // Red
-  { border: "border-[#10b981]/20 hover:border-[#10b981]/50", numColor: "text-[#10b981]", glow: "group-hover:bg-[#10b981]/20", hoverShadow: "hover:shadow-[0_0_20px_rgba(16,185,129,0.15)]" }, // Green
+  { border: "border-[#10b981]/20 hover:border-[#10b981]/50", numColor: "text-[#10b981]", glow: "group-hover:bg-[#10b981]/20", hoverShadow: "hover:shadow-[0_0_20px_rgba(15,23,42,0.15)]" }, // Green
 ];
 
 export default function WhoWeArePage() {
@@ -203,9 +203,9 @@ export default function WhoWeArePage() {
       accentText: "text-[#10b981]",
       borderAccent: "border-s-[#10b981]",
       borderAccentBottom: "border-b-[#10b981]",
-      shadowHover: "hover:shadow-[#10b981]/10",
+      shadowHover: "hover:shadow-slate-900/10",
       gradientText: "from-[#10b981] to-[#10b981]/40",
-      btnGradient: "from-[#10b981] to-[#059669] shadow-[#10b981]/20",
+      btnGradient: "from-[#10b981] to-[#059669] shadow-slate-900/20",
       icon: <Globe className="w-6 h-6" />,
       badgeLabel: { en: "AFFILIATION", ar: "الانتساب" }
     },

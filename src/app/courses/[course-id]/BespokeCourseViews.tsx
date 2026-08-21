@@ -86,7 +86,7 @@ export const companiesData = {
           note: "Programs may be customized to meet the specific requirements of each organization.",
           img: "/corp_technical.png",
           color: "#1fa968",
-          shadow: "shadow-ih-green"
+          shadow: "shadow-ih-blue"
         },
         {
           key: "executive",
@@ -243,7 +243,7 @@ export const companiesData = {
           note: "يمكن تخصيص البرامج لتلبية المتطلبات المحددة لكل مؤسسة.",
           img: "/corp_technical.png",
           color: "#1fa968",
-          shadow: "shadow-ih-green"
+          shadow: "shadow-ih-blue"
         },
         {
           key: "executive",
@@ -478,7 +478,7 @@ export function EnglishForCompaniesView({ lang }: { lang: string }) {
         color: "#00d084",
         border: "border-emerald-100/80",
         bg: "bg-gradient-to-b from-emerald-50/50 via-white to-white",
-        shadow: "hover:shadow-emerald-200/50",
+        shadow: "hover:shadow-slate-200/50",
         text: "text-slate-800",
         png: "/corp_testing.png",
         borderBottom: "border-b-[#00d084]",
@@ -528,7 +528,7 @@ export function EnglishForCompaniesView({ lang }: { lang: string }) {
         color: "#00d084",
         border: "border-emerald-100/80",
         bg: "bg-gradient-to-b from-emerald-50/50 via-white to-white",
-        shadow: "hover:shadow-emerald-200/50",
+        shadow: "hover:shadow-slate-200/50",
         text: "text-slate-800",
         png: "/str_hybrid.png",
         borderBottom: "border-b-[#00d084]",
@@ -1040,7 +1040,7 @@ export const espData = {
       subtitle: "Targeted language certifications matching specific industrial roles",
       items: [
         { title: "English for Security Guards", level: "A1 – B1", shadow: "shadow-ih-blue", color: "#002F6C", img: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=500&q=80" },
-        { title: "English for the Oil & Gas Industry", level: "B1+", shadow: "shadow-ih-green", color: "#1fa968", img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=500&q=80" },
+        { title: "English for the Oil & Gas Industry", level: "B1+", shadow: "shadow-ih-blue", color: "#1fa968", img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=500&q=80" },
         { title: "English for Offshore Workers", level: "B2+", shadow: "shadow-ih-purple", color: "#8b3275", img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=500&q=80" },
         { title: "English for Logistics", level: "B1+", shadow: "shadow-ih-coral", color: "#e85d4a", img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=500&q=80" },
         { title: "English for Nurses", level: "A2+", shadow: "shadow-ih-peach", color: "#f09550", img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=500&q=80" },
@@ -1048,7 +1048,7 @@ export const espData = {
         { title: "English for Airport Ground Services", level: "B1+", shadow: "shadow-ih-blue", color: "#002F6C", img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=500&q=80" },
         { title: "Legal English", level: "B2+", shadow: "shadow-ih-purple", color: "#8b3275", img: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=500&q=80" },
         { title: "Business Writing", level: "B1+", shadow: "shadow-ih-coral", color: "#e85d4a", img: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=500&q=80" },
-        { title: "English for Engineers", level: "B2+", shadow: "shadow-ih-green", color: "#1fa968", img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=500&q=80" },
+        { title: "English for Engineers", level: "B2+", shadow: "shadow-ih-blue", color: "#1fa968", img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=500&q=80" },
         { title: "English for Hospitality & Tourism", level: "A2+", shadow: "shadow-ih-yellow", color: "#f6c96a", img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=500&q=80" }
       ]
     },
@@ -1080,7 +1080,7 @@ export const espData = {
       subtitle: "شهادات لغوية موجهة لتناسب الأدوار المهنية المختلفة",
       items: [
         { title: "الإنجليزية لحراس الأمن", level: "A1 – B1", shadow: "shadow-ih-blue", color: "#002F6C", img: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=500&q=80" },
-        { title: "الإنجليزية لصناعة النفط والغاز", level: "B1+", shadow: "shadow-ih-green", color: "#1fa968", img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=500&q=80" },
+        { title: "الإنجليزية لصناعة النفط والغاز", level: "B1+", shadow: "shadow-ih-blue", color: "#1fa968", img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=500&q=80" },
         { title: "الإنجليزية لعمال المنصات البحرية", level: "B2+", shadow: "shadow-ih-purple", color: "#8b3275", img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=500&q=80" },
         { title: "الإنجليزية للخدمات اللوجستية", level: "B1+", shadow: "shadow-ih-coral", color: "#e85d4a", img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=500&q=80" },
         { title: "الإنجليزية للتمريض والرعاية الصحية", level: "A2+", shadow: "shadow-ih-peach", color: "#f09550", img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=500&q=80" },
@@ -1088,7 +1088,7 @@ export const espData = {
         { title: "الإنجليزية للخدمات الأرضية للمطارات", level: "B1+", shadow: "shadow-ih-blue", color: "#002F6C", img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=500&q=80" },
         { title: "الإنجليزية القانونية", level: "B2+", shadow: "shadow-ih-purple", color: "#8b3275", img: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=500&q=80" },
         { title: "الكتابة وصياغة الأعمال", level: "B1+", shadow: "shadow-ih-coral", color: "#e85d4a", img: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=500&q=80" },
-        { title: "الإنجليزية للمهندسين والفنيين", level: "B2+", shadow: "shadow-ih-green", color: "#1fa968", img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=500&q=80" },
+        { title: "الإنجليزية للمهندسين والفنيين", level: "B2+", shadow: "shadow-ih-blue", color: "#1fa968", img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=500&q=80" },
         { title: "الإنجليزية للضيافة والسياحة", level: "A2+", shadow: "shadow-ih-yellow", color: "#f6c96a", img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=500&q=80" }
       ]
     },
@@ -2374,7 +2374,7 @@ export function YoungLearnersView({ lang }: { lang: string }) {
             {/* IH */}
             <motion.div
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}
-              className="p-8 rounded-3xl bg-white border border-emerald-100/50 shadow-md shadow-ih-green/10"
+              className="p-8 rounded-3xl bg-white border border-emerald-100/50 shadow-md shadow-ih-blue/10"
             >
               <h3 className="text-xl font-extrabold text-[#1fa968] mb-6 flex items-center gap-2">
                 <CheckCircle size={22} className="text-[#1fa968]" />
@@ -2528,7 +2528,7 @@ export const onlineClassesData = {
       consultation: "IH offers a FREE consultation. Contact us to learn exactly what online English learning can mean for your company right now on +966 (0)13 814 58 36 ext 32.",
       items: [
         { title: "30 Years in Saudi Industry", desc: "International House is your training partner that has been on the ground, in Saudi Arabia, and embedded in Saudi industry for over 30 years.", shadow: "shadow-ih-blue", color: "#002F6C", img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=500&q=80" },
-        { title: "360 Degree Service Setup", desc: "IH offers a 360 degree service from needs analysis, placement testing, consultation with your HR/TDD specialists, to designing the most efficient online training plan.", shadow: "shadow-ih-green", color: "#1fa968", img: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=500&q=80" },
+        { title: "360 Degree Service Setup", desc: "IH offers a 360 degree service from needs analysis, placement testing, consultation with your HR/TDD specialists, to designing the most efficient online training plan.", shadow: "shadow-ih-blue", color: "#1fa968", img: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=500&q=80" },
         { title: "Hybrid Orientation Session", desc: "Direct contact orientation session where instructors meet employees to explain goals in person and help learners adjust to live online classes.", shadow: "shadow-ih-purple", color: "#8b3275", img: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=500&q=80" },
         { title: "Transition Support Setup", desc: "Full support when issues with technical aptitude, age, or motivation are identified so candidates can adapt, with face-to-face classes remaining a primary option.", shadow: "shadow-ih-coral", color: "#e85d4a", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=500&q=80" },
         { title: "Dhahran & Local Centers Support", desc: "Local instructors on hand in Jubail & Yanbu branches, with all programs subject to ongoing quality control from our business office in Dhahran.", shadow: "shadow-ih-peach", color: "#f09550", img: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=500&q=80" },
@@ -2584,7 +2584,7 @@ export const onlineClassesData = {
       consultation: "تقدم الهاوس الدولي استشارة مجانية بالكامل. اتصل بنا لمعرفة ما يمكن أن يقدمه التعلم الإلكتروني لشركتك الآن على +966 (0)13 814 58 36 تحويلة 32.",
       items: [
         { title: "30 عاماً في قلب الصناعة السعودية", desc: "الهاوس الدولي هي شريك التدريب المعتمد المتواجد في الميدان والمندمج في قلب الصناعة والشركات السعودية لأكثر من 30 عاماً.", shadow: "shadow-ih-blue", color: "#002F6C", img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=500&q=80" },
-        { title: "إعداد خدمة 360 درجة شاملة", desc: "نقدم دورة متكاملة تبدأ من تحليل الاحتياجات واختبار تحديد المستوى، والاستشارة الفنية مع مسؤولي الموارد البشرية والتطوير لتصميم الخطة التدريبية المخصصة.", shadow: "shadow-ih-green", color: "#1fa968", img: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=500&q=80" },
+        { title: "إعداد خدمة 360 درجة شاملة", desc: "نقدم دورة متكاملة تبدأ من تحليل الاحتياجات واختبار تحديد المستوى، والاستشارة الفنية مع مسؤولي الموارد البشرية والتطوير لتصميم الخطة التدريبية المخصصة.", shadow: "shadow-ih-blue", color: "#1fa968", img: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=500&q=80" },
         { title: "جلسة توجيه حضورية مدمجة", desc: "جلسة حضورية أولية مباشرة يلتقي فيها المدربون بالموظفين لشرح الأهداف اللغوية شخصياً ومساعدة المتعلمين على التأقلم السريع مع الفصول الرقمية.", shadow: "shadow-ih-purple", color: "#8b3275", img: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=500&q=80" },
         { title: "دعم التكيف الفني والذهني", desc: "دعم فني ونفسي كامل للمرشحين الذين يواجهون صعوبات تتعلق بالتقنية، السن، أو الحافز لمساعدتهم على التأقلم مع إبقاء التدريب الحضوري خياراً أساسياً.", shadow: "shadow-ih-coral", color: "#e85d4a", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=500&q=80" },
         { title: "دعم فروع الجبيل وينبع ومكتب الظهران", desc: "مدربون محليون متواجدون للدعم الإضافي في فروع الجبيل وينبع، مع خضوع البرامج لرقابة دورية على الجودة من مكتب أعمالنا الرئيسي في الظهران.", shadow: "shadow-ih-peach", color: "#f09550", img: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=500&q=80" },
@@ -2865,7 +2865,7 @@ export const placementData = {
           title: "Testing at Selected Venues",
           desc: "IH instructors visit any location in the Kingdom to administer paper-based placement tests, including grammar, writing, listening, and oral tests. Ideal for massive candidate numbers.",
           details: "Additionally, all IH projects include an inbuilt placement testing service. Visiting instructors are fully trained to manage testing requirements under their normal scope of work.",
-          shadow: "shadow-ih-green",
+          shadow: "shadow-ih-blue",
           color: "#1fa968",
           img: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=500&q=80"
         }
@@ -2907,7 +2907,7 @@ export const placementData = {
           title: "الاختبار في مواقع محددة بالزيارة",
           desc: "يمكن لمدربي الهاوس الدولي زيارة أي موقع في المملكة لإجراء الاختبارات الورقية الشاملة، بما في ذلك القواعد والكتابة والاستماع والمقابلة الشفهية. ممتاز للأعداد الكبيرة.",
           details: "تتضمن مشاريع الهاوس الدولي خدمة اختبار تحديد مستوى مدمجة. المدربون في موقعك مدربون بالكامل لإدارة وإجراء اختبارات التحديد ضمن نطاق عملهم المعتاد.",
-          shadow: "shadow-ih-green",
+          shadow: "shadow-ih-blue",
           color: "#1fa968",
           img: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=500&q=80"
         }

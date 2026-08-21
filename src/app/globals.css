@@ -121,12 +121,6 @@ a, button { transition: all 0.2s ease; }
   box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.20);
 }
 
-.shadow-ih-green {
-  box-shadow: 0 8px 30px -5px rgba(15, 23, 42, 0.08);
-}
-.shadow-ih-green:hover {
-  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.20);
-}
 
 .shadow-ih-purple {
   box-shadow: 0 8px 30px -5px rgba(15, 23, 42, 0.08);
