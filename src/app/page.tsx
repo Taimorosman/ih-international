@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -8,7 +8,7 @@ import {
   Award, Globe2, BookOpen, Building2, ArrowRight, MapPin,
   CheckCircle2, Users, ArrowUpRight, GraduationCap, Compass,
   Briefcase, Calendar, ShieldCheck, FileDown, Mail, Phone,
-  Star, Sparkles, ChevronRight,
+  Star, Sparkles, ChevronRight, Play,
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { fadeUp } from "@/utils/animations";
@@ -34,6 +34,25 @@ const slideLeft = {
 export default function HomePage() {
   const { lang } = useLanguage();
   const isRtl = lang === "ar";
+  const [activeVideo, setActiveVideo] = useState("B4RYr-xnYj8");
+
+  const spotlightVideos = [
+    {
+      id: "B4RYr-xnYj8",
+      title: { en: "English Language Learning for Every Stage of Your Journey", ar: "تعليم اللغة الإنجليزية لكل مرحلة من رحلتك" },
+      tag: { en: "Language Learning", ar: "تعليم اللغات" }
+    },
+    {
+      id: "cWnokEcuVZA",
+      title: { en: "Grow with IH Saudi Arabia", ar: "تطور وتألق مع الهاوس الدولي السعودية" },
+      tag: { en: "Academic Growth", ar: "التطور الأكاديمي" }
+    },
+    {
+      id: "ZVSCZiXFO7I",
+      title: { en: "A Global Network. A Local Commitment.", ar: "شبكة عالمية والتزام محلي راسخ" },
+      tag: { en: "Global Network", ar: "الشبكة العالمية" }
+    }
+  ];
 
   // ─── DATA STRUCTURES ───────────────────────────────────────
   const partners = [
@@ -172,13 +191,13 @@ export default function HomePage() {
     },
   ];
 
-  // Services with card images
+  // Services with card images - real original assets from beta.ihsaudiarabia.com
   const services = [
     {
       title: { en: "English Language Courses", ar: "دورات اللغة الإنجليزية" },
       desc: { en: "Practical English programs for learners, professionals, and organizations.", ar: "برامج عملية في اللغة الإنجليزية للمتعلمين والمهنيين والمؤسسات." },
       icon: <BookOpen className="w-6 h-6" />,
-      image: "/card_english.png",
+      image: "/beta_assets/p1.jpeg",
       color: "#002F6C",
       accentClass: "border-t-4 border-t-[#002F6C]",
       link: "/courses#general-english",
@@ -187,7 +206,7 @@ export default function HomePage() {
       title: { en: "Languages & Cultural Programs", ar: "برامج اللغات والثقافة" },
       desc: { en: "Arabic, French, Spanish, Chinese, and other world languages with cultural learning.", ar: "العربية، الفرنسية، الإسبانية، الصينية وغيرها من اللغات العالمية." },
       icon: <Globe2 className="w-6 h-6" />,
-      image: "/card_languages.png",
+      image: "/beta_assets/pic1.png",
       color: "#cf1430",
       accentClass: "border-t-4 border-t-[#cf1430]",
       link: "/courses/learn-arabic",
@@ -196,16 +215,16 @@ export default function HomePage() {
       title: { en: "Corporate Training Solutions", ar: "حلول تدريب الشركات" },
       desc: { en: "Customized workforce development and communication training programs.", ar: "برامج تدريبية مخصصة لتطوير مهارات التواصل وتنمية القوى العاملة." },
       icon: <Briefcase className="w-6 h-6" />,
-      image: "/card_corporate.png",
+      image: "/beta_assets/corporate_training.png",
       color: "#002F6C",
       accentClass: "border-t-4 border-t-[#002F6C]",
-      link: "/courses/english-for-companies",
+      link: "/corporate-training",
     },
     {
       title: { en: "Teacher Training & Professional Dev.", ar: "تدريب المعلمين والتطوير المهني" },
       desc: { en: "Supporting educators through internationally informed development pathways.", ar: "دعم المعلمين من خلال مسارات التطوير المهني المعتمدة دولياً." },
       icon: <GraduationCap className="w-6 h-6" />,
-      image: "/card_teacher.png",
+      image: "/beta_assets/teacher_training.png",
       color: "#cf1430",
       accentClass: "border-t-4 border-t-[#cf1430]",
       link: "/teacher-training",
@@ -214,16 +233,16 @@ export default function HomePage() {
       title: { en: "Examinations & Certification", ar: "الاختبارات والشهادات الدولية" },
       desc: { en: "Preparation pathways for internationally recognized qualifications and certifications.", ar: "مسارات تأهيلية لاجتياز الاختبارات والحصول على الشهادات المعتمدة عالمياً." },
       icon: <ShieldCheck className="w-6 h-6" />,
-      image: "/card_exams.png",
+      image: "/beta_assets/p3.jpeg",
       color: "#002F6C",
       accentClass: "border-t-4 border-t-[#002F6C]",
-      link: "/courses#exam-prep",
+      link: "/examinations",
     },
     {
       title: { en: "Study Abroad & International Ops", ar: "الدراسة في الخارج والفرص الدولية" },
       desc: { en: "Access global learning experiences through trusted IH educational partnerships.", ar: "فرص للتعلم الدولي المتميز من خلال شراكات تعليمية موثوقة وشبكة معاهد IH العالمية." },
       icon: <Compass className="w-6 h-6" />,
-      image: "/card_abroad.png",
+      image: "/beta_assets/study_abroad-1.png",
       color: "#cf1430",
       accentClass: "border-t-4 border-t-[#cf1430]",
       link: "/study-abroad",
@@ -408,10 +427,8 @@ export default function HomePage() {
   return (
     <div className="pt-[72px] overflow-hidden bg-white font-['Inter',_sans-serif]">
 
-      {/* ── HERO SLIDER ── */}
+      {/* ── HERO SLIDER (contains official IH World rainbow border pinned at its bottom border) ── */}
       <HeroSlider />
-
-      <ThemeAccent height="h-2.5" pills />
 
       {/* ─── NEW: CORE PILLARS SECTION ─── */}
       <section className="py-20 bg-slate-50 relative overflow-hidden border-b border-slate-100">
@@ -493,9 +510,12 @@ export default function HomePage() {
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
               className="lg:col-span-7 space-y-6 text-start"
             >
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-[#002F6C]">
+              <Link
+                href="/who-we-are"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-[#002F6C] hover:bg-[#cf1430] transition-colors cursor-pointer shadow-sm hover:scale-105"
+              >
                 {isRtl ? "من نحن" : "WHO WE ARE"}
-              </span>
+              </Link>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-[#002F6C] font-['Montserrat',_sans-serif]">
                 {isRtl ? "تمكين المتعلمين والمؤسسات في جميع أنحاء المملكة" : "Empowering Learners and Organizations Across Saudi Arabia"}
               </h2>
@@ -550,8 +570,8 @@ export default function HomePage() {
               {/* Main classroom image */}
               <div className="relative aspect-[4/3] w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white ring-1 ring-slate-100">
                 <Image
-                  src="/about_classroom.png"
-                  alt="IH Saudi Arabia English language classroom"
+                  src="/beta_assets/ihsa.png"
+                  alt="IH Saudi Arabia Headquarters & Education Center"
                   fill
                   className="object-cover"
                 />
@@ -587,6 +607,81 @@ export default function HomePage() {
                 ))}
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────────────────────────
+          1B. OFFICIAL VIDEO SHOWCASE — GROW WITH IH SAUDI ARABIA
+      ───────────────────────────────────────────────────────────────── */}
+      <section className="py-20 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-y border-slate-200/80 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#002F6C] bg-blue-50 border border-blue-200/60 mb-3">
+              <Sparkles className="w-3.5 h-3.5 text-[#cf1430]" />
+              {isRtl ? "شاهد برامجنا بالفيديو" : "OFFICIAL VIDEO SHOWCASE"}
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black text-[#002F6C] font-['Montserrat',_sans-serif] mb-4">
+              {isRtl ? "تطور مع الهاوس الدولي السعودية" : "Grow with IH Saudi Arabia"}
+            </h2>
+            <p className="text-slate-600 text-sm sm:text-base font-light leading-relaxed">
+              {isRtl
+                ? "شاهد الفيديوهات الرسمية لبرامجنا وتعرف على معايير التدريب العالمية المعتمدة في كافة فروعنا بالمملكة."
+                : "Watch our official videos and explore our interactive learning ecosystem delivering world-class language education across the Kingdom."}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Main Video Player */}
+            <div className="lg:col-span-8">
+              <div className="relative aspect-[16/9] w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-950">
+                <iframe
+                  key={activeVideo}
+                  src={`https://www.youtube-nocookie.com/embed/${activeVideo}?rel=0&playsinline=1`}
+                  title="International House Saudi Arabia Official Video"
+                  className="w-full h-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+
+            {/* Video Selector List */}
+            <div className="lg:col-span-4 space-y-3.5 text-start">
+              <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2 px-1">
+                {isRtl ? "اختر الفيديو للمشاهدة" : "Select Video to Watch"}
+              </p>
+              {spotlightVideos.map((vid) => {
+                const isActive = vid.id === activeVideo;
+                return (
+                  <button
+                    key={vid.id}
+                    onClick={() => setActiveVideo(vid.id)}
+                    className={`w-full text-start p-4 rounded-2xl transition-all duration-300 flex items-start gap-4 border ${
+                      isActive
+                        ? "bg-white border-[#002F6C] shadow-lg ring-2 ring-[#002F6C]/10 translate-x-1 rtl:-translate-x-1"
+                        : "bg-white/80 hover:bg-white border-slate-200/80 hover:border-slate-300 shadow-sm"
+                    }`}
+                  >
+                    <div
+                      className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
+                        isActive ? "bg-[#002F6C] text-white" : "bg-slate-100 text-slate-500"
+                      }`}
+                    >
+                      <Play size={16} fill={isActive ? "currentColor" : "none"} />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#cf1430] block mb-1">
+                        {vid.tag[lang]}
+                      </span>
+                      <h4 className="text-xs sm:text-sm font-bold text-slate-800 leading-snug line-clamp-2">
+                        {vid.title[lang]}
+                      </h4>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
@@ -682,10 +777,10 @@ export default function HomePage() {
                 </p>
               </div>
 
-              {/* Study abroad visual */}
+              {/* Real IH classroom visual */}
               <div className="relative h-48 w-full rounded-2xl overflow-hidden shadow-inner hidden sm:block">
-                <Image src="/study_abroad.png" alt="Students learning" fill className="object-cover object-center brightness-75" />
-                <div className="absolute inset-0 bg-[#002F6C]/40" />
+                <Image src="/beta_assets/pic1.png" alt="Students learning at International House" fill className="object-cover object-center brightness-90" />
+                <div className="absolute inset-0 bg-[#002F6C]/30" />
                 <div className="absolute inset-0 flex items-center justify-center p-6 text-center text-white">
                   <p className="font-extrabold text-sm tracking-widest uppercase">
                     {isRtl ? "خبرة تفوق ٣٠ عاماً في خدمة المملكة" : "OVER 30 YEARS OF EDUCATIONAL EXCELLENCE"}
@@ -750,9 +845,12 @@ export default function HomePage() {
             </motion.div>
           </div>
         </div>
-      </section>
 
-      <ThemeAccent height="h-1.5" pills />
+        {/* Pinned at the bottom border of the section, rising upwards */}
+        <div className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none">
+          <ThemeAccent />
+        </div>
+      </section>
 
       {/* ─────────────────────────────────────────────────────────────────
           4. OUR SERVICES — IH Mexico / LDA Image Cards Style
@@ -921,12 +1019,12 @@ export default function HomePage() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-[#f59e0b]/5 blur-[100px] animate-pulse" style={{ animationDelay: "0.8s" }} />
         </div>
 
-        {/* Background image at higher opacity */}
+        {/* Real corporate training backdrop */}
         <Image
-          src="/corporate_training.png"
+          src="/beta_assets/corporate_training.png"
           alt="Corporate training"
           fill
-          className="object-cover object-center opacity-[0.04] mix-blend-multiply pointer-events-none"
+          className="object-cover object-center opacity-[0.06] mix-blend-multiply pointer-events-none"
         />
 
         {/* Top accent bar */}
@@ -1363,14 +1461,17 @@ export default function HomePage() {
             ))}
           </motion.div>
         </div>
-      </section>
 
-      <ThemeAccent height="h-1.5" />
+        {/* Pinned at the bottom border of the section, rising upwards */}
+        <div className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none">
+          <ThemeAccent />
+        </div>
+      </section>
 
       {/* ─────────────────────────────────────────────────────────────────
           9. LOCATIONS SECTION
       ───────────────────────────────────────────────────────────────── */}
-      <section className="pt-14 pb-32 bg-white relative">
+      <section className="pt-14 pb-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
@@ -1469,9 +1570,12 @@ export default function HomePage() {
             })}
           </motion.div>
         </div>
-      </section>
 
-      <ThemeAccent height="h-2" pills />
+        {/* Pinned at the bottom border of the section, rising upwards */}
+        <div className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none">
+          <ThemeAccent />
+        </div>
+      </section>
 
       {/* ─────────────────────────────────────────────────────────────────
           10. 70 YEARS CELEBRATION BAND (Redesigned with Authentic Stamp & Badge)

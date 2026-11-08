@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import ThemeAccent from "@/components/ThemeAccent";
@@ -20,7 +21,10 @@ import {
   Send,
   CheckCircle2,
   AlertCircle,
-  Loader2
+  Loader2,
+  Globe,
+  Compass,
+  Languages
 } from "lucide-react";
 
 // Bilingual content definitions
@@ -69,7 +73,7 @@ const content = {
           "English for Healthcare Professionals",
           "English for Customer Service"
         ],
-        cta: "Request Custom Proposal"
+        cta: "Request a Corporate Proposal"
       },
       exams: {
         id: "exam-prep",
@@ -169,7 +173,7 @@ const content = {
           "الإنجليزية لممارسي الرعاية الصحية",
           "الإنجليزية لخدمة العملاء"
         ],
-        cta: "طلب مقترح مخصص"
+        cta: "طلب مقترح تدريب الشركات"
       },
       exams: {
         id: "exam-prep",
@@ -329,15 +333,15 @@ const sectionThemes = {
   }
 };
 
-// Section Metadata mapping downloaded IH Colombia image assets
+// Section Metadata mapping real original assets from beta.ihsaudiarabia.com
 const sectionMeta = [
-  { key: "general", image: "/colombia_ingles.svg", icon: <BookOpen className="w-5 h-5" />, theme: sectionThemes.general },
-  { key: "business", image: "/colombia_hero.webp", icon: <Briefcase className="w-5 h-5" />, theme: sectionThemes.business },
-  { key: "technical", image: "/colombia_tesol.webp", icon: <Wrench className="w-5 h-5" />, theme: sectionThemes.technical },
-  { key: "exams", image: "/colombia_cambridge.svg", icon: <GraduationCap className="w-5 h-5" />, theme: sectionThemes.exams },
-  { key: "young", image: "/colombia_tkt.webp", icon: <Sparkles className="w-5 h-5" />, theme: sectionThemes.young },
-  { key: "online", image: "/colombia_ielts.svg", icon: <Laptop className="w-5 h-5" />, theme: sectionThemes.online },
-  { key: "private", image: "/colombia_celta_tesol.webp", icon: <UserCheck className="w-5 h-5" />, theme: sectionThemes.private },
+  { key: "general", image: "/beta_assets/p1.jpeg", icon: <BookOpen className="w-5 h-5" />, theme: sectionThemes.general },
+  { key: "business", image: "/beta_assets/p2.jpeg", icon: <Briefcase className="w-5 h-5" />, theme: sectionThemes.business },
+  { key: "technical", image: "/beta_assets/corporate_training.png", icon: <Wrench className="w-5 h-5" />, theme: sectionThemes.technical },
+  { key: "exams", image: "/beta_assets/p3.jpeg", icon: <GraduationCap className="w-5 h-5" />, theme: sectionThemes.exams },
+  { key: "young", image: "/beta_assets/young_learners.png", icon: <Sparkles className="w-5 h-5" />, theme: sectionThemes.young },
+  { key: "online", image: "/beta_assets/online_class.png", icon: <Laptop className="w-5 h-5" />, theme: sectionThemes.online },
+  { key: "private", image: "/beta_assets/placement_test.png", icon: <UserCheck className="w-5 h-5" />, theme: sectionThemes.private },
 ];
 
 export default function CoursesPage() {
@@ -601,6 +605,34 @@ export default function CoursesPage() {
                   );
                 })}
               </nav>
+
+              {/* Global & Additional World Languages links */}
+              <div className="pt-4 mt-4 border-t border-slate-100 space-y-1">
+                <div className="text-[10px] font-black uppercase tracking-wider text-slate-400 px-2 pb-1">
+                  {isRtl ? "اللغات العالمية" : "Global & World Languages"}
+                </div>
+                <Link
+                  href="/languages-programs"
+                  className="flex items-center gap-2.5 w-full px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-[#002f6c] hover:bg-slate-50 transition-all text-start"
+                >
+                  <Globe className="w-4 h-4 text-slate-400 shrink-0" />
+                  <span className="truncate">{isRtl ? "اللغات العالمية" : "Global Languages"}</span>
+                </Link>
+                <Link
+                  href="/languages-programs#additional"
+                  className="flex items-center gap-2.5 w-full px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-[#002f6c] hover:bg-slate-50 transition-all text-start"
+                >
+                  <Languages className="w-4 h-4 text-slate-400 shrink-0" />
+                  <span className="truncate">{isRtl ? "لغات عالمية إضافية" : "Additional World Languages"}</span>
+                </Link>
+                <Link
+                  href="/study-abroad"
+                  className="flex items-center gap-2.5 w-full px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-[#002f6c] hover:bg-slate-50 transition-all text-start"
+                >
+                  <Compass className="w-4 h-4 text-slate-400 shrink-0" />
+                  <span className="truncate">{isRtl ? "الدراسة والابتعاث بالخارج" : "Study Abroad"}</span>
+                </Link>
+              </div>
             </div>
           </aside>
 
@@ -692,13 +724,18 @@ export default function CoursesPage() {
                       </div>
                     </div>
                   </div>
-                  <button
-                    onClick={() => scrollToSection("courses-cta")}
+                  <a
+                    href="#register-section"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setForm((prev) => ({ ...prev, course: "general" }));
+                      scrollToSection("register-section");
+                    }}
                     className="inline-flex items-center justify-center gap-2 self-start px-6 py-3 bg-[#002f6c] hover:bg-[#cf1430] text-white text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group"
                   >
                     {t.sections.general.cta}
                     <ArrowRight className={`w-4 h-4 transition-transform group-hover:translate-x-1 ${isRtl ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
-                  </button>
+                  </a>
                 </div>
               </div>
             </motion.div>
@@ -743,13 +780,18 @@ export default function CoursesPage() {
                       </div>
                     </div>
                   </div>
-                  <button
-                    onClick={() => scrollToSection("courses-cta")}
+                  <a
+                    href="#register-section"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setForm((prev) => ({ ...prev, course: "business" }));
+                      scrollToSection("register-section");
+                    }}
                     className="inline-flex items-center justify-center gap-2 self-start px-6 py-3 bg-[#002f6c] hover:bg-[#cf1430] text-white text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group"
                   >
                     {t.sections.business.cta}
                     <ArrowRight className={`w-4 h-4 transition-transform group-hover:translate-x-1 ${isRtl ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
-                  </button>
+                  </a>
                 </div>
                 <div className="lg:col-span-5 relative h-64 sm:h-80 rounded-2xl overflow-hidden shadow-sm order-1 lg:order-2 border border-slate-200">
                   <Image
@@ -813,13 +855,13 @@ export default function CoursesPage() {
                       </div>
                     </div>
                   </div>
-                  <button
-                    onClick={() => scrollToSection("courses-cta")}
+                  <Link
+                    href="/corporate-training#proposal"
                     className="inline-flex items-center justify-center gap-2 self-start px-6 py-3 bg-[#002f6c] hover:bg-[#cf1430] text-white text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group"
                   >
                     {t.sections.technical.cta}
                     <ArrowRight className={`w-4 h-4 transition-transform group-hover:translate-x-1 ${isRtl ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -864,13 +906,18 @@ export default function CoursesPage() {
                       </div>
                     </div>
                   </div>
-                  <button
-                    onClick={() => scrollToSection("courses-cta")}
+                  <a
+                    href="#register-section"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setForm((prev) => ({ ...prev, course: "ielts" }));
+                      scrollToSection("register-section");
+                    }}
                     className="inline-flex items-center justify-center gap-2 self-start px-6 py-3 bg-[#002f6c] hover:bg-[#cf1430] text-white text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group"
                   >
                     {t.sections.exams.cta}
                     <ArrowRight className={`w-4 h-4 transition-transform group-hover:translate-x-1 ${isRtl ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
-                  </button>
+                  </a>
                 </div>
                 <div className="lg:col-span-5 relative h-64 sm:h-80 rounded-2xl overflow-hidden shadow-sm order-1 lg:order-2 border border-slate-200">
                   <Image
@@ -950,13 +997,18 @@ export default function CoursesPage() {
                       </div>
                     </div>
                   </div>
-                  <button
-                    onClick={() => scrollToSection("courses-cta")}
+                  <a
+                    href="#register-section"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setForm((prev) => ({ ...prev, course: "young-learners" }));
+                      scrollToSection("register-section");
+                    }}
                     className="inline-flex items-center justify-center gap-2 self-start px-6 py-3 bg-[#002f6c] hover:bg-[#cf1430] text-white text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group"
                   >
                     {t.sections.young.cta}
                     <ArrowRight className={`w-4 h-4 transition-transform group-hover:translate-x-1 ${isRtl ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
-                  </button>
+                  </a>
                 </div>
               </div>
             </motion.div>
@@ -1000,13 +1052,18 @@ export default function CoursesPage() {
                       </div>
                     </div>
                   </div>
-                  <button
-                    onClick={() => scrollToSection("courses-cta")}
+                  <a
+                    href="#register-section"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setForm((prev) => ({ ...prev, course: "online" }));
+                      scrollToSection("register-section");
+                    }}
                     className="inline-flex items-center justify-center gap-2 self-start px-6 py-3 bg-[#002f6c] hover:bg-[#cf1430] text-white text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group"
                   >
                     {t.sections.online.cta}
                     <ArrowRight className={`w-4 h-4 transition-transform group-hover:translate-x-1 ${isRtl ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
-                  </button>
+                  </a>
                 </div>
                 <div className="lg:col-span-5 relative h-64 sm:h-80 rounded-2xl overflow-hidden shadow-sm order-1 lg:order-2 border border-slate-200">
                   <Image
@@ -1071,13 +1128,18 @@ export default function CoursesPage() {
                       </div>
                     </div>
                   </div>
-                  <button
-                    onClick={() => scrollToSection("courses-cta")}
+                  <a
+                    href="#register-section"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setForm((prev) => ({ ...prev, course: "private" }));
+                      scrollToSection("register-section");
+                    }}
                     className="inline-flex items-center justify-center gap-2 self-start px-6 py-3 bg-[#002f6c] hover:bg-[#cf1430] text-white text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group"
                   >
                     {t.sections.private.cta}
                     <ArrowRight className={`w-4 h-4 transition-transform group-hover:translate-x-1 ${isRtl ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
-                  </button>
+                  </a>
                 </div>
               </div>
             </motion.div>
@@ -1111,13 +1173,13 @@ export default function CoursesPage() {
                   {t.sections.guidance.desc}
                 </p>
                 
-                <button
-                  onClick={() => scrollToSection("courses-cta")}
+                <Link
+                  href="/placement-test-booking"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-[#cf1430] text-[#002f6c] hover:text-white text-base font-bold rounded-2xl shadow-lg transition-all duration-300 group"
                 >
                   {isRtl ? "احجز اختبار تحديد المستوى" : "Book Placement Assessment"}
                   <ArrowRight className={`w-5 h-5 transition-transform group-hover:translate-x-1.5 ${isRtl ? "rotate-180 group-hover:-translate-x-1.5" : ""}`} />
-                </button>
+                </Link>
               </div>
             </motion.div>
 
@@ -1159,7 +1221,7 @@ export default function CoursesPage() {
                 </p>
               </div>
               <a
-                href="/contact?action=placement"
+                href="/register?form=student"
                 className="inline-flex items-center gap-1.5 text-sm font-bold text-[#002f6c] hover:text-[#cf1430] transition-colors"
               >
                 {t.cta.placement}
@@ -1417,6 +1479,8 @@ export default function CoursesPage() {
                       <option value="business">{isRtl ? "اللغة الإنجليزية للأعمال" : "Business English"}</option>
                       <option value="ielts">{isRtl ? "التحضير لاختبار آيلتس" : "IELTS Preparation"}</option>
                       <option value="young-learners">{isRtl ? "برامج الصغار والشباب" : "Young Learners Program"}</option>
+                      <option value="online">{isRtl ? "التعلم عبر الإنترنت والهجين" : "Online & Hybrid Learning"}</option>
+                      <option value="private">{isRtl ? "الدروس الخصوصية والتدريب الفردي" : "Private Tuition"}</option>
                       <option value="arabic">{isRtl ? "تعلم العربية مع IH" : "Learn Arabic with IH"}</option>
                       <option value="esp">{isRtl ? "إنجليزية لأغراض خاصة (ESP)" : "English for Specific Purposes (ESP)"}</option>
                     </select>
@@ -1435,9 +1499,9 @@ export default function CoursesPage() {
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-gray-800 bg-slate-50/50 focus:outline-none focus:border-blue-500 appearance-none cursor-pointer"
                   >
                     <option value="">{isRtl ? "اختر فترة الدراسة" : "Select study timing"}</option>
-                    <option value="morning">{isRtl ? "الصباح (٨:٠٠ ص - ١٢:٠٠ م)" : "Morning (8:00 AM - 12:00 PM)"}</option>
-                    <option value="afternoon">{isRtl ? "بعد الظهر (١:٠٠ م - ٥:٠٠ م)" : "Afternoon (1:00 PM - 5:00 PM)"}</option>
-                    <option value="evening">{isRtl ? "المساء (٦:٠٠ م - ١٠:٠٠ م)" : "Evening (6:00 PM - 10:00 PM)"}</option>
+                    <option value="morning">{isRtl ? "الصباح" : "Morning"}</option>
+                    <option value="afternoon">{isRtl ? "بعد الظهر" : "Afternoon"}</option>
+                    <option value="evening">{isRtl ? "المساء" : "Evening"}</option>
                   </select>
                 </div>
 

@@ -11,7 +11,6 @@ import {
   Layers, MapPin, Compass, Sparkles, Lightbulb
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import ThemeAccent from "./ThemeAccent";
 import { useLanguage } from "@/context/LanguageContext";
 import type { LucideIcon } from "lucide-react";
 
@@ -142,32 +141,42 @@ export default function Header() {
       desc: t("nav.courses.desc"),
       groups: [
         {
-          heading: lang === "ar" ? "دورات اللغة الإنجليزية" : "Language Programs",
+          heading: lang === "ar" ? "برامج اللغات" : "Language Programs:",
           items: [
-            { label: t("nav.courses.general"), href: "/courses#general-english", icon: BookOpen, desc: lang === "ar" ? "الإنجليزية العامة للجميع" : "For students & general learners" },
-            { label: t("nav.courses.business"), href: "/courses#business-english", icon: Briefcase, desc: lang === "ar" ? "الإنجليزية للأعمال" : "For professional communication" },
+            { label: t("nav.courses.general"), href: "/courses#general-english", icon: BookOpen, desc: lang === "ar" ? "للطلاب والمتعلمين العامين" : "For students & general learners" },
+            { label: t("nav.courses.business"), href: "/courses#business-english", icon: Briefcase, desc: lang === "ar" ? "للتواصل المهني" : "For professional communication" },
             { label: t("nav.courses.technical"), href: "/courses#technical-professional", icon: Wrench, desc: lang === "ar" ? "الإنجليزية الفنية والتخصصية" : "Technical & Industry-specific" },
-            { label: t("nav.courses.online_hybrid"), href: "/courses#online-hybrid", icon: Laptop, desc: lang === "ar" ? "تعليم مرن عبر الإنترنت" : "Online & hybrid virtual setups" },
-            { label: t("nav.courses.young_learners_sub"), href: "/courses#young-learners", icon: Users, desc: lang === "ar" ? "برامج الصغار والشباب" : "Interactive kids & teens classes" },
+            { label: t("nav.courses.online_hybrid"), href: "/courses#online-hybrid", icon: Laptop, desc: lang === "ar" ? "بيئات افتراضية مدمجة وعبر الإنترنت" : "Online & hybrid virtual setups" },
+            { label: t("nav.courses.young_learners_sub"), href: "/courses#young-learners", icon: Users, desc: lang === "ar" ? "فصول تفاعلية للأطفال واليافعين" : "Interactive kids & teens classes" },
           ],
         },
         {
-          heading: lang === "ar" ? "اللغات والسفر للخارج" : "Global Languages & Travel",
+          heading: lang === "ar" ? "اللغات العالمية" : "Global Languages",
           items: [
-            { label: t("nav.languages.arabic"), href: "/languages-programs#arabic", icon: BookOpen, desc: lang === "ar" ? "العربية لغير الناطقين بها" : "Learn Arabic with IH" },
-            { label: t("nav.languages.french"), href: "/languages-programs#french", icon: Globe, desc: lang === "ar" ? "الفرنسية، الإسبانية، والصينية" : "French, Spanish, Chinese, etc." },
-            { label: t("nav.study_abroad"), href: "/study-abroad", icon: Compass, desc: lang === "ar" ? "الدراسة والابتعاث بالخارج" : "Personalized international study" },
-            { label: t("nav.languages.cultural"), href: "/languages-programs#cultural", icon: Sparkles, desc: lang === "ar" ? "البرامج والتبادل الثقافي" : "Cultural experiences & travel" },
+            { label: lang === "ar" ? "اللغة العربية والدراسات الثقافية" : "Arabic Language & Cultural Studies", href: "/languages-programs#arabic", icon: BookOpen, desc: lang === "ar" ? "تعلم العربية مع IH" : "Learn Arabic with IH" },
+            { label: lang === "ar" ? "اللغات العالمية" : "Global Languages", href: "/languages-programs", icon: Globe, desc: lang === "ar" ? "الفرنسية، الإسبانية، الصينية، إلخ." : "French, Spanish, Chinese, etc." },
+            { label: t("nav.study_abroad"), href: "/study-abroad", icon: Compass, desc: lang === "ar" ? "دراسة دولية مخصصة" : "Personalized international study" },
+            { label: lang === "ar" ? "التعلم الثقافي والتجارب الدولية" : "Cultural Learning & International Experiences", href: "/languages-programs#cultural", icon: Sparkles, desc: lang === "ar" ? "تجارب ثقافية وسفر" : "Cultural experiences & travel" },
+          ],
+        },
+        {
+          heading: lang === "ar" ? "لغات عالمية إضافية" : "Additional World Languages",
+          items: [
+            { label: "German (Deutsch)", href: "/languages-programs#german", icon: Globe, desc: "Deutsch" },
+            { label: "Italian (Italiano)", href: "/languages-programs#italian", icon: Globe, desc: "Italiano" },
+            { label: "Japanese (日本語)", href: "/languages-programs#japanese", icon: Globe, desc: "日本語" },
+            { label: "Korean (한국어)", href: "/languages-programs#korean", icon: Globe, desc: "한국어" },
+            { label: "Turkish (Türkçe)", href: "/languages-programs#turkish", icon: Globe, desc: "Türkçe" },
           ],
         }
       ],
       promo: {
-        badge: lang === "ar" ? "اختبار مجاني" : "FREE TEST",
-        title: lang === "ar" ? "حدد مستوى لغتك" : "Language Assessment",
-        desc: lang === "ar" ? "احجز اختبار تحديد المستوى عبر الإنترنت مجاناً وبسهولة." : "Evaluate your language standing with our online placement test.",
-        btnText: lang === "ar" ? "ابدأ الاختبار" : "Take Test",
-        href: "/courses#placement-testing",
-        bgGradient: "from-red-950 via-[#cf1430] to-red-900"
+        badge: lang === "ar" ? "جميع الدورات" : "ALL COURSES",
+        title: lang === "ar" ? "استكشف دوراتنا" : "Explore our courses",
+        desc: lang === "ar" ? "اكتشف جميع خيارات التعلم ومسارات البرامج المتنوعة لدى IH السعودية." : "View our full catalog of English and world language programs.",
+        btnText: lang === "ar" ? "استكشف دوراتنا" : "Explore our courses",
+        href: "/courses",
+        bgGradient: "from-[#002f6c] via-[#0a4a9f] to-[#cf1430]"
       }
     },
     {
@@ -265,8 +274,6 @@ export default function Header() {
             : "bg-white border-b border-transparent"
         }`}
       >
-        <ThemeAccent />
-
         {/* ═══ TOP UTILITY BAR (Desktop Only) ═══ */}
         <div
           className={`hidden lg:block bg-gradient-to-r from-[#001a3f] to-[#002d6b] text-slate-300 text-xs transition-all duration-300 select-none ${
@@ -368,6 +375,8 @@ export default function Header() {
                   <AnimatePresence>
                     {activeMenu === item.label && item.groups && (() => {
                       const isExaminations = item.label === t("nav.examinations");
+                      const isThreeGroups = item.groups.length === 3;
+                      const menuWidth = isThreeGroups ? "w-[940px] xl:w-[980px]" : "w-[820px]";
                       const alignClass = isExaminations
                         ? (isRTL ? "left-0" : "right-0")
                         : (isRTL ? "right-1/2" : "left-1/2");
@@ -381,77 +390,147 @@ export default function Header() {
                           animate={{ opacity: 1, y: 0, x: motionX }}
                           exit={{ opacity: 0, y: 10, x: motionX }}
                           transition={{ duration: 0.22, ease: "easeOut" }}
-                          className={`absolute top-[64px] ${alignClass} w-[820px] bg-white/95 backdrop-blur-xl border border-slate-100 shadow-[0_24px_56px_rgba(0,0,0,0.15)] rounded-3xl p-6 z-50 grid grid-cols-12 gap-6`}
+                          className={`absolute top-[64px] ${alignClass} ${menuWidth} bg-white/95 backdrop-blur-xl border border-slate-100 shadow-[0_24px_56px_rgba(0,0,0,0.15)] rounded-3xl p-6 z-50 grid grid-cols-12 gap-6`}
                           onMouseEnter={() => openMenu(item.label)}
                           onMouseLeave={closeMenu}
                         >
-                          {/* Left/Right content: Subgroups (8 columns) */}
-                          <div className="col-span-8 grid grid-cols-2 gap-6 text-start">
-                            {item.groups.map((group, gIdx) => (
-                              <div key={gIdx} className="space-y-3.5">
-                                <h4 className="text-[10px] font-black tracking-wider uppercase text-cyan-600/90 border-b border-slate-100 pb-1.5">
-                                  {group.heading}
-                                </h4>
-                                <div className="space-y-1">
-                                  {group.items.map((sub, sIdx) => {
-                                    const IconComponent = sub.icon;
-                                    return (
-                                      <Link
-                                        key={sIdx}
-                                        href={sub.href}
-                                        onClick={() => setActiveMenu(null)}
-                                        className="group/item flex items-start gap-3.5 p-2 rounded-xl transition-all duration-200 hover:bg-slate-50"
-                                      >
-                                        <div className="w-9 h-9 rounded-xl bg-slate-50 group-hover/item:bg-white group-hover/item:shadow-sm flex items-center justify-center text-slate-400 group-hover/item:text-[#002f6c] transition-colors shrink-0">
-                                          <IconComponent size={16} strokeWidth={2} />
-                                        </div>
-                                        <div className="flex flex-col">
-                                          <span className="text-[13px] font-bold text-slate-700 group-hover/item:text-[#002f6c] transition-colors">
-                                            {sub.label}
-                                          </span>
-                                          {sub.desc && (
-                                            <span className="text-[10px] font-normal text-slate-400 leading-normal">
-                                              {sub.desc}
-                                            </span>
-                                          )}
-                                        </div>
-                                      </Link>
-                                    );
-                                  })}
+                          {isThreeGroups ? (
+                            <>
+                              {/* 3 Columns Subgroups Grid */}
+                              <div className="col-span-12 grid grid-cols-3 gap-6 text-start">
+                                {item.groups.map((group, gIdx) => (
+                                  <div key={gIdx} className="space-y-3">
+                                    <h4 className="text-[11px] font-black tracking-wider uppercase text-[#002f6c] border-b border-slate-100 pb-2">
+                                      {group.heading}
+                                    </h4>
+                                    <div className="space-y-1">
+                                      {group.items.map((sub, sIdx) => {
+                                        const IconComponent = sub.icon;
+                                        return (
+                                          <Link
+                                            key={sIdx}
+                                            href={sub.href}
+                                            onClick={() => setActiveMenu(null)}
+                                            className="group/item flex items-start gap-3 p-2 rounded-xl transition-all duration-200 hover:bg-slate-50"
+                                          >
+                                            <div className="w-8 h-8 rounded-lg bg-slate-100 group-hover/item:bg-[#002f6c] flex items-center justify-center text-slate-500 group-hover/item:text-white transition-colors shrink-0">
+                                              <IconComponent size={14} strokeWidth={2} />
+                                            </div>
+                                            <div className="flex flex-col min-w-0">
+                                              <span className="text-[13px] font-bold text-slate-700 group-hover/item:text-[#002f6c] transition-colors leading-tight">
+                                                {sub.label}
+                                              </span>
+                                              {sub.desc && (
+                                                <span className="text-[10px] font-normal text-slate-400 leading-normal mt-0.5 truncate">
+                                                  {sub.desc}
+                                                </span>
+                                              )}
+                                            </div>
+                                          </Link>
+                                        );
+                                      })}
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+
+                              {/* Bottom Explore Our Courses CTA Bar */}
+                              <div className="col-span-12 pt-3 border-t border-slate-100 flex items-center justify-between bg-gradient-to-r from-slate-50 via-blue-50/50 to-slate-50 -mx-6 -mb-6 p-4 px-6 rounded-b-3xl">
+                                <div className="flex items-center gap-2.5 text-start">
+                                  <div className="w-8 h-8 rounded-lg bg-[#002f6c]/10 text-[#002f6c] flex items-center justify-center shrink-0">
+                                    <Sparkles size={16} />
+                                  </div>
+                                  <div>
+                                    <span className="text-xs font-extrabold text-[#002f6c] block leading-tight">
+                                      {isRTL ? "استكشف جميع المسارات والدورات التعليمية" : "Explore All Courses & Learning Pathways"}
+                                    </span>
+                                    <span className="text-[10px] text-slate-500">
+                                      {isRTL ? "انتقل إلى صفحة جميع الدورات للاطلاع على البرامج المتاحة" : "The link should take you to the All Courses page provided"}
+                                    </span>
+                                  </div>
                                 </div>
+
+                                <Link
+                                  href="/courses"
+                                  onClick={() => setActiveMenu(null)}
+                                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-black text-white bg-[#002F6C] hover:bg-[#cf1430] transition-all shadow-md hover:shadow-lg shrink-0"
+                                >
+                                  <span>{isRTL ? "استكشف دوراتنا" : "Explore our courses"}</span>
+                                  <ArrowRight size={14} className={isRTL ? "rotate-180" : ""} />
+                                </Link>
                               </div>
-                            ))}
-                          </div>
-
-                          {/* Side Banner Column (4 columns) */}
-                          {item.promo && (
-                            <div className="col-span-4 rounded-2xl p-5 text-white flex flex-col justify-between overflow-hidden relative shadow-inner group/promo text-start">
-                              {/* Accent Background Gradient */}
-                              <div className={`absolute inset-0 bg-gradient-to-br ${item.promo.bgGradient} transition-transform duration-500 scale-100 group-hover/promo:scale-105`} />
-                              {/* Decorative glowing blob */}
-                              <div className="absolute -bottom-10 -right-10 w-24 h-24 rounded-full bg-white/10 blur-xl pointer-events-none" />
-
-                              <div className="relative z-10 space-y-2">
-                                <span className="inline-block px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-white/20 text-white">
-                                  {item.promo.badge}
-                                </span>
-                                <h4 className="text-base font-extrabold font-['Montserrat',_sans-serif] leading-tight">
-                                  {item.promo.title}
-                                </h4>
-                                <p className="text-[11px] font-light text-slate-200/90 leading-relaxed">
-                                  {item.promo.desc}
-                                </p>
+                            </>
+                          ) : (
+                            <>
+                              {/* Left/Right content: Subgroups (8 columns) */}
+                              <div className="col-span-8 grid grid-cols-2 gap-6 text-start">
+                                {item.groups.map((group, gIdx) => (
+                                  <div key={gIdx} className="space-y-3.5">
+                                    <h4 className="text-[10px] font-black tracking-wider uppercase text-cyan-600/90 border-b border-slate-100 pb-1.5">
+                                      {group.heading}
+                                    </h4>
+                                    <div className="space-y-1">
+                                      {group.items.map((sub, sIdx) => {
+                                        const IconComponent = sub.icon;
+                                        return (
+                                          <Link
+                                            key={sIdx}
+                                            href={sub.href}
+                                            onClick={() => setActiveMenu(null)}
+                                            className="group/item flex items-start gap-3.5 p-2 rounded-xl transition-all duration-200 hover:bg-slate-50"
+                                          >
+                                            <div className="w-9 h-9 rounded-xl bg-slate-50 group-hover/item:bg-white group-hover/item:shadow-sm flex items-center justify-center text-slate-400 group-hover/item:text-[#002f6c] transition-colors shrink-0">
+                                              <IconComponent size={16} strokeWidth={2} />
+                                            </div>
+                                            <div className="flex flex-col">
+                                              <span className="text-[13px] font-bold text-slate-700 group-hover/item:text-[#002f6c] transition-colors">
+                                                {sub.label}
+                                              </span>
+                                              {sub.desc && (
+                                                <span className="text-[10px] font-normal text-slate-400 leading-normal">
+                                                  {sub.desc}
+                                                </span>
+                                              )}
+                                            </div>
+                                          </Link>
+                                        );
+                                      })}
+                                    </div>
+                                  </div>
+                                ))}
                               </div>
 
-                              <Link
-                                href={item.promo.href}
-                                onClick={() => setActiveMenu(null)}
-                                className="relative z-10 mt-5 inline-flex items-center justify-center gap-1.5 w-full py-2 bg-white text-slate-900 text-xs font-extrabold rounded-xl shadow-sm hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
-                              >
-                                <span>{item.promo.btnText}</span>
-                                <ArrowRight size={12} className={isRTL ? "rotate-180" : ""} />
-                              </Link>
-                            </div>
+                              {/* Side Banner Column (4 columns) */}
+                              {item.promo && (
+                                <div className="col-span-4 rounded-2xl p-5 text-white flex flex-col justify-between overflow-hidden relative shadow-inner group/promo text-start">
+                                  {/* Accent Background Gradient */}
+                                  <div className={`absolute inset-0 bg-gradient-to-br ${item.promo.bgGradient} transition-transform duration-500 scale-100 group-hover/promo:scale-105`} />
+                                  {/* Decorative glowing blob */}
+                                  <div className="absolute -bottom-10 -right-10 w-24 h-24 rounded-full bg-white/10 blur-xl pointer-events-none" />
+
+                                  <div className="relative z-10 space-y-2">
+                                    <span className="inline-block px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-white/20 text-white">
+                                      {item.promo.badge}
+                                    </span>
+                                    <h4 className="text-base font-extrabold font-['Montserrat',_sans-serif] leading-tight">
+                                      {item.promo.title}
+                                    </h4>
+                                    <p className="text-[11px] font-light text-slate-200/90 leading-relaxed">
+                                      {item.promo.desc}
+                                    </p>
+                                  </div>
+
+                                  <Link
+                                    href={item.promo.href}
+                                    onClick={() => setActiveMenu(null)}
+                                    className="relative z-10 mt-5 inline-flex items-center justify-center gap-1.5 w-full py-2 bg-white text-slate-900 text-xs font-extrabold rounded-xl shadow-sm hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+                                  >
+                                    <span>{item.promo.btnText}</span>
+                                    <ArrowRight size={12} className={isRTL ? "rotate-180" : ""} />
+                                  </Link>
+                                </div>
+                              )}
+                            </>
                           )}
                         </motion.div>
                       );

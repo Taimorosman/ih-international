@@ -375,7 +375,7 @@ export default function TeacherTrainingPage() {
             </motion.div>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}>
               <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-2xl">
-                <Image src="/celta_training.png" alt="CELTA training session" fill className="object-cover" />
+                <Image src="/beta_assets/teacher_training.png" alt="IH Teacher Training and Professional Development" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="flex items-center gap-3 bg-white/15 backdrop-blur-sm rounded-2xl p-4 border border-white/25">
@@ -409,14 +409,10 @@ export default function TeacherTrainingPage() {
                 <motion.div
                   key={i} custom={i}
                   initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-                  className={`relative z-10 overflow-hidden asymmetric-card p-8 border transition-all duration-300 group/card cursor-pointer ${w.shadow}`}
+                  className={`relative z-10 overflow-hidden rounded-3xl p-8 border ${w.shadow}`}
                   style={{
                     background: w.bg,
                     borderColor: w.border
-                  }}
-                  whileHover={{
-                    borderColor: w.borderHover,
-                    background: w.hoverBg
                   }}
                 >
                   {/* Visible background photo inside the card */}
@@ -463,14 +459,10 @@ export default function TeacherTrainingPage() {
                 <motion.div
                   key={i} custom={i}
                   initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-                  className={`relative z-10 overflow-hidden asymmetric-card border transition-all duration-300 group/card cursor-pointer ${track.shadow}`}
+                  className={`relative z-10 overflow-hidden rounded-3xl border ${track.shadow}`}
                   style={{
                     background: track.bg,
                     borderColor: track.border
-                  }}
-                  whileHover={{
-                    borderColor: track.borderHover,
-                    background: track.hoverBg
                   }}
                 >
                   {/* Visible background photo inside the card */}

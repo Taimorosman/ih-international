@@ -82,7 +82,7 @@ const contentData = {
       title: "Teacher Qualifications & Professional Certification",
       desc: "International House has a long-standing reputation for supporting teacher development and educational excellence. IH Saudi Arabia supports teachers and educational professionals through internationally informed training pathways and professional development opportunities that help educators advance their careers and enhance their teaching practice.",
       badge: "TEACHER DEVELOPMENT",
-      img: "/exam_teacher.png"
+      img: "/beta_assets/teacher_training.png"
     },
     corporateAssessment: {
       title: "Corporate Assessment & Certification Support",
@@ -95,7 +95,7 @@ const contentData = {
         "Certification Pathway Guidance"
       ],
       badge: "CORPORATE SOLUTIONS",
-      img: "/str_corporate.png"
+      img: "/beta_assets/placement_test.png"
     },
     prepFeatures: {
       title: "Examination Preparation Features",
@@ -207,7 +207,7 @@ const contentData = {
       title: "تأهيل المعلمين والشهادات المهنية",
       desc: "تتمتع إنترناشونال هاوس بسمعة عريقة في إعداد المعلمين وقيادة التميز التعليمي. تدعم إنترناشونال هاوس السعودية الدارسين والأخصائيين عبر مسارات تدريب مهني معتمدة عالمياً (مثل كامبريدج CELTA) لمساعدتهم في التقدم المهني داخل وخارج المملكة.",
       badge: "تطوير المعلمين والتعليم",
-      img: "/exam_teacher.png"
+      img: "/beta_assets/teacher_training.png"
     },
     corporateAssessment: {
       title: "التقييم المؤسسي واعتمادات الشركات",
@@ -220,7 +220,7 @@ const contentData = {
         "توجيه مسارات الشهادات والاعتمادات الرسمية"
       ],
       badge: "حلول قطاع الأعمال والشركات",
-      img: "/str_corporate.png"
+      img: "/beta_assets/placement_test.png"
     },
     prepFeatures: {
       title: "ميزات برامج الاستعداد للامتحانات",
@@ -279,10 +279,10 @@ export default function ExaminationsPage() {
       {/* 1. HERO SECTION */}
       <section className="py-24 sm:py-32 relative overflow-hidden group bg-gradient-to-br from-[#002F6C] via-[#083e87] to-[#0c4ea6] text-white">
         <Image
-          src="/card_exams.png"
-          alt="Examinations background"
+          src="/beta_assets/p3.jpeg"
+          alt="International House Saudi Arabia Examinations"
           fill
-          className="object-cover object-center opacity-15 group-hover:opacity-25 transition-opacity duration-500 ease-in-out mix-blend-overlay pointer-events-none"
+          className="object-cover object-center opacity-20 group-hover:opacity-30 transition-opacity duration-500 ease-in-out mix-blend-overlay pointer-events-none"
           priority
         />
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10 -translate-y-32 translate-x-32 bg-white" />

@@ -94,9 +94,9 @@ const content = {
         title: "Flexible Delivery Options",
         subtitle: "Training that fits around your operational schedule.",
         options: [
-          { title: "Face-to-Face On-Site", desc: "Our certified trainers conduct classes directly at your office or facility.", icon: MapPin, img: "/learn_face_to_face.png" },
-          { title: "Live Virtual Classroom", desc: "Flexible, interactive online classes delivered via our custom platform.", icon: Laptop, img: "/learn_online_classes.png" },
-          { title: "Blended Learning Paths", desc: "A hybrid framework combining online self-study with structured teacher-led sessions.", icon: Settings, img: "/learn_hybrid.png" }
+          { title: "Face-to-Face On-Site", desc: "Our certified trainers conduct classes directly at your office or facility.", icon: MapPin, img: "/beta_assets/corporate_training.png" },
+          { title: "Live Virtual Classroom", desc: "Flexible, interactive online classes delivered via our custom platform.", icon: Laptop, img: "/beta_assets/online_class.png" },
+          { title: "Blended Learning Paths", desc: "A hybrid framework combining online self-study with structured teacher-led sessions.", icon: Settings, img: "/beta_assets/pic1.png" }
         ]
       },
       workforce: {
@@ -205,9 +205,9 @@ const content = {
         title: "خيارات التقديم المرنة",
         subtitle: "تدريب يتناسب مع جداول أعمالك التشغيلية دون انقطاع.",
         options: [
-          { title: "وجهاً لوجه في الموقع", desc: "يقوم مدربونا المعتمدون بتقديم الفصول الدراسية مباشرة في مقرات شركتكم.", icon: MapPin, img: "/learn_face_to_face.png" },
-          { title: "فصول افتراضية مباشرة", desc: "فصول تفاعلية مرنة عبر الإنترنت تُقدَّم من خلال منصتنا المخصصة.", icon: Laptop, img: "/learn_online_classes.png" },
-          { title: "مسارات التعلم المدمج", desc: "إطار هجين يجمع بين الدراسة الذاتية عبر الإنترنت والجلسات المباشرة مع المعلم.", icon: Settings, img: "/learn_hybrid.png" }
+          { title: "وجهاً لوجه في الموقع", desc: "يقوم مدربونا المعتمدون بتقديم الفصول الدراسية مباشرة في مقرات شركتكم.", icon: MapPin, img: "/beta_assets/corporate_training.png" },
+          { title: "فصول افتراضية مباشرة", desc: "فصول تفاعلية مرنة عبر الإنترنت تُقدَّم من خلال منصتنا المخصصة.", icon: Laptop, img: "/beta_assets/online_class.png" },
+          { title: "مسارات التعلم المدمج", desc: "إطار هجين يجمع بين الدراسة الذاتية عبر الإنترنت والجلسات المباشرة مع المعلم.", icon: Settings, img: "/beta_assets/pic1.png" }
         ]
       },
       workforce: {
@@ -416,7 +416,7 @@ export default function CorporatePage() {
               </ul>
             </div>
             <div className="aspect-[4/3] rounded-2xl overflow-hidden relative shadow-sm border border-slate-200">
-              <Image src="/corp_testing.png" alt="Corporate language assessment" fill className="object-cover pointer-events-none" />
+              <Image src="/beta_assets/placement_test.png" alt="Corporate language assessment" fill className="object-cover pointer-events-none" />
             </div>
           </div>
         </div>
@@ -563,6 +563,7 @@ export default function CorporatePage() {
                       <option value="oil_gas">{lang === "ar" ? "النفط والغاز والطاقة" : "Oil & Gas / Energy"}</option>
                       <option value="hospitality">{lang === "ar" ? "السياحة والضيافة" : "Hospitality & Tourism"}</option>
                       <option value="retail">{lang === "ar" ? "التجزئة والخدمات" : "Retail & Services"}</option>
+                      <option value="other_custom">{lang === "ar" ? "أخرى / مخصص" : "Other/Custom"}</option>
                     </select>
                   </div>
                 </div>

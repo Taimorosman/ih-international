@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import ThemeAccent from "./ThemeAccent";
 
 const MotionLink = motion(Link);
 
@@ -20,6 +21,8 @@ interface SlideData {
   badgeText: { en: string; ar: string };
   badgeVal: { en: string; ar: string };
   studentScale?: string;
+  badge1Pos?: string;
+  badge2Pos?: string;
 }
 
 const slides: SlideData[] = [
@@ -42,7 +45,9 @@ const slides: SlideData[] = [
     studentImage: "/riyadh_student.png",
     badgeText: { en: "Vision 2030 Partner", ar: "شريك رؤية 2030" },
     badgeVal: { en: "Cambridge English", ar: "الإنجليزية من كامبريدج" },
-    studentScale: "scale-[1.48] translate-y-[-16px] origin-bottom"
+    studentScale: "scale-[1.48] translate-y-[-16px] origin-bottom",
+    badge1Pos: "top-[20%] left-[-40px]",
+    badge2Pos: "bottom-[25%] right-[-40px]"
   },
   {
     key: "jeddah",
@@ -63,7 +68,9 @@ const slides: SlideData[] = [
     studentImage: "/jeddah_student.png",
     badgeText: { en: "Executive Training", ar: "التدريب التنفيذي" },
     badgeVal: { en: "98% Student Success", ar: "٪٩٨ نجاح الطلاب" },
-    studentScale: "scale-[1.32] translate-y-[-20px] origin-bottom"
+    studentScale: "scale-[1.68] translate-y-[-65px] xl:translate-y-[-80px] origin-bottom",
+    badge1Pos: "top-[54%] left-[-45px] xl:left-[-55px]",
+    badge2Pos: "bottom-[22%] right-[-40px]"
   },
   {
     key: "dammam",
@@ -84,7 +91,9 @@ const slides: SlideData[] = [
     studentImage: "/dammam_student.png",
     badgeText: { en: "Technical ESP Courses", ar: "دورات إنجليزية تقنية متخصصة" },
     badgeVal: { en: "Authorized Center", ar: "مركز اختبارات معتمد" },
-    studentScale: "scale-[1.32] translate-y-[-20px] origin-bottom"
+    studentScale: "scale-[1.54] translate-y-[-20px] xl:translate-y-[-26px] origin-bottom",
+    badge1Pos: "top-[26%] left-[-40px]",
+    badge2Pos: "bottom-[25%] right-[-40px]"
   }
 ];
 
@@ -275,47 +284,57 @@ export default function HeroSlider() {
             <div className="absolute inset-0 bg-accent/10 rounded-full blur-[100px] -z-10 animate-pulse" />
 
             {/* Main Cutout Container */}
-            <div className="relative w-full h-full flex items-end justify-center">
+            <div className="relative w-full h-full flex items-end justify-center overflow-visible">
               <Image
                 src={currentSlide.studentImage}
                 alt={currentSlide.city[lang]}
                 fill
+                style={{
+                  WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 65%, rgba(0,0,0,0.7) 78%, rgba(0,0,0,0.2) 90%, rgba(0,0,0,0) 98%)",
+                  maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 65%, rgba(0,0,0,0.7) 78%, rgba(0,0,0,0.2) 90%, rgba(0,0,0,0) 98%)",
+                }}
                 className={`object-contain object-bottom select-none pointer-events-none z-0 transition-all duration-700 ${currentSlide.studentScale || ""}`}
                 priority
                 unoptimized
               />
               
-              {/* Soft radial glow shadow/ellipse at the bottom to blend cutout cutoff smoothly with background */}
+              {/* Soft radial atmospheric fog/glow behind & over cutout bottom */}
               <div
-                className="absolute bottom-[-20px] inset-x-[-35%] h-56 pointer-events-none z-10 blur-2xl"
+                className="absolute bottom-[-10px] inset-x-[-35%] h-72 pointer-events-none z-10 blur-2xl"
                 style={{
-                  background: "radial-gradient(ellipse at bottom, rgba(0,26,63,1) 0%, rgba(0,26,63,0.95) 25%, rgba(0,47,108,0.6) 55%, rgba(0,47,108,0.2) 75%, transparent 100%)"
+                  background: "radial-gradient(ellipse at bottom, rgba(0,26,63,1) 0%, rgba(0,26,63,0.95) 35%, rgba(0,47,108,0.7) 65%, rgba(0,47,108,0.2) 85%, transparent 100%)"
+                }}
+              />
+
+              {/* Seamless upward dark blue fog covering the lower edge */}
+              <div 
+                className="absolute bottom-0 inset-x-[-25%] h-44 pointer-events-none z-10"
+                style={{
+                  background: "linear-gradient(to top, rgba(0,26,63,1) 0%, rgba(0,26,63,0.92) 28%, rgba(0,26,63,0.5) 65%, transparent 100%)"
                 }}
               />
             </div>
 
             {/* Floating Badge 1 (Top Left) */}
-            {currentSlide.key !== "dammam" && (
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-[20%] left-[-40px] bg-primary/90 backdrop-blur-md border border-white/20 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-2.5 z-20 pointer-events-auto"
-              >
-                <div className="w-7 h-7 rounded-full bg-accent flex items-center justify-center font-bold text-primary text-xs shadow-inner">
-                  ✓
-                </div>
-                <div>
-                  <p className="text-[8px] text-white/50 uppercase font-bold tracking-wider">Accredited</p>
-                  <p className="text-xs font-bold text-white leading-none mt-0.5">{currentSlide.badgeText[lang]}</p>
-                </div>
-              </motion.div>
-            )}
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className={`absolute ${currentSlide.badge1Pos || "top-[20%] left-[-40px]"} bg-primary/90 backdrop-blur-md border border-white/20 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-2.5 z-20 pointer-events-auto`}
+            >
+              <div className="w-7 h-7 rounded-full bg-accent flex items-center justify-center font-bold text-primary text-xs shadow-inner">
+                ✓
+              </div>
+              <div>
+                <p className="text-[8px] text-white/50 uppercase font-bold tracking-wider">Accredited</p>
+                <p className="text-xs font-bold text-white leading-none mt-0.5">{currentSlide.badgeText[lang]}</p>
+              </div>
+            </motion.div>
 
             {/* Floating Badge 2 (Bottom Right) */}
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute bottom-[25%] right-[-40px] bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-2.5 z-20 pointer-events-auto"
+              className={`absolute ${currentSlide.badge2Pos || "bottom-[25%] right-[-40px]"} bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-2.5 z-20 pointer-events-auto`}
             >
               <div className="w-7 h-7 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-accent text-xs shadow-sm">
                 ★
@@ -327,43 +346,6 @@ export default function HeroSlider() {
             </motion.div>
           </motion.div>
         </AnimatePresence>
-      </div>
-
-      {/* ── BOTTOM DOCK NAVIGATION ── */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 w-full max-w-5xl px-4 sm:px-6">
-        <div className="bg-primary/30 backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-5 shadow-2xl flex justify-between items-center gap-4 sm:gap-8">
-          {slides.map((slide, index) => {
-            const isActive = index === currentIndex;
-            return (
-              <button
-                key={slide.key}
-                onClick={() => setCurrentIndex(index)}
-                className="flex-1 text-start cursor-pointer group focus:outline-none"
-              >
-                <span className={`block text-[11px] sm:text-sm font-semibold transition-all duration-300 ${
-                  isActive ? "text-accent scale-[1.02]" : "text-white/50 group-hover:text-white"
-                }`}>
-                  {isRtl
-                    ? `${index === 0 ? "١" : index === 1 ? "٢" : "٣"}. ${slide.city[lang]}`
-                    : `${index + 1}. ${slide.city[lang]}`}
-                </span>
-                <div className="h-1 bg-white/10 rounded-full overflow-hidden w-full mt-2">
-                  {isActive ? (
-                    <motion.div
-                      key={currentIndex} // triggers reset on change
-                      initial={{ width: "0%" }}
-                      animate={{ width: "100%" }}
-                      transition={{ duration: 8, ease: "linear" }}
-                      className="h-full bg-accent"
-                    />
-                  ) : (
-                    <div className="h-full w-0 bg-transparent" />
-                  )}
-                </div>
-              </button>
-            );
-          })}
-        </div>
       </div>
 
       {/* ── ARROWS FOR MANUAL CONTROL (ACCESSIBILITY) ── */}
@@ -382,6 +364,19 @@ export default function HeroSlider() {
         >
           {isRtl ? <ArrowLeft size={18} /> : <ArrowRight size={18} />}
         </button>
+      </div>
+
+      {/* ── SEAMLESS BOTTOM FOG / DHUND ACROSS FULL HERO WIDTH ── */}
+      <div 
+        className="absolute bottom-0 left-0 right-0 h-28 pointer-events-none z-10"
+        style={{
+          background: "linear-gradient(to top, rgba(0,26,63,1) 0%, rgba(0,26,63,0.85) 35%, rgba(0,26,63,0.4) 70%, transparent 100%)"
+        }}
+      />
+
+      {/* ── OFFICIAL IH WORLD RAINBOW BORDER PINNED AT BOTTOM EDGE OF HERO ── */}
+      <div className="absolute bottom-0 left-0 right-0 z-20 pointer-events-none">
+        <ThemeAccent />
       </div>
     </section>
   );

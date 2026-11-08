@@ -275,8 +275,8 @@ export default function WhoWeArePage() {
             >
               <div className="relative aspect-[4/3] w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-50 group">
                 <Image
-                  src="/about_classroom.png"
-                  alt="IH Classroom"
+                  src="/beta_assets/ihsa.png"
+                  alt="International House Saudi Arabia Campus"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   priority
@@ -622,8 +622,8 @@ export default function WhoWeArePage() {
               className="relative rounded-3xl overflow-hidden shadow-2xl h-[400px] lg:h-[600px] w-full"
             >
               <Image
-                src="/riyadh_bg.png"
-                alt="Looking to the Future"
+                src="/beta_assets/riyadh_school.jpeg"
+                alt="International House Riyadh Campus"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

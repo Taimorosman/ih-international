@@ -10,7 +10,7 @@ export default function FloatingHotline() {
 
   return (
     <motion.div
-      className={`fixed bottom-6 z-50 ${
+      className={`fixed bottom-6 z-50 pointer-events-none ${
         isRTL ? "left-6" : "right-6"
       }`}
       animate={{
@@ -38,10 +38,10 @@ export default function FloatingHotline() {
 
       {/* Main Interactive Button Link */}
       <a
-        href="https://wa.me/966920000364"
+        href="https://wa.me/966581781000"
         target="_blank"
         rel="noopener noreferrer"
-        className="group relative flex items-center p-[1.5px] rounded-full overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_8px_32px_rgba(0,0,0,0.4)] ih-pulse-effect"
+        className="pointer-events-auto group relative flex items-center p-[1.5px] rounded-full overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_8px_32px_rgba(0,0,0,0.4)] ih-pulse-effect cursor-pointer"
       >
         {/* Glow Border Background */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#3b3fa8] via-[#002F6C] to-[#3b3fa8] rounded-full opacity-80 group-hover:opacity-100 transition-opacity duration-300" />

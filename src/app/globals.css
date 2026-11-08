@@ -86,24 +86,22 @@ a, button { transition: all 0.2s ease; }
   text-align: right;
 }
 
-/* ─── ASYMMETRIC CARD INTERACTION ──────────────────────── */
+/* ─── CARD STYLING (CLEAN & STATIC - NO BORDER ANIMATION) ──────────────── */
 .asymmetric-card {
-  border-radius: 20% 5% 20% 5%;
-  transition: border-radius 0.3s ease-in-out, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  border-radius: 1.5rem;
 }
 
 .asymmetric-card:hover {
-  border-radius: 5% 20% 5% 20%;
-  transform: translateY(-8px) scale(1.025);
+  border-radius: 1.5rem;
 }
 
-/* Mirrored shapes in RTL for premium local experience */
+/* Stable shapes in RTL */
 [dir="rtl"] .asymmetric-card {
-  border-radius: 5% 20% 5% 20%;
+  border-radius: 1.5rem;
 }
 
 [dir="rtl"] .asymmetric-card:hover {
-  border-radius: 20% 5% 20% 5%;
+  border-radius: 1.5rem;
 }
 
 /* Neutral corporate shadows (no color cast) */

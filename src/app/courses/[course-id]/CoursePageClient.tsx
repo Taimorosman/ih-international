@@ -387,7 +387,7 @@ export default function CoursePageClient({ courseId }: { courseId: string }) {
               custom={1}
             >
               <div
-                className="asymmetric-card p-7 border-2 h-fit"
+                className="rounded-3xl p-7 border-2 h-fit"
                 style={{ borderColor: cfg.color + "30", background: cfg.color + "08" }}
               >
                 <h3 className="font-extrabold text-base mb-5" style={{ color: cfg.color }}>
@@ -403,11 +403,13 @@ export default function CoursePageClient({ courseId }: { courseId: string }) {
                 </div>
                 <div className="mt-8 space-y-3">
                   <Link
-                    href="/contact"
+                    href={cfg.id === "technical-professional" || cfg.id === "corporate-training" ? "/corporate-training#proposal" : "/registration-form"}
                     className="flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-bold text-sm text-white shadow-[0_8px_20px_rgba(0,47,108,0.15)] hover:scale-[1.02] transition-all"
                     style={{ background: cfg.color }}
                   >
-                    Enquire Now <ArrowRight size={15} />
+                    {cfg.id === "technical-professional" || cfg.id === "corporate-training"
+                      ? (lang === "ar" ? "طلب مقترح للشركات" : "Request a Corporate Proposal")
+                      : (lang === "ar" ? "استفسر الآن" : "Enquire Now")} <ArrowRight size={15} />
                   </Link>
                   <Link
                     href="/courses/placement-test"
@@ -457,16 +459,11 @@ export default function CoursePageClient({ courseId }: { courseId: string }) {
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={fadeUp}
-                  className="relative z-10 overflow-hidden flex items-start gap-4 p-5 asymmetric-card border transition-all duration-300 group/card cursor-pointer"
+                  className="relative z-10 overflow-hidden flex items-start gap-4 p-5 rounded-2xl border group/card cursor-pointer"
                   style={{
                     background: bg,
                     borderColor: border,
                     boxShadow: "0 8px 30px -5px color-mix(in srgb, " + cfg.color + " 15%, transparent)"
-                  }}
-                  whileHover={{
-                    borderColor: borderHover,
-                    background: hoverBg,
-                    boxShadow: "0 20px 40px -10px color-mix(in srgb, " + cfg.color + " 35%, transparent)"
                   }}
                 >
                   {/* Visible background photo inside the card */}
@@ -530,16 +527,11 @@ export default function CoursePageClient({ courseId }: { courseId: string }) {
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={fadeUp}
-                  className="asymmetric-card overflow-hidden transition-all duration-300 border group/card cursor-pointer"
+                  className="rounded-3xl overflow-hidden border group/card cursor-pointer"
                   style={{
                     background: bg,
                     borderColor: border,
                     boxShadow: "0 8px 30px -5px color-mix(in srgb, " + cfg.color + " 15%, transparent)"
-                  }}
-                  whileHover={{
-                    borderColor: borderHover,
-                    background: hoverBg,
-                    boxShadow: "0 20px 40px -10px color-mix(in srgb, " + cfg.color + " 35%, transparent)"
                   }}
                 >
                   <div className="h-2 relative z-20" style={{ background: cfg.color }} />

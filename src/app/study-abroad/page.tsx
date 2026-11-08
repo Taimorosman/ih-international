@@ -343,7 +343,7 @@ export default function StudyAbroadPage() {
               viewport={{ once: true }}
               className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100 flex items-center justify-center border border-slate-200"
             >
-              <Image src="/study_abroad.png" alt="Study Abroad Experience" fill className="object-cover pointer-events-none" />
+              <Image src="/beta_assets/study_abroad-1.png" alt="International House Study Abroad Experience" fill className="object-cover pointer-events-none" />
             </motion.div>
           </div>
         </div>

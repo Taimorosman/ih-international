@@ -1133,7 +1133,7 @@ export function EspCoursesView({ lang }: { lang: string }) {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
-                href="/contact"
+                href="/registration-form"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-white font-bold text-sm text-[#8b3275] shadow-lg hover:scale-105 transition-all duration-300"
               >
                 {lang === "ar" ? "احصل على استشارة" : "Enquire Now"} <ArrowRight size={16} className="rtl:rotate-180" />
@@ -1823,9 +1823,12 @@ export function LearnArabicView({ lang }: { lang: string }) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-5">
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                <span className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-3 py-1 rounded-full bg-[#f0f4ff] text-[#002F6C]">
+                <Link
+                  href="/who-we-are"
+                  className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-3 py-1 rounded-full bg-[#f0f4ff] hover:bg-[#002F6C] text-[#002F6C] hover:text-white transition-all cursor-pointer shadow-sm hover:scale-105"
+                >
                   {lang === "ar" ? "من نحن" : "WHO WE ARE"}
-                </span>
+                </Link>
                 <h2 className="text-3xl font-extrabold mb-6 text-[#002F6C]">
                   {d.intro.title}
                 </h2>
