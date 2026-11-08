@@ -403,11 +403,11 @@ export default function CoursePageClient({ courseId }: { courseId: string }) {
                 </div>
                 <div className="mt-8 space-y-3">
                   <Link
-                    href={cfg.id === "technical-professional" || cfg.id === "corporate-training" ? "/corporate-training#proposal" : "/registration-form"}
+                    href={courseId === "technical-professional" || courseId === "corporate-training" ? "/corporate-training#proposal" : "/registration-form"}
                     className="flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-bold text-sm text-white shadow-[0_8px_20px_rgba(0,47,108,0.15)] hover:scale-[1.02] transition-all"
                     style={{ background: cfg.color }}
                   >
-                    {cfg.id === "technical-professional" || cfg.id === "corporate-training"
+                    {courseId === "technical-professional" || courseId === "corporate-training"
                       ? (lang === "ar" ? "طلب مقترح للشركات" : "Request a Corporate Proposal")
                       : (lang === "ar" ? "استفسر الآن" : "Enquire Now")} <ArrowRight size={15} />
                   </Link>

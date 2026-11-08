@@ -370,10 +370,11 @@ export default function StudentTestimonials() {
                       <h4 className="font-bold text-[#002F6C] text-sm truncate">
                         {item.name[lang]}
                       </h4>
-                      <CheckCircle2
-                        className="w-3.5 h-3.5 text-blue-600 shrink-0"
-                        title="Verified Learner"
-                      />
+                      <span title="Verified Learner">
+                        <CheckCircle2
+                          className="w-3.5 h-3.5 text-blue-600 shrink-0"
+                        />
+                      </span>
                     </div>
                     <p className="text-xs text-slate-500 font-normal truncate">
                       {item.role[lang]}
