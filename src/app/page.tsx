@@ -425,7 +425,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="pt-[72px] overflow-hidden bg-white font-['Inter',_sans-serif]">
+    <div className="pt-16 lg:pt-[108px] overflow-hidden bg-white font-['Inter',_sans-serif]">
 
       {/* ── HERO SLIDER (contains official IH World rainbow border pinned at its bottom border) ── */}
       <HeroSlider />

@@ -427,74 +427,97 @@ export default function Header() {
             : "bg-white border-b border-slate-100"
         }`}
       >
-        {/* ═══ TOP UTILITY BAR (Desktop Full-Width) ═══ */}
-        <div
-          className={`hidden lg:block bg-gradient-to-r from-[#001a3f] to-[#002d6b] text-slate-300 text-xs transition-all duration-300 select-none ${
-            scrolled ? "h-0 overflow-hidden opacity-0 py-0 border-b-0" : "h-9 opacity-100 py-1.5 border-b border-white/10"
-          }`}
-        >
-          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 h-full flex items-center justify-between">
-            {/* Left side info: Hotline & Official Email */}
-            <div className="flex items-center gap-6">
-              <a href="tel:+966920000364" className="flex items-center gap-2 hover:text-white transition-colors">
-                <Phone size={12} className="text-yellow-400 shrink-0" />
-                <span className="font-bold text-white tracking-wide text-xs" dir="ltr">+966 920 000 364</span>
-              </a>
-              <div className="w-px h-3.5 bg-white/20" />
-              <a href="mailto:info@ih-saudiarabia.com" className="flex items-center gap-2 hover:text-white transition-colors">
-                <Mail size={12} className="text-cyan-400 shrink-0" />
-                <span className="text-xs">info@ih-saudiarabia.com</span>
-              </a>
-            </div>
-
-            {/* Right side quick message & fast links */}
-            <div className="flex items-center gap-5 text-[11px]">
-              <span className="text-slate-400 hidden xl:inline">
-                {isRTL ? "الريادة العالمية في تعليم الإنجليزية منذ 2001" : "World-Class Language Education Across Saudi Arabia"}
-              </span>
-              <div className="w-px h-3.5 bg-white/20 hidden xl:inline" />
-              <Link href="/news" className="hover:text-white transition-colors">
-                {t("nav.news")}
-              </Link>
-              <Link href="/faqs" className="hover:text-white transition-colors">
-                {t("nav.faqs")}
-              </Link>
-              <Link href="/contact" className="hover:text-white transition-colors font-bold text-yellow-300">
-                {t("nav.contact")}
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* ═══ MAIN NAVIGATION BAR (FULL WIDTH UTILIZED) ═══ */}
-        <div className="w-full px-3 sm:px-5 lg:px-6 xl:px-8 2xl:px-10">
-          <div className="flex items-center justify-between h-16 lg:h-[72px] gap-2 xl:gap-4">
+        {/* ═══ TIER 1: BRAND LOGO & EXECUTIVE UTILITY BAR (Desktop) ═══ */}
+        <div className="hidden lg:block bg-white border-b border-slate-100">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 h-16 flex items-center justify-between">
             
-            {/* Logo area (Anchored cleanly to Left with proper spacing, shrink-0) */}
-            <Link href="/" className="flex items-center gap-2 sm:gap-3 shrink-0 mr-3 lg:mr-4 xl:mr-6 2xl:mr-8 group">
+            {/* Logo area - Cleanly isolated on its own row, NEVER touched by menu */}
+            <Link href="/" className="flex items-center gap-3 shrink-0 group">
               <img
                 src="/logo.png"
                 alt="International House Saudi Arabia"
-                className="h-8 sm:h-9 xl:h-10 w-auto object-contain transition-transform group-hover:scale-105"
+                className="h-9 xl:h-10 w-auto object-contain transition-transform group-hover:scale-105"
               />
-              <div className="w-px h-5 bg-slate-200 hidden xl:block" />
+              <div className="w-px h-6 bg-slate-200" />
               <img
                 src="/ih_70years_v2.png"
                 alt="Celebrating 70 Years"
-                className="h-7 sm:h-8 w-auto object-contain hidden 2xl:block"
+                className="h-8 xl:h-9 w-auto object-contain"
               />
             </Link>
 
-            {/* Desktop Navigation Links (Unified flow, zero overlap, all 12 pillars) */}
-            <nav className="hidden lg:flex items-center h-full gap-0.5 xl:gap-1 2xl:gap-1.5 flex-1 justify-end min-w-0">
+            {/* Right side utility: Toll-free phone, Email, Language, FAQs & Primary CTA */}
+            <div className="flex items-center gap-5 xl:gap-6 text-xs text-slate-600">
+              {/* Phone */}
+              <a href="tel:+966920000364" className="flex items-center gap-2 hover:text-[#002f6c] transition-colors">
+                <div className="w-7 h-7 rounded-full bg-blue-50 text-[#002f6c] flex items-center justify-center shrink-0">
+                  <Phone size={12} className="text-[#002f6c]" />
+                </div>
+                <div>
+                  <span className="text-[10px] text-slate-400 block leading-tight">Toll-Free KSA</span>
+                  <span className="font-extrabold text-slate-800 text-xs tracking-wide" dir="ltr">+966 920 000 364</span>
+                </div>
+              </a>
+
+              <div className="w-px h-5 bg-slate-200" />
+
+              {/* Email */}
+              <a href="mailto:info@ih-saudiarabia.com" className="flex items-center gap-2 hover:text-[#002f6c] transition-colors hidden xl:flex">
+                <div className="w-7 h-7 rounded-full bg-blue-50 text-[#002f6c] flex items-center justify-center shrink-0">
+                  <Mail size={12} className="text-[#002f6c]" />
+                </div>
+                <div>
+                  <span className="text-[10px] text-slate-400 block leading-tight">Official Email</span>
+                  <span className="font-semibold text-slate-700 text-xs">info@ih-saudiarabia.com</span>
+                </div>
+              </a>
+
+              <div className="w-px h-5 bg-slate-200 hidden xl:block" />
+
+              {/* Language Switch Button */}
+              <button
+                onClick={toggleLang}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-black border border-slate-200 hover:border-blue-400 hover:bg-blue-50 text-slate-700 hover:text-blue-700 transition-all select-none"
+              >
+                <Globe size={13} />
+                <span>{t("nav.language")}</span>
+              </button>
+
+              {/* FAQs Fast Link */}
+              <Link
+                href="/faqs"
+                className="flex items-center gap-1 font-bold text-slate-700 hover:text-[#002f6c] transition-colors"
+              >
+                <HelpCircle size={14} className="text-[#002f6c]" />
+                <span>{t("nav.faqs")}</span>
+              </Link>
+
+              {/* Primary Contact Us Button */}
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-black bg-[#cf1430] hover:bg-[#a50f26] text-white shadow-sm hover:shadow-md transition-all hover:scale-105 shrink-0"
+              >
+                <Mail size={13} />
+                <span>{t("nav.contact")}</span>
+              </Link>
+            </div>
+
+          </div>
+        </div>
+
+        {/* ═══ TIER 2: MAIN NAVIGATION BAR (Desktop - 100% Full Width Dedicated to Menus) ═══ */}
+        <div className="hidden lg:block bg-gradient-to-r from-slate-50/95 via-white to-slate-50/95 border-b border-slate-200/70 shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 h-11 flex items-center justify-between">
+            
+            <nav className="flex items-center h-full gap-0.5 xl:gap-1.5 flex-1 justify-start">
               
-              {/* 1. Home Direct Link (with icon to clearly separate from logo) */}
+              {/* 1. Home Link */}
               <Link
                 href="/"
-                className={`flex items-center gap-1 py-1.5 px-2 xl:px-2.5 rounded-xl text-[11px] xl:text-[12px] 2xl:text-[13px] font-bold transition-all duration-200 whitespace-nowrap shrink-0 ${
+                className={`flex items-center gap-1 py-1 px-2.5 rounded-lg text-xs xl:text-[13px] font-bold transition-all duration-150 whitespace-nowrap shrink-0 ${
                   isActive("/") && pathname === "/"
                     ? "text-[#002f6c] bg-[#002f6c]/10 font-black"
-                    : "text-slate-700 hover:text-[#002f6c] hover:bg-slate-50"
+                    : "text-slate-700 hover:text-[#002f6c] hover:bg-slate-100/80"
                 }`}
               >
                 <Home size={13} className="shrink-0 text-slate-400" />
@@ -508,22 +531,21 @@ export default function Header() {
                 return (
                   <div
                     key={item.label}
-                    className="relative h-full flex items-center"
+                    className="relative h-full flex items-center shrink-0"
                     onMouseEnter={() => openMenu(item.label)}
                     onMouseLeave={closeMenu}
                   >
                     <Link
                       href={item.href}
-                      className={`flex items-center gap-0.5 xl:gap-1 py-1.5 px-1.5 xl:px-2 2xl:px-2.5 rounded-xl text-[11px] xl:text-[12px] 2xl:text-[13px] font-bold transition-all duration-200 whitespace-nowrap ${
+                      className={`flex items-center gap-1 py-1 px-2 xl:px-2.5 rounded-lg text-xs xl:text-[13px] font-bold transition-all duration-150 whitespace-nowrap ${
                         activeMenu === item.label
                           ? "text-[#002f6c] bg-[#002f6c]/10 font-black"
                           : isActive(item.href)
                           ? "text-[#002f6c] bg-[#002f6c]/10 font-black"
-                          : "text-slate-700 hover:text-[#002f6c] hover:bg-slate-50"
+                          : "text-slate-700 hover:text-[#002f6c] hover:bg-slate-100/80"
                       }`}
                     >
-                      <span className="hidden 2xl:inline">{item.label}</span>
-                      <span className="2xl:hidden">{item.shortLabel || item.label}</span>
+                      <span>{item.label}</span>
                       <ChevronDown
                         size={11}
                         className={`shrink-0 transition-transform duration-200 ${
@@ -536,11 +558,11 @@ export default function Header() {
                     <AnimatePresence>
                       {activeMenu === item.label && item.groups && (
                         <motion.div
-                          initial={{ opacity: 0, y: 12 }}
+                          initial={{ opacity: 0, y: 8 }}
                           animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 8 }}
+                          exit={{ opacity: 0, y: 6 }}
                           transition={{ duration: 0.18, ease: "easeOut" }}
-                          className={`absolute top-[64px] ${placement.className} w-[780px] xl:w-[850px] bg-white/98 backdrop-blur-xl border border-slate-100 shadow-[0_24px_56px_rgba(0,0,0,0.16)] rounded-3xl p-6 z-50 grid grid-cols-12 gap-6`}
+                          className={`absolute top-full mt-1.5 ${placement.className} w-[780px] xl:w-[850px] bg-white/98 backdrop-blur-xl border border-slate-100 shadow-[0_24px_56px_rgba(0,0,0,0.16)] rounded-3xl p-6 z-50 grid grid-cols-12 gap-6`}
                           onMouseEnter={() => openMenu(item.label)}
                           onMouseLeave={closeMenu}
                         >
@@ -652,70 +674,80 @@ export default function Header() {
                 );
               })}
 
-              {/* 10. News & Insights */}
+              {/* 10. News & Insights Direct Link */}
               <Link
                 href="/news"
-                className={`py-1.5 px-1.5 xl:px-2 2xl:px-2.5 rounded-xl text-[11px] xl:text-[12px] 2xl:text-[13px] font-bold transition-all duration-200 whitespace-nowrap shrink-0 ${
+                className={`py-1 px-2.5 rounded-lg text-xs xl:text-[13px] font-bold transition-all duration-150 whitespace-nowrap shrink-0 ${
                   isActive("/news")
                     ? "text-[#002f6c] bg-[#002f6c]/10 font-black"
-                    : "text-slate-700 hover:text-[#002f6c] hover:bg-slate-50"
+                    : "text-slate-700 hover:text-[#002f6c] hover:bg-slate-100/80"
                 }`}
               >
-                <span className="hidden 2xl:inline">{t("nav.news")}</span>
-                <span className="2xl:hidden">{lang === "ar" ? "الأخبار" : "News"}</span>
+                <span>{t("nav.news")}</span>
               </Link>
+            </nav>
 
-              {/* 11. FAQs (AT THE END) */}
+            {/* Right End: FAQs and Contact Us in Navigation Tier */}
+            <div className="flex items-center gap-2 shrink-0">
+              {/* 11. FAQs */}
               <Link
                 href="/faqs"
-                className={`flex items-center gap-1 py-1.5 px-1.5 xl:px-2 2xl:px-2.5 rounded-xl text-[11px] xl:text-[12px] 2xl:text-[13px] font-bold transition-all duration-200 whitespace-nowrap shrink-0 ${
+                className={`flex items-center gap-1 py-1 px-2.5 rounded-lg text-xs xl:text-[13px] font-bold transition-all duration-150 whitespace-nowrap shrink-0 ${
                   isActive("/faqs")
                     ? "text-[#002f6c] bg-[#002f6c]/10 font-black"
-                    : "text-slate-700 hover:text-[#002f6c] hover:bg-slate-50"
+                    : "text-slate-700 hover:text-[#002f6c] hover:bg-slate-100/80"
                 }`}
               >
                 <HelpCircle size={13} className="text-[#002f6c] shrink-0" />
                 <span>{t("nav.faqs")}</span>
               </Link>
 
-              {/* Language Switch Button */}
-              <button
-                onClick={toggleLang}
-                className="flex items-center gap-1 px-2 py-1.5 rounded-xl text-[11px] xl:text-xs font-black border border-slate-200 hover:border-blue-400 hover:bg-blue-50 text-slate-700 hover:text-blue-700 transition-all select-none shrink-0 mx-0.5"
-              >
-                <Globe size={12} />
-                <span>{t("nav.language")}</span>
-              </button>
-
-              {/* 12. Contact Us (PRIMARY RED CTA BUTTON AT THE VERY END) */}
+              {/* 12. Contact Us (Red CTA) */}
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-1.5 px-3 xl:px-3.5 py-1.5 xl:py-2 rounded-xl text-[11px] xl:text-xs 2xl:text-[13px] font-black bg-[#cf1430] hover:bg-[#a50f26] text-white shadow-sm hover:shadow-md transition-all hover:scale-105 shrink-0 whitespace-nowrap ml-1"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-black bg-[#cf1430] hover:bg-[#a50f26] text-white shadow-sm transition-all shrink-0 whitespace-nowrap"
               >
-                <Mail size={13} className="shrink-0" />
+                <Mail size={12} className="shrink-0" />
                 <span>{t("nav.contact")}</span>
               </Link>
-
-            </nav>
-
-            {/* Mobile Nav Trigger & Lang Selector */}
-            <div className="lg:hidden flex items-center gap-2">
-              <button
-                onClick={toggleLang}
-                className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-extrabold border border-slate-200 text-slate-700 bg-slate-50 select-none"
-              >
-                <Globe size={13} />
-                <span>{t("nav.language")}</span>
-              </button>
-              <button
-                onClick={() => setMobileOpen(!mobileOpen)}
-                className="p-2 rounded-xl text-slate-700 hover:bg-slate-50 transition-colors"
-                aria-label="Toggle Menu"
-              >
-                {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-              </button>
             </div>
 
+          </div>
+        </div>
+
+        {/* ═══ MOBILE HEADER BAR (Under 1024px) ═══ */}
+        <div className="lg:hidden w-full px-4 h-16 flex items-center justify-between bg-white border-b border-slate-100">
+          {/* Logo on Left */}
+          <Link href="/" className="flex items-center gap-2 group">
+            <img
+              src="/logo.png"
+              alt="International House Saudi Arabia"
+              className="h-8 w-auto object-contain"
+            />
+            <div className="w-px h-5 bg-slate-200" />
+            <img
+              src="/ih_70years_v2.png"
+              alt="Celebrating 70 Years"
+              className="h-7 w-auto object-contain"
+            />
+          </Link>
+
+          {/* Language Switcher & Hamburger Menu */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={toggleLang}
+              className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-extrabold border border-slate-200 text-slate-700 bg-slate-50 select-none"
+            >
+              <Globe size={13} />
+              <span>{t("nav.language")}</span>
+            </button>
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="p-2 rounded-xl text-slate-700 hover:bg-slate-50 transition-colors"
+              aria-label="Toggle Menu"
+            >
+              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
           </div>
         </div>
 
