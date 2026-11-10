@@ -239,7 +239,7 @@ export default function WhoWeArePage() {
 
   return (
     <div className={`pt-24 lg:pt-32 overflow-hidden bg-white font-['Inter',_sans-serif] ${isRtl ? "text-right" : "text-left"}`}>
-      <section className="relative pb-20 border-b border-slate-100">
+      <section id="learning-experiences" className="relative pb-20 border-b border-slate-100 scroll-mt-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column: Text Info */}

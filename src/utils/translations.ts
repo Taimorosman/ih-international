@@ -26,6 +26,7 @@ export const translations: Record<Lang, Record<string, string>> = {
 
     // ─── NAV SUB-ITEMS (Mega Menu) ────────────────────────────────────
     "nav.who_we_are.desc": "Building International Learning Experiences Across Saudi Arabia",
+    "nav.who_we_are.learning_exp": "Building International Learning Experiences Across Saudi Arabia",
     "nav.who_we_are.story": "Our Story",
     "nav.who_we_are.network": "Part of a Global Educational Network",
     "nav.who_we_are.vision": "Our Vision",
@@ -46,7 +47,7 @@ export const translations: Record<Lang, Record<string, string>> = {
 
     "nav.languages.desc": "Explore World Languages & Cultural Programs",
     "nav.languages.arabic": "Arabic Language & Cultural Studies",
-    "nav.languages.french": "Global Languages",
+    "nav.languages.french": "French Language Programs",
     "nav.languages.spanish": "Spanish Language Programs",
     "nav.languages.chinese": "Chinese Language Programs",
     "nav.languages.additional": "Additional World Languages",
@@ -71,7 +72,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     "nav.teacher.desc": "Develop Your Teaching Career",
     "nav.teacher.why": "Why Teacher Development Matters",
     "nav.teacher.professional": "Professional Development Opportunities",
-    "nav.teacher.celta": "CELTA & International Teacher Training Pathways",
+    "nav.teacher.celta": "CELTA & International Teacher Training Pathways - Download Forms",
     "nav.teacher.institutional": "Training for Educational Institutions",
     "nav.teacher.commitment": "A Commitment to Educational Excellence",
 
@@ -81,6 +82,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     "nav.abroad.opportunities": "Study Abroad Opportunities",
     "nav.abroad.destinations": "Popular Destinations",
     "nav.abroad.support": "Personalized Guidance & Support",
+    "nav.abroad.more_than": "More Than a Language Program",
 
     "nav.careers.desc": "Join Our Team",
     "nav.careers.why": "Why Work With IH Saudi Arabia?",
@@ -378,6 +380,7 @@ export const translations: Record<Lang, Record<string, string>> = {
 
     // ─── NAV SUB-ITEMS (Mega Menu) ────────────────────────────────────
     "nav.who_we_are.desc": "بناء تجارب تعليمية دولية في جميع أنحاء المملكة العربية السعودية",
+    "nav.who_we_are.learning_exp": "بناء تجارب تعليمية دولية في جميع أنحاء المملكة العربية السعودية",
     "nav.who_we_are.story": "قصتنا",
     "nav.who_we_are.network": "جزء من شبكة تعليمية عالمية",
     "nav.who_we_are.vision": "رؤيتنا",
@@ -398,7 +401,7 @@ export const translations: Record<Lang, Record<string, string>> = {
 
     "nav.languages.desc": "استكشف اللغات العالمية والبرامج الثقافية",
     "nav.languages.arabic": "اللغة العربية والدراسات الثقافية",
-    "nav.languages.french": "اللغات العالمية",
+    "nav.languages.french": "برامج اللغة الفرنسية",
     "nav.languages.spanish": "برامج اللغة الإسبانية",
     "nav.languages.chinese": "برامج اللغة الصينية",
     "nav.languages.additional": "لغات عالمية إضافية",
@@ -423,7 +426,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     "nav.teacher.desc": "طوّر مسيرتك التعليمية",
     "nav.teacher.why": "لماذا يهم تطوير المعلمين",
     "nav.teacher.professional": "فرص التطوير المهني",
-    "nav.teacher.celta": "مسارات CELTA والتدريب الدولي للمعلمين",
+    "nav.teacher.celta": "مسارات CELTA والتدريب الدولي للمعلمين - النماذج القابلة للتنزيل",
     "nav.teacher.institutional": "التدريب للمؤسسات التعليمية",
     "nav.teacher.commitment": "التزام بالتميز التعليمي",
 
@@ -433,6 +436,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     "nav.abroad.opportunities": "فرص الدراسة في الخارج",
     "nav.abroad.destinations": "الوجهات الشهيرة",
     "nav.abroad.support": "التوجيه والدعم الشخصي",
+    "nav.abroad.more_than": "أكثر من مجرد برنامج لغوي",
 
     "nav.careers.desc": "انضم إلى فريقنا",
     "nav.careers.why": "لماذا العمل مع IH السعودية؟",

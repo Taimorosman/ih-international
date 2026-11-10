@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import {
   Clock, Users, BookOpen, CheckCircle, ArrowRight,
   Award, Globe2, Star, TrendingUp, ChevronDown, Phone,
+  FileText, Download
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { fadeUp } from "@/utils/animations";
@@ -517,6 +518,48 @@ export default function TeacherTrainingPage() {
               </motion.div>
             )})}
           </div>
+
+          {/* Downloadable Application Form & Pathways Section */}
+          <motion.div
+            id="celta-downloadable-forms"
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+            className="mt-14 rounded-3xl p-6 sm:p-8 bg-gradient-to-r from-[#002f6c] via-[#001f4a] to-[#0a4a9f] text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl border border-white/10"
+          >
+            <div className="flex items-center gap-4 text-start">
+              <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-yellow-400 shrink-0 border border-white/20">
+                <FileText size={28} />
+              </div>
+              <div>
+                <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-white/20 text-white mb-1">
+                  {lang === "ar" ? "نماذج التقديم الرسمية" : "Official Application Forms"}
+                </span>
+                <h3 className="text-xl font-extrabold text-white">
+                  {lang === "ar" ? "تحميل نماذج التقديم لدورات CELTA ومسارات التدريب" : "CELTA & Teacher Training Downloadable Forms"}
+                </h3>
+                <p className="text-xs text-blue-200 mt-1 max-w-xl leading-relaxed">
+                  {lang === "ar"
+                    ? "قم بتنزيل استمارة التقديم الرسمية لدورات CELTA ومسارات تدريب المعلمين، أو قدم طلبك مباشرة عبر النموذج الإلكتروني المعتمد."
+                    : "Download official Cambridge CELTA application forms and international teacher training pathways, or apply directly online."}
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-wrap items-center gap-3 shrink-0">
+              <Link
+                href="/register?form=teacher"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-xs bg-[#cf1430] hover:bg-[#a50f26] text-white transition-all shadow-lg hover:scale-105"
+              >
+                <span>{lang === "ar" ? "التقديم الإلكتروني المباشر" : "Apply Online Now"}</span>
+                <ArrowRight size={14} className="rtl:rotate-180" />
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-xs bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all hover:scale-105"
+              >
+                <Download size={14} />
+                <span>{lang === "ar" ? "طلب النماذج الورقية" : "Request Forms"}</span>
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
 
