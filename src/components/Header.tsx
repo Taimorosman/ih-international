@@ -42,6 +42,7 @@ interface PromoBanner {
 
 interface NavItem {
   label: string;
+  shortLabel?: string;
   href: string;
   desc?: string;
   align?: "left" | "center" | "right";
@@ -184,6 +185,7 @@ export default function Header() {
     // 3. LANGUAGES & CULTURAL PROGRAMS
     {
       label: t("nav.languages_programs"),
+      shortLabel: lang === "ar" ? "اللغات والثقافة" : "Languages",
       href: "/languages-programs",
       desc: t("nav.languages.desc"),
       align: "left",
@@ -218,6 +220,7 @@ export default function Header() {
     // 4. CORPORATE TRAINING
     {
       label: t("nav.corporate_training"),
+      shortLabel: lang === "ar" ? "تدريب الشركات" : "Corporate",
       href: "/corporate-training",
       desc: t("nav.corporate.desc"),
       align: "center",
@@ -253,6 +256,7 @@ export default function Header() {
     // 5. EXAMINATIONS & CERTIFICATION
     {
       label: t("nav.examinations"),
+      shortLabel: lang === "ar" ? "الاختبارات" : "Exams & Certs",
       href: "/examinations",
       desc: t("nav.exams.desc"),
       align: "center",
@@ -466,28 +470,28 @@ export default function Header() {
         <div className="w-full px-3 sm:px-5 lg:px-6 xl:px-8 2xl:px-10">
           <div className="flex items-center justify-between h-16 lg:h-[72px] gap-2 xl:gap-4">
             
-            {/* Logo area (Anchored cleanly to the Left edge) */}
-            <Link href="/" className="flex items-center gap-2.5 sm:gap-3.5 shrink-0 group">
+            {/* Logo area (Anchored cleanly to the Left edge, shrink-0) */}
+            <Link href="/" className="flex items-center gap-2 sm:gap-3 shrink-0 group">
               <img
                 src="/logo.png"
                 alt="International House Saudi Arabia"
-                className="h-8 sm:h-10 xl:h-11 w-auto object-contain transition-transform group-hover:scale-105"
+                className="h-8 sm:h-9 xl:h-10 w-auto object-contain transition-transform group-hover:scale-105"
               />
-              <div className="w-px h-6 bg-slate-200" />
+              <div className="w-px h-5 bg-slate-200 hidden xl:block" />
               <img
                 src="/ih_70years_v2.png"
                 alt="Celebrating 70 Years"
-                className="h-7 sm:h-8 xl:h-9 w-auto object-contain"
+                className="h-7 sm:h-8 w-auto object-contain hidden 2xl:block"
               />
             </Link>
 
-            {/* Desktop Navigation Links (Spans across the entire header width) */}
-            <nav className="hidden lg:flex items-center h-full gap-1 xl:gap-1.5 2xl:gap-2 flex-1 justify-end">
+            {/* Desktop Navigation Links (Centered, flexible, zero overflow) */}
+            <nav className="hidden lg:flex items-center h-full gap-0.5 xl:gap-1 2xl:gap-1.5 flex-1 justify-center min-w-0 px-1">
               
               {/* 1. Home Direct Link */}
               <Link
                 href="/"
-                className={`py-1.5 px-2 xl:px-2.5 2xl:px-3 rounded-xl text-xs xl:text-[13px] font-bold transition-all duration-200 whitespace-nowrap ${
+                className={`py-1.5 px-2 xl:px-2.5 rounded-xl text-[11px] xl:text-[12px] 2xl:text-[13px] font-bold transition-all duration-200 whitespace-nowrap ${
                   isActive("/") && pathname === "/"
                     ? "text-[#002f6c] bg-[#002f6c]/10 font-black"
                     : "text-slate-700 hover:text-[#002f6c] hover:bg-slate-50"
@@ -509,7 +513,7 @@ export default function Header() {
                   >
                     <Link
                       href={item.href}
-                      className={`flex items-center gap-1 py-1.5 px-1.5 xl:px-2 2xl:px-2.5 rounded-xl text-[11.5px] xl:text-[12.5px] 2xl:text-[13.5px] font-bold transition-all duration-200 whitespace-nowrap ${
+                      className={`flex items-center gap-0.5 xl:gap-1 py-1.5 px-1.5 xl:px-2 2xl:px-2.5 rounded-xl text-[11px] xl:text-[12px] 2xl:text-[13px] font-bold transition-all duration-200 whitespace-nowrap ${
                         activeMenu === item.label
                           ? "text-[#002f6c] bg-[#002f6c]/10 font-black"
                           : isActive(item.href)
@@ -517,7 +521,8 @@ export default function Header() {
                           : "text-slate-700 hover:text-[#002f6c] hover:bg-slate-50"
                       }`}
                     >
-                      <span>{item.label}</span>
+                      <span className="hidden 2xl:inline">{item.label}</span>
+                      <span className="2xl:hidden">{item.shortLabel || item.label}</span>
                       <ChevronDown
                         size={11}
                         className={`shrink-0 transition-transform duration-200 ${
@@ -649,41 +654,45 @@ export default function Header() {
               {/* 10. News & Insights DIRECT IN MAIN NAVBAR */}
               <Link
                 href="/news"
-                className={`py-1.5 px-2 xl:px-2.5 2xl:px-3 rounded-xl text-[11.5px] xl:text-[12.5px] 2xl:text-[13.5px] font-bold transition-all duration-200 whitespace-nowrap ${
+                className={`py-1.5 px-1.5 xl:px-2 2xl:px-2.5 rounded-xl text-[11px] xl:text-[12px] 2xl:text-[13px] font-bold transition-all duration-200 whitespace-nowrap ${
                   isActive("/news")
                     ? "text-[#002f6c] bg-[#002f6c]/10 font-black"
                     : "text-slate-700 hover:text-[#002f6c] hover:bg-slate-50"
                 }`}
               >
-                {t("nav.news")}
+                <span className="hidden 2xl:inline">{t("nav.news")}</span>
+                <span className="2xl:hidden">{lang === "ar" ? "الأخبار" : "News"}</span>
               </Link>
+            </nav>
 
+            {/* Desktop Right Action Area: Lang Switcher, FAQs & Contact Us (LOCKED ON SCREEN, NEVER HIDDEN) */}
+            <div className="hidden lg:flex items-center gap-1.5 xl:gap-2.5 shrink-0">
               {/* Language Switch Button */}
               <button
                 onClick={toggleLang}
-                className="flex items-center gap-1.5 px-2.5 xl:px-3 py-1.5 rounded-xl text-xs font-black border border-slate-200 hover:border-blue-400 hover:bg-blue-50 text-slate-700 hover:text-blue-700 transition-all ms-1 select-none shrink-0"
+                className="flex items-center gap-1 px-2 xl:px-2.5 py-1.5 rounded-xl text-[11px] xl:text-xs font-black border border-slate-200 hover:border-blue-400 hover:bg-blue-50 text-slate-700 hover:text-blue-700 transition-all select-none shrink-0"
               >
                 <Globe size={13} />
                 <span>{t("nav.language")}</span>
               </button>
 
-              {/* Subtle End Divider */}
-              <div className="w-px h-5 bg-slate-200 shrink-0 mx-1 hidden xl:block" />
+              {/* Subtle Divider */}
+              <div className="w-px h-5 bg-slate-200 shrink-0 mx-0.5" />
 
-              {/* 11. FAQs (AT THE END) */}
+              {/* 11. FAQs (ALWAYS VISIBLE & PROMINENT) */}
               <Link
                 href="/faqs"
-                className={`flex items-center gap-1 py-1.5 px-2 xl:px-2.5 rounded-xl text-[11.5px] xl:text-[12.5px] 2xl:text-[13.5px] font-bold transition-all duration-200 whitespace-nowrap ${
+                className={`flex items-center gap-1 px-2.5 xl:px-3 py-1.5 rounded-xl text-xs xl:text-[13px] font-bold transition-all duration-200 whitespace-nowrap shrink-0 ${
                   isActive("/faqs")
                     ? "text-[#002f6c] bg-[#002f6c]/10 font-black"
-                    : "text-slate-700 hover:text-[#002f6c] hover:bg-slate-50"
+                    : "text-slate-700 hover:text-[#002f6c] hover:bg-slate-100"
                 }`}
               >
-                <HelpCircle size={13} className="text-slate-400" />
+                <HelpCircle size={14} className="text-[#002f6c]" />
                 <span>{t("nav.faqs")}</span>
               </Link>
 
-              {/* 12. Contact Us (AT THE VERY END AS PRIMARY RED CTA) */}
+              {/* 12. Contact Us (PRIMARY RED CTA BUTTON) */}
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-1.5 px-3.5 xl:px-4 py-2 rounded-xl text-xs xl:text-[13px] font-black bg-[#cf1430] hover:bg-[#a50f26] text-white shadow-md hover:shadow-lg transition-all hover:scale-105 shrink-0 whitespace-nowrap"
@@ -691,7 +700,7 @@ export default function Header() {
                 <Mail size={13} className="shrink-0" />
                 <span>{t("nav.contact")}</span>
               </Link>
-            </nav>
+            </div>
 
             {/* Mobile Nav Trigger & Lang Selector */}
             <div className="lg:hidden flex items-center gap-2">
@@ -846,20 +855,26 @@ export default function Header() {
                   <Link
                     href="/faqs"
                     onClick={() => setMobileOpen(false)}
-                    className="flex items-center justify-between px-4 py-3 text-xs sm:text-sm font-bold text-slate-700 hover:bg-slate-50 rounded-2xl border border-slate-100"
+                    className="flex items-center justify-between px-4 py-3.5 text-xs sm:text-sm font-bold text-slate-800 bg-slate-50 hover:bg-blue-50/50 rounded-2xl border border-slate-200 transition-colors"
                   >
-                    <span>{t("nav.faqs")}</span>
-                    <HelpCircle size={15} className="text-slate-400" />
+                    <span className="flex items-center gap-2.5">
+                      <HelpCircle size={17} className="text-[#002f6c]" />
+                      <span>{t("nav.faqs")}</span>
+                    </span>
+                    <span className="text-[10px] font-bold text-[#002f6c] uppercase tracking-wider bg-blue-100/60 px-2 py-0.5 rounded-full">Help & Answers</span>
                   </Link>
 
                   {/* 12. Contact Us Direct Link in Mobile Drawer */}
                   <Link
                     href="/contact"
                     onClick={() => setMobileOpen(false)}
-                    className="flex items-center justify-between px-4 py-3 text-xs sm:text-sm font-bold text-white bg-[#cf1430] hover:bg-[#a50f26] rounded-2xl shadow-sm"
+                    className="flex items-center justify-between px-4 py-3.5 text-xs sm:text-sm font-black text-white bg-[#cf1430] hover:bg-[#a50f26] rounded-2xl shadow-md transition-transform active:scale-[0.99]"
                   >
-                    <span>{t("nav.contact")}</span>
-                    <Mail size={15} />
+                    <span className="flex items-center gap-2.5">
+                      <Mail size={17} />
+                      <span>{t("nav.contact")}</span>
+                    </span>
+                    <span className="text-xs bg-white/20 px-2.5 py-0.5 rounded-full text-white font-bold">24/7 Support</span>
                   </Link>
 
                 </div>
