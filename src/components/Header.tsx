@@ -472,7 +472,7 @@ export default function Header() {
                 </div>
               </a>
 
-              <div className="w-px h-5 bg-slate-200 hidden xl:block" />
+              <div className="w-px h-5 bg-slate-200" />
 
               {/* Language Switch Button */}
               <button
@@ -482,24 +482,6 @@ export default function Header() {
                 <Globe size={13} />
                 <span>{t("nav.language")}</span>
               </button>
-
-              {/* FAQs Fast Link */}
-              <Link
-                href="/faqs"
-                className="flex items-center gap-1 font-bold text-slate-700 hover:text-[#002f6c] transition-colors"
-              >
-                <HelpCircle size={14} className="text-[#002f6c]" />
-                <span>{t("nav.faqs")}</span>
-              </Link>
-
-              {/* Primary Contact Us Button */}
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-black bg-[#cf1430] hover:bg-[#a50f26] text-white shadow-sm hover:shadow-md transition-all hover:scale-105 shrink-0"
-              >
-                <Mail size={13} />
-                <span>{t("nav.contact")}</span>
-              </Link>
             </div>
 
           </div>
