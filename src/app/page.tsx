@@ -6,14 +6,15 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   Award, Globe2, BookOpen, Building2, ArrowRight, MapPin,
-  CheckCircle2, Users, ArrowUpRight, GraduationCap, Compass,
-  Briefcase, Calendar, ShieldCheck, FileDown, Mail, Phone,
-  Star, Sparkles, ChevronRight, Play,
+  CheckCircle2, Users, GraduationCap, Compass,
+  Briefcase, ShieldCheck, FileDown, Mail, Phone,
+  Star, Sparkles, ChevronRight, Play, ArrowUpRight, Check
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { fadeUp } from "@/utils/animations";
 import ThemeAccent from "@/components/ThemeAccent";
 import HeroSlider from "@/components/HeroSlider";
+import StudentTestimonials from "@/components/StudentTestimonials";
 
 // ─── STAGGER CHILDREN VARIANT ────────────────────────────────
 const staggerContainer = {
@@ -76,7 +77,6 @@ export default function HomePage() {
       title: { en: "International Standards", ar: "معايير دولية" },
       bgColor: "#3f3dbe",
       textColor: "#fccb56",
-      iconColor: "#fccb56",
       icon: (
         <svg viewBox="0 0 100 100" className="w-16 h-16 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12">
           <path
@@ -90,7 +90,6 @@ export default function HomePage() {
       title: { en: "Saudi Market Understanding", ar: "فهم السوق السعودي" },
       bgColor: "#9d2b67",
       textColor: "#ffffff",
-      iconColor: "#ffffff",
       icon: (
         <svg viewBox="0 0 100 100" className="w-16 h-16 transition-transform duration-700 ease-out group-hover:rotate-90">
           <path
@@ -104,7 +103,6 @@ export default function HomePage() {
       title: { en: "Practical Learning", ar: "التعليم العملي" },
       bgColor: "#ff8b3d",
       textColor: "#8c1f58",
-      iconColor: "#8c1f58",
       icon: (
         <svg viewBox="0 0 100 100" className="w-16 h-16 transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1">
           <path
@@ -118,7 +116,6 @@ export default function HomePage() {
       title: { en: "Growth & Development", ar: "النمو والتطوير" },
       bgColor: "#fed891",
       textColor: "#3f3dbe",
-      iconColor: "#3f3dbe",
       icon: (
         <svg viewBox="0 0 100 100" className="w-16 h-16 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
           <g transform="rotate(45 50 50)">
@@ -132,305 +129,77 @@ export default function HomePage() {
     },
   ];
 
-  const strengths = [
-    {
-      en: "International House World Organization Member",
-      ar: "عضو في منظمة إنترناشونال هاوس العالمية",
-      icon: <Globe2 className="w-6 h-6" />,
-      image: "/str_network.png",
-      headerColor: "#002F6C",
-      headerLabel: { en: "Global Network", ar: "شبكة عالمية" },
-    },
-    {
-      en: "Over 30 Years of Experience in Saudi Arabia",
-      ar: "أكثر من ٣٠ عاماً من الخبرة في المملكة العربية السعودية",
-      icon: <Star className="w-6 h-6" />,
-      image: "/str_saudi.png",
-      headerColor: "#f59e0b",
-      headerLabel: { en: "30+ Years", ar: "أكثر من ٣٠ عاماً" },
-    },
-    {
-      en: "Internationally Aligned Methodologies",
-      ar: "مناهج تعليمية متوافقة مع المعايير الدولية",
-      icon: <BookOpen className="w-6 h-6" />,
-      image: "/str_method.png",
-      headerColor: "#16a34a",
-      headerLabel: { en: "Proven Methods", ar: "مناهج مُعتمدة" },
-    },
-    {
-      en: "Experienced Trainers and Educators",
-      ar: "مدربون ومربون ذوو خبرة وكفاءة عالية",
-      icon: <Users className="w-6 h-6" />,
-      image: "/str_trainers.png",
-      headerColor: "#ea580c",
-      headerLabel: { en: "Expert Trainers", ar: "مدربون متخصصون" },
-    },
-    {
-      en: "Corporate and Workforce Development Expertise",
-      ar: "خبرة واسعة في تدريب وتطوير القوى العاملة للشركات",
-      icon: <Briefcase className="w-6 h-6" />,
-      image: "/str_corporate.png",
-      headerColor: "#cf1430",
-      headerLabel: { en: "Corporate Training", ar: "تدريب الشركات" },
-    },
-    {
-      en: "Face-to-Face, Online, and Hybrid Learning Solutions",
-      ar: "حلول تعليمية حضورية، وعبر الإنترنت، ومدمجة",
-      icon: <Compass className="w-6 h-6" />,
-      image: "/str_hybrid.png",
-      headerColor: "#6d28d9",
-      headerLabel: { en: "Flexible Learning", ar: "تعليم مرن" },
-    },
-    {
-      en: "Commitment to Quality, Innovation, and Excellence",
-      ar: "التزام راسخ بالجودة والابتكار والتميز",
-      icon: <Award className="w-6 h-6" />,
-      image: "/str_quality.png",
-      headerColor: "#0f766e",
-      headerLabel: { en: "Quality & Excellence", ar: "الجودة والتميز" },
-    },
-  ];
-
-  // Services with card images - real original assets from beta.ihsaudiarabia.com
-  const services = [
+  // The 6 Core Educational Gateways
+  const educationalGateways = [
     {
       title: { en: "English Language Courses", ar: "دورات اللغة الإنجليزية" },
-      desc: { en: "Practical English programs for learners, professionals, and organizations.", ar: "برامج عملية في اللغة الإنجليزية للمتعلمين والمهنيين والمؤسسات." },
+      subtitle: { en: "General, Business, Technical & Young Learners", ar: "العامة، الأعمال، التقنية، وبرامج الصغار" },
+      desc: { en: "Interactive courses from beginner to mastery, delivered by certified native trainers with CEFR certification.", ar: "برامج تفاعلية من المبتدئ إلى الاحتراف مع مدربين ناطقين باللغة الأصلية وشهادات CEFR معتمدة." },
       icon: <BookOpen className="w-6 h-6" />,
       image: "/beta_assets/p1.jpeg",
       color: "#002F6C",
-      accentClass: "border-t-4 border-t-[#002F6C]",
-      link: "/courses#general-english",
+      link: "/courses",
+      badge: { en: "Core Programs", ar: "البرامج الأساسية" }
     },
     {
-      title: { en: "Languages & Cultural Programs", ar: "برامج اللغات والثقافة" },
-      desc: { en: "Arabic, French, Spanish, Chinese, and other world languages with cultural learning.", ar: "العربية، الفرنسية، الإسبانية، الصينية وغيرها من اللغات العالمية." },
+      title: { en: "Languages & Cultural Programs", ar: "برامج اللغات والثقافة العالمية" },
+      subtitle: { en: "Arabic, French, Spanish, Chinese & World Languages", ar: "العربية، الفرنسية، الإسبانية، الصينية ولغات العالم" },
+      desc: { en: "Immersive language studies and cultural experiences with native-speaking experts and modern multimedia labs.", ar: "دراسات لغوية وتجارب ثقافية ثرية بإشراف خبراء متخصصين ومختبرات وسائط متعددة حديثة." },
       icon: <Globe2 className="w-6 h-6" />,
       image: "/beta_assets/pic1.png",
       color: "#cf1430",
-      accentClass: "border-t-4 border-t-[#cf1430]",
-      link: "/courses/learn-arabic",
+      link: "/languages-programs",
+      badge: { en: "World Languages", ar: "لغات العالم" }
     },
     {
-      title: { en: "Corporate Training Solutions", ar: "حلول تدريب الشركات" },
-      desc: { en: "Customized workforce development and communication training programs.", ar: "برامج تدريبية مخصصة لتطوير مهارات التواصل وتنمية القوى العاملة." },
+      title: { en: "Corporate Training & B2B Solutions", ar: "حلول تدريب الشركات والمؤسسات" },
+      subtitle: { en: "Workforce Upskilling & CEFR Audits", ar: "تمكين القوى العاملة والتدقيق اللغوي" },
+      desc: { en: "Customized corporate language training tailored to your industry goals, featuring TNA audits and performance reports.", ar: "حلول تدريب مؤسسية مصممة خصيصاً لأهداف قطاعك التجاري مع اختبارات تحديد المستوى وتقارير دورية." },
       icon: <Briefcase className="w-6 h-6" />,
       image: "/beta_assets/corporate_training.png",
       color: "#002F6C",
-      accentClass: "border-t-4 border-t-[#002F6C]",
       link: "/corporate-training",
-    },
-    {
-      title: { en: "Teacher Training & Professional Dev.", ar: "تدريب المعلمين والتطوير المهني" },
-      desc: { en: "Supporting educators through internationally informed development pathways.", ar: "دعم المعلمين من خلال مسارات التطوير المهني المعتمدة دولياً." },
-      icon: <GraduationCap className="w-6 h-6" />,
-      image: "/beta_assets/teacher_training.png",
-      color: "#cf1430",
-      accentClass: "border-t-4 border-t-[#cf1430]",
-      link: "/teacher-training",
+      badge: { en: "Enterprise", ar: "حلول الشركات" }
     },
     {
       title: { en: "Examinations & Certification", ar: "الاختبارات والشهادات الدولية" },
-      desc: { en: "Preparation pathways for internationally recognized qualifications and certifications.", ar: "مسارات تأهيلية لاجتياز الاختبارات والحصول على الشهادات المعتمدة عالمياً." },
+      subtitle: { en: "Cambridge English & IELTS Exam Prep", ar: "مؤهلات كامبريدج والتحضير لـ IELTS" },
+      desc: { en: "Official preparation pathways for internationally accredited Cambridge qualifications and high-impact IELTS scores.", ar: "مسارات تأهيلية معتمدة لاجتياز اختبارات كامبريدج وتحقيق أعلى درجات الأيلتس العالمية." },
       icon: <ShieldCheck className="w-6 h-6" />,
       image: "/beta_assets/p3.jpeg",
       color: "#002F6C",
-      accentClass: "border-t-4 border-t-[#002F6C]",
       link: "/examinations",
+      badge: { en: "Accredited", ar: "شهادات دولية" }
     },
     {
-      title: { en: "Study Abroad & International Ops", ar: "الدراسة في الخارج والفرص الدولية" },
-      desc: { en: "Access global learning experiences through trusted IH educational partnerships.", ar: "فرص للتعلم الدولي المتميز من خلال شراكات تعليمية موثوقة وشبكة معاهد IH العالمية." },
+      title: { en: "Teacher Training (CELTA)", ar: "تدريب وتطوير المعلمين" },
+      subtitle: { en: "Cambridge CELTA & Professional Pathways", ar: "شهادة كامبريدج CELTA ومسارات التطوير" },
+      desc: { en: "Develop your international teaching career with prestigious Cambridge CELTA certification and downloadable application forms.", ar: "طور مسيرتك المهنية في التدريس الدولي مع شهادة سيلتا كامبريدج ونماذج التقديم الإلكترونية." },
+      icon: <GraduationCap className="w-6 h-6" />,
+      image: "/beta_assets/teacher_training.png",
+      color: "#cf1430",
+      link: "/teacher-training",
+      badge: { en: "Cambridge CELTA", ar: "سيلتا كامبريدج" }
+    },
+    {
+      title: { en: "Study Abroad Programs", ar: "برامج الدراسة في الخارج" },
+      subtitle: { en: "UK, USA, Canada & 45+ Countries", ar: "بريطانيا، أمريكا، كندا و٥٠+ دولة" },
+      desc: { en: "Access global language immersion programs through our affiliated network of 150+ International House schools worldwide.", ar: "انطلق في تجربة تعليمية عالمية فريدة عبر شبكة معاهد إنترناشونال هاوس المنتشرة في أكثر من ٤٥ دولة." },
       icon: <Compass className="w-6 h-6" />,
       image: "/beta_assets/study_abroad-1.png",
       color: "#cf1430",
-      accentClass: "border-t-4 border-t-[#cf1430]",
       link: "/study-abroad",
+      badge: { en: "Global Network", ar: "شبكة عالمية" }
     },
   ];
-
-  const corporateServices = [
-    { en: "Business English", ar: "الإنجليزية للأعمال" },
-    { en: "Technical English", ar: "الإنجليزية الفنية والتقنية" },
-    { en: "Executive Coaching", ar: "التدريب والتوجيه التنفيذي" },
-    { en: "Workplace Communication", ar: "التواصل في بيئة العمل" },
-    { en: "Placement Testing", ar: "اختبارات تحديد المستوى" },
-    { en: "Customized Training Solutions", ar: "حلول تدريبية مخصصة بالكامل" },
-  ];
-
-  const learningOptions = [
-    {
-      en: "Face-to-Face Learning",
-      ar: "التعليم الحضوري المباشر",
-      descEn: "Immersive in-person learning with native speakers at our modern centers.",
-      descAr: "تعليم حضوري تفاعلي داخل مراكزنا الحديثة مع معلمين مؤهلين دولياً.",
-      image: "/learn_face_to_face.png",
-      color: "#002F6C",
-      icon: "Users"
-    },
-    {
-      en: "Live Online Classes",
-      ar: "الفصول المباشرة عبر الإنترنت",
-      descEn: "Interactive digital classroom experience with real-time feedback and flexibility.",
-      descAr: "فصول رقمية تفاعلية مباشرة تتيح لك التواصل ومتابعة دروسك بمرونة عالية.",
-      image: "/learn_online_classes.png",
-      color: "#cf1430",
-      icon: "Globe2"
-    },
-    {
-      en: "Hybrid Learning",
-      ar: "التعليم المدمج (حضوري وعن بعد)",
-      descEn: "Perfect blend of face-to-face classroom interaction and online convenience.",
-      descAr: "مزيج مثالي يجمع بين التعليم الحضوري التفاعلي ومرونة التعلم الرقمي.",
-      image: "/learn_hybrid.png",
-      color: "#f59e0b",
-      icon: "Compass"
-    },
-    {
-      en: "Private Tuition (1-on-1)",
-      ar: "الدروس الخصوصية الفردية (1-on-1)",
-      descEn: "Personalized individual tutoring tailored to your exact pace and targets.",
-      descAr: "حصص فردية مخصصة بالكامل تركز على أهدافك وسرعة تعلمك الخاصة.",
-      image: "/about_classroom.png",
-      color: "#16a34a",
-      icon: "GraduationCap"
-    },
-    {
-      en: "Group Programs",
-      ar: "البرامج والصفوف الجماعية",
-      descEn: "Collaborative and dynamic cohorts focusing on active conversational English.",
-      descAr: "مجموعات تعليمية حيوية تركز على التواصل الفعال والمحادثة الجماعية النشطة.",
-      image: "/str_trainers.png",
-      color: "#6d28d9",
-      icon: "Sparkles"
-    },
-    {
-      en: "Corporate Language Training",
-      ar: "التدريب المخصص للشركات والجهات",
-      descEn: "Tailored business language solutions to empower and elevate your workforce.",
-      descAr: "حلول لغوية وتدريبية مخصصة للأعمال لتمكين وتطوير كوادر الشركات.",
-      image: "/learn_corporate.png",
-      color: "#ea580c",
-      icon: "Briefcase"
-    }
-  ];
-
-  const examOptions = [
-    {
-      en: "IELTS Academic & General",
-      ar: "التحضير لاختبار آيلتس (IELTS)",
-      descEn: "Master the skills and strategies needed to achieve your target band score.",
-      descAr: "اكتسب المهارات والاستراتيجيات اللازمة لتحقيق الدرجة المطلوبة في الآيلتس.",
-      image: "/exam_exams.png",
-      color: "#cf1430",
-      icon: "Award"
-    },
-    {
-      en: "LanguageCert International Exams",
-      ar: "اختبارات لانجوج سيرت (LanguageCert)",
-      descEn: "Fast, flexible, and internationally recognized English language examinations.",
-      descAr: "اختبارات لغة إنجليزية مرنة، سريعة وموثقة دولياً لتلبية احتياجاتك.",
-      image: "/card_languages.png",
-      color: "#002F6C",
-      icon: "ShieldCheck"
-    },
-    {
-      en: "Cambridge English Qualifications",
-      ar: "مؤهلات كامبريدج للغة الإنجليزية",
-      descEn: "Prestigious qualifications that open doors to global academic & career success.",
-      descAr: "مؤهلات مرموقة تفتح لك آفاقاً واسعة للدراسة والعمل على مستوى العالم.",
-      image: "/card_english.png",
-      color: "#16a34a",
-      icon: "GraduationCap"
-    },
-    {
-      en: "Pearson PTE Qualifications",
-      ar: "مؤهلات بيرسون الدولية (PTE)",
-      descEn: "Highly trusted, computer-based assessments for global migration and admission.",
-      descAr: "اختبارات مؤتمتة موثوقة عالمياً لأغراض الهجرة والقبول الجامعي الدولي.",
-      image: "/card_abroad.png",
-      color: "#f59e0b",
-      icon: "Globe2"
-    },
-    {
-      en: "Teacher Development (CELTA)",
-      ar: "مسارات تدريب وتطوير المعلمين (CELTA)",
-      descEn: "Advance your international teaching career with Cambridge CELTA training.",
-      descAr: "ارتقِ بمسيرتك التعليمية الدولية مع شهادة السيلتا وبرامج التطوير المهني.",
-      image: "/exam_teacher.png",
-      color: "#6d28d9",
-      icon: "BookOpen"
-    }
-  ];
-
-
-  const learningJourney = [
-    {
-      step: "01",
-      title: { en: "Placement Test", ar: "اختبار تحديد المستوى" },
-      bgClass: "bg-[#cf1430] text-white border-transparent",
-      numColor: "text-white/30 group-hover:text-white/90",
-      barColor: "#ffffff"
-    },
-    {
-      step: "02",
-      title: { en: "Academic Consultation", ar: "الاستشارة الأكاديمية" },
-      bgClass: "bg-[#16a34a] text-white border-transparent",
-      numColor: "text-white/30 group-hover:text-white/90",
-      barColor: "#ffffff"
-    },
-    {
-      step: "03",
-      title: { en: "Program Recommendation", ar: "توصية البرنامج المناسب" },
-      bgClass: "bg-[#f59e0b] text-[#002F6C] border-transparent",
-      numColor: "text-[#002F6C]/30 group-hover:text-[#002F6C]/90",
-      barColor: "#002F6C"
-    },
-    {
-      step: "04",
-      title: { en: "Learning & Development", ar: "التعليم والتطوير المستمر" },
-      bgClass: "bg-white text-slate-800 border-slate-200",
-      numColor: "text-slate-800/30 group-hover:text-slate-800/90",
-      barColor: "#002F6C"
-    },
-    {
-      step: "05",
-      title: { en: "Assessment & Progress Tracking", ar: "التقييم ومتابعة مستوى التقدم" },
-      bgClass: "bg-[#cf1430] text-white border-transparent",
-      numColor: "text-white/30 group-hover:text-white/90",
-      barColor: "#ffffff"
-    },
-    {
-      step: "06",
-      title: { en: "Certification & Next-Level Progression", ar: "الشهادات والترقي للمستوى الأعلى" },
-      bgClass: "bg-[#16a34a] text-white border-transparent",
-      numColor: "text-white/30 group-hover:text-white/90",
-      barColor: "#ffffff"
-    }
-  ];
-
-  const getIcon = (iconName: string, className: string = "w-5 h-5") => {
-    switch (iconName) {
-      case "Users": return <Users className={className} />;
-      case "Globe2": return <Globe2 className={className} />;
-      case "Compass": return <Compass className={className} />;
-      case "GraduationCap": return <GraduationCap className={className} />;
-      case "Sparkles": return <Sparkles className={className} />;
-      case "Briefcase": return <Briefcase className={className} />;
-      case "Award": return <Award className={className} />;
-      case "ShieldCheck": return <ShieldCheck className={className} />;
-      case "BookOpen": return <BookOpen className={className} />;
-      default: return <BookOpen className={className} />;
-    }
-  };
 
   return (
     <div className="pt-16 lg:pt-[108px] overflow-hidden bg-white font-['Inter',_sans-serif]">
 
-      {/* ── HERO SLIDER (contains official IH World rainbow border pinned at its bottom border) ── */}
+      {/* ── 1. HERO SLIDER (contains official IH World rainbow border pinned at its bottom) ── */}
       <HeroSlider />
 
-      {/* ─── NEW: CORE PILLARS SECTION ─── */}
+      {/* ── 2. CORE PILLARS OVERVIEW (IH World Official Brand Aesthetics) ── */}
       <section className="py-20 bg-slate-50 relative overflow-hidden border-b border-slate-100">
         <div className="absolute inset-0 opacity-[0.02] pointer-events-none"
           style={{ backgroundImage: "radial-gradient(#002F6C 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
@@ -451,7 +220,7 @@ export default function HomePage() {
             </h2>
             <p className="mt-3 text-slate-500 font-light text-base sm:text-lg max-w-2xl mx-auto">
               {isRtl 
-                ? "نسعى لتقديم تجربة تعليمية فريدة تدمج بين المعايير الدولية والخبرة المحلية لدعم نموك." 
+                ? "نسعى لتقديم تجربة تعليمية فريدة تدمج بين المعايير الدولية والخبرة المحلية لدعم نموك وتألقك." 
                 : "Empowering learners through world-class standards, practical experiences, and dedicated local support."}
             </p>
           </motion.div>
@@ -472,14 +241,12 @@ export default function HomePage() {
                 className="group relative rounded-[2rem] p-8 sm:p-10 flex flex-col justify-between aspect-[3/2] cursor-default shadow-md hover:shadow-2xl transition-all duration-300"
                 style={{ backgroundColor: pillar.bgColor }}
               >
-                {/* Icon wrapper at the top */}
                 <div className="flex items-start justify-between w-full">
                   <div className="relative">
                     {pillar.icon}
                   </div>
                 </div>
 
-                {/* Text content at the bottom */}
                 <div className="mt-8">
                   <h3 
                     className="text-xl sm:text-2xl font-black font-['Montserrat',_sans-serif] leading-tight"
@@ -494,18 +261,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────────
-          1. ABOUT & EMPOWERMENT + 70 YEARS BADGE
-      ───────────────────────────────────────────────────────────────── */}
+      {/* ── 3. WHO WE ARE & STRATEGIC EMPOWERMENT (Executive Gateway Teaser) ── */}
       <section className="py-24 bg-white relative overflow-hidden">
-        {/* Subtle background grid pattern */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
           style={{ backgroundImage: "radial-gradient(#002F6C 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 
-            {/* Left Side: Content */}
+            {/* Left Side: Teaser Content */}
             <motion.div
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
               className="lg:col-span-7 space-y-6 text-start"
@@ -514,60 +278,55 @@ export default function HomePage() {
                 href="/who-we-are"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-[#002F6C] hover:bg-[#cf1430] transition-colors cursor-pointer shadow-sm hover:scale-105"
               >
-                {isRtl ? "من نحن" : "WHO WE ARE"}
+                {isRtl ? "من نحن • نبذة تعريفية" : "WHO WE ARE • EXECUTIVE OVERVIEW"}
               </Link>
+              
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-[#002F6C] font-['Montserrat',_sans-serif]">
                 {isRtl ? "تمكين المتعلمين والمؤسسات في جميع أنحاء المملكة" : "Empowering Learners and Organizations Across Saudi Arabia"}
               </h2>
+              
               <p className="text-[#cf1430] font-bold text-lg sm:text-xl leading-relaxed border-l-4 border-[#cf1430] pl-4 rtl:border-l-0 rtl:border-r-4 rtl:pl-0 rtl:pr-4">
-                {isRtl ? "معايير عالمية. فهم محلي. نتائج حقيقية." : "International Standards. Local Understanding. Real Results."}
+                {isRtl ? "معايير عالمية. فهم محلي. نتائج حقيقية منذ عام 2001." : "International Standards. Local Understanding. Real Results Since 2001."}
               </p>
+              
               <div className="text-slate-600 space-y-4 font-light text-base leading-relaxed">
                 <p>
                   {isRtl
-                    ? "إنترناشونال هاوس المملكة العربية السعودية (IHSA) هي جزء من منظمة إنترناشونال هاوس العالمية (IHWO) المرموقة دولياً."
-                    : "International House Saudi Arabia (IHSA) is part of the globally respected International House World Organization (IHWO), one of the world's leading networks of language schools and teacher training centers."}
+                    ? "إنترناشونال هاوس المملكة العربية السعودية هي جزء من شبكة إنترناشونال هاوس العالمية (IHWO) العريقة، التي تأسست عام ١٩٥٣ وتضم أكثر من ١٥٠ مدرسة لغات في ٥٠ دولة حول العالم."
+                    : "International House Saudi Arabia (IHSA) is part of the prestigious International House World Organization (IHWO), founded in 1953 with a global network spanning over 150 schools across 50+ countries."}
                 </p>
                 <p>
                   {isRtl
-                    ? "لأكثر من ٣٠ عاماً، ساندت إنترناشونال هاوس السعودية الدارسين، والمهنيين، والشركات، والمؤسسات الحكومية في جميع أنحاء المملكة عبر تقديم برامج تعليم لغات عالية الجودة."
-                    : "For over 30 years, IH Saudi Arabia has supported learners, professionals, companies, and institutions across the Kingdom through high-quality language education, corporate training solutions, teacher development programs, international qualifications, and global learning opportunities."}
-                </p>
-                <p>
-                  {isRtl
-                    ? "من خلال الجمع بين الخبرة الأكاديمية العالمية والفهم العميق للاحتياجات المحلية، نساعد الأفراد والمنظمات على تطوير المهارات التواصلية، والمعرفة، والثقة."
-                    : "Combining international expertise with deep local understanding, we help individuals and organizations develop the communication skills, knowledge, and confidence needed to succeed in an increasingly connected world."}
+                    ? "من خلال الجمع بين الخبرة الأكاديمية العالمية والفهم العميق لاحتياجات سوق العمل السعودي، نقدم تجارب تعليمية شاملة معتمدة تدعم أهداف رؤية المملكة ٢٠٣٠."
+                    : "Combining international academic rigor with a deep understanding of Saudi workforce requirements, we deliver accredited learning solutions fully aligned with Saudi Vision 2030."}
                 </p>
               </div>
 
-              {/* CTA Buttons */}
-              <div className="pt-6 space-y-4">
-                <h4 className="font-bold text-slate-800 text-sm uppercase tracking-wider">
-                  {isRtl ? "ابدأ رحلتك التعليمية معنا" : "Start Your Journey With Us"}
-                </h4>
-                <div className="flex flex-wrap gap-3">
-                  <Link href="/courses/placement-test"
-                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-[#cf1430] text-white hover:bg-[#a50f26] shadow-lg shadow-[#cf1430]/25 hover:scale-[1.02] transition-all duration-300">
-                    {isRtl ? "احجز اختبار تحديد المستوى" : "Book a Placement Test"}
-                  </Link>
-                  <Link href="/courses"
-                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-[#002F6C] text-white hover:bg-[#001a3f] shadow-lg shadow-[#002F6C]/20 hover:scale-[1.02] transition-all duration-300">
-                    {isRtl ? "استكشف دوراتنا" : "Explore Our Courses"}
-                  </Link>
-                  <Link href="/contact"
-                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm border-2 border-[#002F6C]/20 text-[#002F6C] hover:bg-slate-50 hover:scale-[1.02] transition-all duration-300">
-                    {isRtl ? "طلب مقترح تدريب الشركات" : "Request a Corporate Proposal"}
-                  </Link>
-                </div>
+              {/* Direct Gateway Links */}
+              <div className="pt-4 flex flex-wrap gap-4 items-center">
+                <Link
+                  href="/who-we-are"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-[#002F6C] text-white hover:bg-[#001a3f] shadow-lg shadow-[#002F6C]/20 hover:scale-[1.02] transition-all duration-300"
+                >
+                  <span>{isRtl ? "اكتشف قصتنا ورؤيتنا كاملة" : "Read Our Full Story & Vision"}</span>
+                  <ArrowRight className="w-4 h-4 rtl:rotate-180" />
+                </Link>
+
+                <Link
+                  href="/placement-test-booking"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-[#cf1430] text-white hover:bg-[#a50f26] shadow-lg shadow-[#cf1430]/25 hover:scale-[1.02] transition-all duration-300"
+                >
+                  <Sparkles className="w-4 h-4" />
+                  <span>{isRtl ? "اختبار تحديد المستوى المجاني" : "Free Placement Test"}</span>
+                </Link>
               </div>
             </motion.div>
 
-            {/* Right Side: Image + Badges */}
+            {/* Right Side: Visual & 70 Years Seal */}
             <motion.div
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}
               className="lg:col-span-5 relative"
             >
-              {/* Main classroom image */}
               <div className="relative aspect-[4/3] w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white ring-1 ring-slate-100">
                 <Image
                   src="/beta_assets/ihsa.png"
@@ -575,7 +334,7 @@ export default function HomePage() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-[#cf1430] flex items-center justify-center text-white font-bold text-lg">✓</div>
                   <span className="text-white font-extrabold text-sm sm:text-base tracking-wide uppercase drop-shadow-md">
@@ -584,7 +343,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* 70 Years Badge - floating */}
+              {/* 70 Years Seal Floating */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.7, rotate: -8 }}
                 whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -595,26 +354,106 @@ export default function HomePage() {
                 <Image src="/ih_70years_v2.png" alt="Celebrating 70 Years of IH World" fill className="object-contain" />
               </motion.div>
 
-
-
               {/* Accreditations mini grid */}
-              <div className="mt-10 grid grid-cols-2 gap-3">
+              <div className="mt-8 grid grid-cols-2 gap-3">
                 {partners.map((p, i) => (
                   <div key={i} className="flex items-center gap-3 p-3 bg-slate-50 border border-slate-100 rounded-2xl hover:border-[#002F6C]/30 hover:bg-white hover:shadow-md transition-all duration-300">
-                    <div className="text-[#002F6C] bg-white w-9 h-9 rounded-xl flex items-center justify-center shadow-sm">{p.icon}</div>
+                    <div className="text-[#002F6C] bg-white w-9 h-9 rounded-xl flex items-center justify-center shadow-sm shrink-0">{p.icon}</div>
                     <span className="text-[11px] font-bold text-slate-700 leading-tight">{p.name[lang]}</span>
                   </div>
                 ))}
               </div>
             </motion.div>
+
           </div>
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────────
-          1B. OFFICIAL VIDEO SHOWCASE — GROW WITH IH SAUDI ARABIA
-      ───────────────────────────────────────────────────────────────── */}
-      <section className="py-20 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-y border-slate-200/80 relative overflow-hidden">
+      {/* ── 4. THE 6 CORE EDUCATIONAL GATEWAYS (Streamlined & Clean) ── */}
+      <section className="py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-y border-slate-200/80 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-[#002F6C] mb-4">
+              <BookOpen className="w-3.5 h-3.5 text-yellow-400" />
+              {isRtl ? "المسارات التعليمية والمهنية" : "EXPLORE OUR PATHWAYS"}
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#002F6C] font-['Montserrat',_sans-serif] tracking-tight">
+              {isRtl ? "برامجنا وحلولنا التعليمية المعتمدة" : "Educational Solutions & Global Pathways"}
+            </h2>
+            <p className="mt-3 text-slate-600 text-base sm:text-lg font-light leading-relaxed">
+              {isRtl
+                ? "اختر المسار المناسب لأهدافك من بين برامجنا المعتمدة للأفراد والمؤسسات والكوادر الوطنية:"
+                : "Select the specialized pathway designed for your academic, career, or corporate growth:"}
+            </p>
+          </div>
+
+          {/* 6 Gateway Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {educationalGateways.map((card, idx) => (
+              <motion.div
+                key={idx}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInScale}
+                className="group bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5"
+              >
+                <div>
+                  {/* Card Image */}
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100">
+                    <Image
+                      src={card.image}
+                      alt={card.title[lang]}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                    
+                    {/* Badge */}
+                    <div className="absolute top-4 left-4 rtl:left-auto rtl:right-4">
+                      <span className="px-3 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider text-white bg-[#002F6C]/90 backdrop-blur-md shadow-sm border border-white/20">
+                        {card.badge[lang]}
+                      </span>
+                    </div>
+
+                    <div className="absolute bottom-4 left-4 right-4 text-white">
+                      <h3 className="text-lg sm:text-xl font-bold leading-tight font-['Montserrat',_sans-serif]">
+                        {card.title[lang]}
+                      </h3>
+                      <p className="text-xs text-slate-200 mt-1 font-light">
+                        {card.subtitle[lang]}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Card Description */}
+                  <div className="p-6">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                      {card.desc[lang]}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Card Action Link */}
+                <div className="p-6 pt-0 border-t border-slate-100 mt-auto">
+                  <Link
+                    href={card.link}
+                    className="flex items-center justify-between text-xs sm:text-sm font-bold text-[#002F6C] group-hover:text-[#cf1430] transition-colors pt-4"
+                  >
+                    <span>{isRtl ? "استكشف التفاصيل والمسارات" : "Explore Program Details"}</span>
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180" />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── 5. OFFICIAL VIDEO SHOWCASE — GROW WITH IH SAUDI ARABIA ── */}
+      <section className="py-20 bg-white border-b border-slate-100 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#002F6C] bg-blue-50 border border-blue-200/60 mb-3">
@@ -686,22 +525,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────────
-          2. BY THE NUMBERS (STATS) — IH World Navy Blue style
-      ───────────────────────────────────────────────────────────────── */}
+      {/* ── 6. BY THE NUMBERS (GLOBAL CREDENTIALS) ── */}
       <section className="py-20 bg-[#002F6C] text-white relative overflow-hidden">
-        {/* Decorative blobs */}
         <div className="absolute -left-32 top-0 w-96 h-96 bg-[#cf1430]/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute -right-32 bottom-0 w-96 h-96 bg-white/5 rounded-full blur-[100px] pointer-events-none" />
 
-        {/* 70 years banner watermark */}
-        <div className="absolute right-8 top-1/2 -translate-y-1/2 opacity-[0.07] pointer-events-none hidden lg:block">
-          <Image src="/ih_70years_v2.png" alt="" width={220} height={220} className="object-contain" />
-        </div>
-
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Stats grid */}
+            
             <div className="lg:col-span-8 space-y-10">
               <div className="text-start">
                 <span className="text-xs font-bold tracking-widest text-[#cf1430] uppercase block mb-2">
@@ -730,7 +561,6 @@ export default function HomePage() {
               </motion.div>
             </div>
 
-            {/* Description Card */}
             <motion.div
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}
               className="lg:col-span-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 shadow-2xl relative overflow-hidden"
@@ -738,869 +568,136 @@ export default function HomePage() {
               <div className="absolute top-0 right-0 w-24 h-24 bg-[#cf1430]/10 rounded-bl-full pointer-events-none" />
               <p className="text-sm sm:text-base font-light text-white/90 leading-relaxed relative z-10">
                 {isRtl
-                  ? "كجزء من منظمة إنترناشونال هاوس العالمية، تتيح إي إتش السعودية للمتعلمين والمؤسسات الوصول إلى الخبرات الأكاديمية العالمية."
+                  ? "كجزء من منظمة إنترناشونال هاوس العالمية، تتيح إي إتش السعودية للمتعلمين والمؤسسات الوصول إلى أرقى الخبرات الأكاديمية العالمية والمعايير المعتمدة دولياً."
                   : "As part of the International House World Organization, IH Saudi Arabia provides learners and organizations with access to global expertise, international partnerships, and world-class educational practices."}
               </p>
-
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─────────────────────────────────────────────────────────────────
-          3. WHY CHOOSE US — IH World LDA style checklist
-      ───────────────────────────────────────────────────────────────── */}
-      <section className="py-24 bg-white relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left side text */}
-            <motion.div
-              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideLeft}
-              className="space-y-6 text-start"
-            >
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-[#cf1430]">
-                {isRtl ? "مواطن قوتنا ورسالتنا" : "OUR VALUES & MISSION"}
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#002F6C] font-['Montserrat',_sans-serif] leading-tight">
-                {isRtl ? "لماذا تختار إنترناشونال هاوس السعودية؟" : "Why Choose IH Saudi Arabia?"}
-              </h2>
-              <div className="text-slate-600 space-y-4 font-light text-base leading-relaxed">
-                <p>
-                  {isRtl
-                    ? "في إنترناشونال هاوس السعودية، نؤمن بأن التعليم يجب أن يكون عملياً، وملهماً، ومتوافقاً مع الاحتياجات المتغيرة للعالم الحقيقي."
-                    : "At IH Saudi Arabia, we believe education should be practical, inspiring, and aligned with real-world needs."}
-                </p>
-                <p>
-                  {isRtl
-                    ? "صُممت برامجنا المتخصصة لبناء الثقة، وتطوير مهارات الاتصال الفعالة، ودعم تميز القوى العاملة."
-                    : "Our programs are designed to build confidence, develop communication skills, support workforce development, and create meaningful opportunities for personal and professional growth."}
-                </p>
-              </div>
-
-              {/* Real IH classroom visual */}
-              <div className="relative h-48 w-full rounded-2xl overflow-hidden shadow-inner hidden sm:block">
-                <Image src="/beta_assets/pic1.png" alt="Students learning at International House" fill className="object-cover object-center brightness-90" />
-                <div className="absolute inset-0 bg-[#002F6C]/30" />
-                <div className="absolute inset-0 flex items-center justify-center p-6 text-center text-white">
-                  <p className="font-extrabold text-sm tracking-widest uppercase">
-                    {isRtl ? "خبرة تفوق ٣٠ عاماً في خدمة المملكة" : "OVER 30 YEARS OF EDUCATIONAL EXCELLENCE"}
-                  </p>
-                </div>
+              <div className="mt-6 pt-6 border-t border-white/10">
+                <Link
+                  href="/who-we-are#global-network"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-yellow-400 hover:text-white transition-colors"
+                >
+                  <span>{isRtl ? "تعرف على شبكتنا الدولية" : "Explore Our Global Network"}</span>
+                  <ArrowRight size={13} className="rtl:rotate-180" />
+                </Link>
               </div>
             </motion.div>
 
-            {/* Right side Strengths — image cards grid */}
-            <motion.div
-              initial="hidden" whileInView="visible" viewport={{ once: true }}
-              variants={staggerContainer}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-5"
-            >
-              {strengths.map((str, i) => (
-                <motion.div
-                  key={i}
-                  variants={fadeInScale}
-                  className="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-default"
-                >
-                  {/* Background Image */}
-                  <div className="relative h-36 overflow-hidden">
-                    <Image
-                      src={str.image}
-                      alt={str.en}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                    {/* Dark overlay */}
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300" />
-                    {/* Icon floating on image */}
-                    <div
-                      className="absolute top-3 right-3 rtl:right-auto rtl:left-3 w-9 h-9 rounded-xl flex items-center justify-center text-white shadow-lg backdrop-blur-sm"
-                      style={{ backgroundColor: `${str.headerColor}cc` }}
-                    >
-                      {str.icon}
-                    </div>
-                  </div>
-
-                  {/* Colored header label bar */}
-                  <div
-                    className="px-4 py-2 flex items-center gap-2"
-                    style={{ backgroundColor: str.headerColor }}
-                  >
-                    <span className="text-white text-[11px] font-black uppercase tracking-widest">
-                      {str.headerLabel[lang]}
-                    </span>
-                  </div>
-
-                  {/* Card text body */}
-                  <div className="bg-white px-4 py-3">
-                    <p className="font-bold text-slate-800 text-sm leading-snug">
-                      {str[lang]}
-                    </p>
-                  </div>
-
-                  {/* Bottom color accent line */}
-                  <div className="h-1 w-full" style={{ backgroundColor: str.headerColor }} />
-                </motion.div>
-              ))}
-            </motion.div>
           </div>
-        </div>
-
-        {/* Pinned at the bottom border of the section, rising upwards */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none">
-          <ThemeAccent />
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────────
-          4. OUR SERVICES — IH Mexico / LDA Image Cards Style
-      ───────────────────────────────────────────────────────────────── */}
-      <section className="py-24 bg-[#f8f9fc] relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      {/* ── 7. VERIFIED STUDENT TESTIMONIALS (Social Proof) ── */}
+      <StudentTestimonials />
+
+      {/* ── 8. SAUDI PRESENCE & CAMPUS LOCATIONS ── */}
+      <section className="py-24 bg-slate-50 relative overflow-hidden border-t border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-            className="max-w-3xl mx-auto space-y-4 mb-16"
+            className="text-center max-w-3xl mx-auto mb-14 space-y-3"
           >
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-[#002F6C]">
-              {isRtl ? "خدماتنا الأكاديمية والمهنية" : "OUR CORE SERVICES"}
+              <MapPin className="w-3.5 h-3.5 text-yellow-400" />
+              {isRtl ? "مواقع مراكزنا بالمملكة" : "CAMPUS NETWORK IN SAUDI ARABIA"}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#002F6C] font-['Montserrat',_sans-serif] tracking-tight">
-              {isRtl ? "استكشف خدماتنا الشاملة" : "Our Educational Services"}
+              {isRtl ? "فروع ومراكز إنترناشونال هاوس" : "Our Campuses & Learning Centers"}
             </h2>
             <p className="text-slate-500 font-light text-base sm:text-lg">
               {isRtl
-                ? "برامج تعليمية شاملة ومسارات مهنية مصممة لضمان التفوق الأكاديمي والنجاح المؤسسي."
-                : "Comprehensive educational programs and pathways designed for corporate success and academic advancement."}
-            </p>
-          </motion.div>
-
-          {/* Services Grid with card images — IH Mexico / LDA Team Lingue style */}
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-start"
-          >
-            {services.map((srv, i) => {
-              const cardType = i % 4;
-              let bgClass = "";
-              let titleClass = "";
-              let descClass = "";
-              let linkClass = "";
-              let arrowBg = "";
-              let arrowColor = "";
-              let iconBg = "";
-
-              if (cardType === 0) {
-                // White
-                bgClass = "bg-white border border-slate-200 text-slate-800 hover:border-blue-500/30";
-                titleClass = "text-slate-800 group-hover:text-[#002F6C]";
-                descClass = "text-slate-500";
-                linkClass = "text-[#002f6c] hover:text-[#cf1430]";
-                arrowBg = "bg-[#002f6c]/10";
-                arrowColor = "text-[#002f6c]";
-                iconBg = "#002F6C"; // Navy
-              } else if (cardType === 1) {
-                // Green
-                bgClass = "bg-[#00d084] text-white border-transparent";
-                titleClass = "text-white group-hover:text-white/90";
-                descClass = "text-white/90";
-                linkClass = "text-white hover:text-white/80";
-                arrowBg = "bg-white/20";
-                arrowColor = "text-white";
-                iconBg = "#00d084";
-              } else if (cardType === 2) {
-                // Yellow
-                bgClass = "bg-[#fcb900] text-white border-transparent";
-                titleClass = "text-white group-hover:text-white/90";
-                descClass = "text-white/90";
-                linkClass = "text-white hover:text-white/80";
-                arrowBg = "bg-white/20";
-                arrowColor = "text-white";
-                iconBg = "#fcb900";
-              } else {
-                // Red
-                bgClass = "bg-[#cf1430] text-white border-transparent";
-                titleClass = "text-white group-hover:text-white/90";
-                descClass = "text-white/90";
-                linkClass = "text-white hover:text-white/80";
-                arrowBg = "bg-white/20";
-                arrowColor = "text-white";
-                iconBg = "#cf1430";
-              }
-
-              return (
-                <motion.div
-                  key={i}
-                  variants={fadeInScale}
-                  className={`group relative rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 cursor-pointer ${bgClass}`}
-                >
-                  {/* Card image header */}
-                  <Link href={srv.link}>
-                    <div className="relative h-48 overflow-hidden">
-                      <Image
-                        src={srv.image}
-                        alt={srv.title.en}
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-700"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                      {/* Icon badge on image */}
-                      <div
-                        className="absolute bottom-4 left-4 w-11 h-11 rounded-2xl flex items-center justify-center text-white shadow-lg z-10"
-                        style={{ backgroundColor: iconBg }}
-                      >
-                        {srv.icon}
-                      </div>
-                    </div>
-
-                    {/* Card text body */}
-                    <div className="p-6">
-                      <div className="flex justify-between items-start mb-3">
-                        <h3 className={`font-extrabold text-lg sm:text-xl transition-colors duration-300 tracking-tight leading-snug flex-1 pr-3 ${titleClass}`}>
-                          {srv.title[lang]}
-                        </h3>
-                        <div
-                          className="shrink-0 w-7 h-7 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1"
-                          style={{ backgroundColor: arrowBg, color: arrowColor }}
-                        >
-                          <ArrowUpRight className="w-4 h-4" />
-                        </div>
-                      </div>
-                      <p className={`text-sm font-light leading-relaxed mb-5 ${descClass}`}>{srv.desc[lang]}</p>
-                      <span className={`inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider transition-colors duration-300 ${linkClass}`}>
-                        {isRtl ? "المزيد من التفاصيل ←" : "Explore Program →"}
-                      </span>
-                    </div>
-                  </Link>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ─────────────────────────────────────────────────────────────────
-          5. MISSION STATEMENT BANNER
-      ───────────────────────────────────────────────────────────────── */}
-      <section className="py-24 relative overflow-hidden bg-[#002F6C] text-center text-white">
-        <Image src="/values_mission.png" alt="Learning growth" fill className="object-cover object-center opacity-15" />
-        <div className="absolute inset-0 bg-[#002F6C]/85 pointer-events-none" />
-
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 space-y-6">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-            <span className="inline-flex items-center gap-1 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-[#cf1430] text-white mb-4">
-              ★ {isRtl ? "دعم النمو والتقدم من خلال التعليم" : "SUPPORTING GROWTH THROUGH EDUCATION"}
-            </span>
-            <p className="text-2xl sm:text-4xl font-extrabold font-['Montserrat',_sans-serif] leading-tight text-white mb-6">
-              {isRtl
-                ? "التعليم هو أحد أقوى الاستثمارات التي يمكن للأفراد والمؤسسات القيام بها لتأمين المستقبل."
-                : "Education is one of the most powerful investments individuals and organizations can make."}
-            </p>
-            <p className="text-base sm:text-xl font-light text-slate-300 leading-relaxed">
-              {isRtl
-                ? "تتمثل مهمتنا في دعم المتعلمين، والمعلمين، والمهنيين، والمؤسسات عبر تقديم تجارب تعليمية عملية تصنع الثقة، وتخلق الفرص، وتدعم النمو والتعلم مدى الحياة."
-                : "Our mission is to support learners, educators, professionals, and organizations through practical learning experiences that create confidence, opportunity, and lifelong growth."}
-            </p>
-
-
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ─────────────────────────────────────────────────────────────────
-          6. CORPORATE EXCELLENCE — Vivid animated redesign
-      ───────────────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-slate-50 border-t border-b border-slate-200">
-        {/* Animated gradient background */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-[#cf1430]/5 blur-[120px] animate-pulse" />
-          <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full bg-[#002F6C]/10 blur-[120px] animate-pulse" style={{ animationDelay: "1.5s" }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-[#f59e0b]/5 blur-[100px] animate-pulse" style={{ animationDelay: "0.8s" }} />
-        </div>
-
-        {/* Real corporate training backdrop */}
-        <Image
-          src="/beta_assets/corporate_training.png"
-          alt="Corporate training"
-          fill
-          className="object-cover object-center opacity-[0.06] mix-blend-multiply pointer-events-none"
-        />
-
-        {/* Top accent bar */}
-        <div className="h-1.5 w-full bg-gradient-to-r from-[#cf1430] via-[#f59e0b] to-[#002F6C]" />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-24">
-
-          {/* Section header — full width animated */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="text-center mb-20"
-          >
-            <motion.span
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-black uppercase tracking-[0.2em] border border-[#cf1430]/60 text-[#cf1430] bg-[#cf1430]/10 mb-6"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#cf1430] animate-ping" />
-              {isRtl ? "تميز تدريب الشركات" : "CORPORATE EXCELLENCE"}
-            </motion.span>
-
-            {/* Big animated title */}
-            <div className="overflow-hidden">
-              <motion.h2
-                initial={{ y: 80, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="text-5xl sm:text-6xl lg:text-7xl font-black leading-none tracking-tight font-['Montserrat',_sans-serif]"
-              >
-                <span className="text-slate-800">
-                  {isRtl ? "حلول تدريب " : "Corporate "}
-                </span>
-                <span className="relative inline-block">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#cf1430] via-[#f59e0b] to-[#cf1430] bg-[length:200%] animate-[gradientShift_3s_ease_infinite]">
-                    {isRtl ? "مخصصة" : "Training"}
-                  </span>
-                </span>
-                <br />
-                <span className="text-slate-700">
-                  {isRtl ? "للشركات والمؤسسات" : "Excellence"}
-                </span>
-              </motion.h2>
-            </div>
-
-            {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.55, duration: 0.6 }}
-              className="mt-6 text-slate-600 text-lg sm:text-xl font-light max-w-3xl mx-auto leading-relaxed"
-            >
-              {isRtl
-                ? "حلول تدريب مخصصة بالكامل تهدف لدعم تطوير مهارات القوى العاملة وتحقيق التميز المؤسسي"
-                : "Customized workforce training solutions from needs analysis to program delivery — helping organizations achieve measurable, lasting results"}
-            </motion.p>
-          </motion.div>
-
-          {/* Corporate Services — Vivid colorful cards */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"
-          >
-            {[
-              { label: { en: "Business English", ar: "الإنجليزية للأعمال" }, color: "#cf1430", glow: "rgba(207,20,48,0.12)", icon: <Briefcase className="w-7 h-7" />, bg: "from-[#cf1430]/10 to-[#cf1430]/5" },
-              { label: { en: "Technical English", ar: "الإنجليزية الفنية والتقنية" }, color: "#f59e0b", glow: "rgba(245,158,11,0.12)", icon: <ShieldCheck className="w-7 h-7" />, bg: "from-[#f59e0b]/10 to-[#f59e0b]/5" },
-              { label: { en: "Executive Coaching", ar: "التدريب والتوجيه التنفيذي" }, color: "#16a34a", glow: "rgba(22,163,74,0.12)", icon: <Star className="w-7 h-7" />, bg: "from-[#16a34a]/10 to-[#16a34a]/5" },
-              { label: { en: "Workplace Communication", ar: "التواصل في بيئة العمل" }, color: "#cf1430", glow: "rgba(207,20,48,0.12)", icon: <Users className="w-7 h-7" />, bg: "from-[#cf1430]/10 to-[#cf1430]/5" },
-              { label: { en: "Placement Testing", ar: "اختبارات تحديد المستوى" }, color: "#f59e0b", glow: "rgba(245,158,11,0.12)", icon: <GraduationCap className="w-7 h-7" />, bg: "from-[#f59e0b]/10 to-[#f59e0b]/5" },
-              { label: { en: "Customized Training Solutions", ar: "حلول تدريبية مخصصة" }, color: "#16a34a", glow: "rgba(22,163,74,0.12)", icon: <Sparkles className="w-7 h-7" />, bg: "from-[#16a34a]/10 to-[#16a34a]/5" },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                variants={{
-                  hidden: { opacity: 0, y: 30, scale: 0.95 },
-                  visible: {
-                    opacity: 1, y: 0, scale: 1,
-                    transition: { duration: 0.5, delay: i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }
-                  }
-                }}
-                whileHover={{ y: -6, scale: 1.02 }}
-                className="group relative rounded-2xl p-6 border text-start cursor-default overflow-hidden transition-all duration-300"
-                style={{
-                  borderColor: `${item.color}35`,
-                  background: "#ffffff",
-                  boxShadow: "0 4px 20px rgba(15, 23, 42, 0.04)",
-                }}
-              >
-                {/* Glow on hover */}
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
-                  style={{ boxShadow: `inset 0 0 40px ${item.glow}` }}
-                />
-                {/* Top glow line */}
-                <div className="absolute top-0 left-0 right-0 h-0.5 rounded-t-2xl" style={{ backgroundColor: item.color }} />
-
-                {/* Icon */}
-                <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 text-white"
-                  style={{ backgroundColor: `${item.color}15`, border: `1px solid ${item.color}25` }}
-                >
-                  <span style={{ color: item.color }}>{item.icon}</span>
-                </div>
-
-                {/* Label */}
-                <h3 className="font-extrabold text-slate-800 text-lg leading-snug tracking-tight">
-                  {item.label[lang]}
-                </h3>
-
-                {/* Bottom arrow */}
-                <div
-                  className="mt-4 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider opacity-60 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ color: item.color }}
-                >
-                  {isRtl ? "معرفة المزيد ←" : "Learn More →"}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* CTA row */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-5 pt-4 border-t border-slate-200"
-          >
-            <p className="text-slate-500 text-sm font-semibold text-center sm:text-start">
-              {isRtl
-                ? "هل تبحث عن حل تدريبي مخصص لمؤسستك؟"
-                : "Looking for a custom training solution for your organization?"}
-            </p>
-            <Link
-              href="/contact"
-              className="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-black text-sm text-white transition-all duration-300 hover:scale-[1.05] hover:shadow-2xl shrink-0"
-              style={{
-                background: "linear-gradient(135deg, #cf1430, #a50f26)",
-                boxShadow: "0 8px 32px rgba(207,20,48,0.25)"
-              }}
-            >
-              {isRtl ? "طلب استشارة للشركات" : "Request a Corporate Consult"}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-            </Link>
-          </motion.div>
-        </div>
-
-        {/* Bottom accent bar */}
-        <div className="h-1.5 w-full bg-gradient-to-r from-[#002F6C] via-[#cf1430] to-[#f59e0b]" />
-      </section>
-
-      {/* ─────────────────────────────────────────────────────────────────
-          7. FLEXIBLE LEARNING OPTIONS (Full Width, 3-Column Grid)
-      ───────────────────────────────────────────────────────────────── */}
-      <section className="pt-14 pb-32 bg-white relative overflow-hidden">
-        {/* Decorative background blurs */}
-        <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#002F6C]/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-[#cf1430]/5 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          {/* Header */}
-          <div className="max-w-3xl mx-auto text-center space-y-4 mb-10">
-            <motion.div
-              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-              className="space-y-3"
-            >
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-[#002F6C]">
-                {isRtl ? "خيارات تعليمية مرنة" : "FLEXIBLE FORMATS"}
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#002F6C] font-['Montserrat',_sans-serif] tracking-tight">
-                {isRtl ? "اختر خيار التعلم المناسب لك" : "Flexible Learning Options"}
-              </h2>
-              <p className="text-slate-500 font-light text-base max-w-2xl mx-auto leading-relaxed">
-                {isRtl
-                  ? "اختر التجربة التعليمية التي تتناسب تماماً مع جدولك، وأهدافك، وطريقتك المفضلة للدراسة:"
-                  : "Choose the learning experience that best fits your goals, schedule, and preferences:"}
-              </p>
-            </motion.div>
-          </div>
-
-          {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {learningOptions.map((lo, i) => {
-              const cardType = i % 3;
-              let bgClass = "";
-              let titleClass = "";
-              let descClass = "";
-              let linkClass = "";
-              let iconBadgeClass = "";
-
-              if (cardType === 0) {
-                // White
-                bgClass = "bg-white border border-slate-200 text-slate-800 hover:border-blue-500/30";
-                titleClass = "text-[#002F6C] group-hover:text-[#cf1430]";
-                descClass = "text-slate-500";
-                linkClass = "text-[#002f6c] hover:text-[#cf1430]";
-                iconBadgeClass = "bg-white/95 text-slate-800 border-slate-200";
-              } else if (cardType === 1) {
-                // Green
-                bgClass = "bg-[#00d084] text-white border-transparent";
-                titleClass = "text-white group-hover:text-white/90";
-                descClass = "text-white/90";
-                linkClass = "text-white hover:text-white/80";
-                iconBadgeClass = "bg-white/25 text-white border-white/10";
-              } else {
-                // Yellow
-                bgClass = "bg-[#fcb900] text-white border-transparent";
-                titleClass = "text-white group-hover:text-white/90";
-                descClass = "text-white/90";
-                linkClass = "text-white hover:text-white/80";
-                iconBadgeClass = "bg-white/25 text-white border-white/10";
-              }
-
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.05 }}
-                  className={`group flex flex-col h-full rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 ${bgClass}`}
-                >
-                  {/* Image Section */}
-                  <div className="relative h-56 w-full overflow-hidden shrink-0">
-                    <Image
-                      src={lo.image}
-                      alt={lo[lang]}
-                      fill
-                      sizes="(max-w-768px) 100vw, 33vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    {/* Glassmorphic Icon Badge */}
-                    <div className={`absolute top-4 right-4 rtl:left-4 rtl:right-auto w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-md shadow-sm border ${iconBadgeClass}`}>
-                      {getIcon(lo.icon, "w-5 h-5")}
-                    </div>
-                    {/* Dynamic Color Strip for White Card, otherwise transparent */}
-                    {cardType === 0 && (
-                      <div className="absolute bottom-0 left-0 w-full h-1" style={{ backgroundColor: lo.color }} />
-                    )}
-                  </div>
-
-                  {/* Content Section */}
-                  <div className="p-6 flex flex-col flex-grow text-start">
-                    <h3 className={`text-lg sm:text-xl font-extrabold font-['Montserrat',_sans-serif] mb-2 transition-colors duration-300 ${titleClass}`}>
-                      {lo[lang]}
-                    </h3>
-                    <p className={`font-light text-sm leading-relaxed mb-6 flex-grow ${descClass}`}>
-                      {lang === "ar" ? lo.descAr : lo.descEn}
-                    </p>
-                    
-                    {/* Action Link */}
-                    <div className={`flex items-center gap-2 text-sm font-bold mt-auto ${linkClass}`}>
-                      <span>{isRtl ? "اكتشف البرنامج" : "Explore Program"}</span>
-                      <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ─────────────────────────────────────────────────────────────────
-          8. GLOBAL ACCREDITATIONS & EXAMS (Full Width, 3-Column Grid)
-      ───────────────────────────────────────────────────────────────── */}
-      <section className="pt-14 pb-32 bg-slate-50/70 border-y border-slate-100 relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-1/3 right-0 w-80 h-80 bg-[#f59e0b]/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-1/3 left-0 w-80 h-80 bg-[#6d28d9]/5 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          {/* Header */}
-          <div className="max-w-3xl mx-auto text-center space-y-4 mb-10">
-            <motion.div
-              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-              className="space-y-3"
-            >
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-[#cf1430]">
-                {isRtl ? "الاختبارات والشهادات الدولية" : "GLOBAL ACCREDITATIONS"}
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#002F6C] font-['Montserrat',_sans-serif] tracking-tight">
-                {isRtl ? "الاختبارات والشهادات الدولية" : "International Examinations & Certification"}
-              </h2>
-              <p className="text-slate-500 font-light text-base max-w-2xl mx-auto leading-relaxed">
-                {isRtl
-                  ? "استعد لاجتياز المؤهلات المعتمدة عالمياً التي تدعم قبولك الأكاديمي، وتطورك المهني، وهجرتك الدولية:"
-                  : "Prepare for internationally recognized qualifications that support academic advancement, career development, and global migration:"}
-              </p>
-            </motion.div>
-          </div>
-
-          {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {examOptions.map((eo, i) => {
-              const cardType = i % 3;
-              let bgClass = "";
-              let titleClass = "";
-              let descClass = "";
-              let linkClass = "";
-              let iconBadgeClass = "";
-
-              if (cardType === 0) {
-                // White
-                bgClass = "bg-white border border-slate-200 text-slate-800 hover:border-blue-500/30";
-                titleClass = "text-[#002F6C] group-hover:text-[#cf1430]";
-                descClass = "text-slate-500";
-                linkClass = "text-[#002f6c] hover:text-[#cf1430]";
-                iconBadgeClass = "bg-white/95 text-slate-800 border-slate-200";
-              } else if (cardType === 1) {
-                // Green
-                bgClass = "bg-[#00d084] text-white border-transparent";
-                titleClass = "text-white group-hover:text-white/90";
-                descClass = "text-white/90";
-                linkClass = "text-white hover:text-white/80";
-                iconBadgeClass = "bg-white/25 text-white border-white/10";
-              } else {
-                // Yellow
-                bgClass = "bg-[#fcb900] text-white border-transparent";
-                titleClass = "text-white group-hover:text-white/90";
-                descClass = "text-white/90";
-                linkClass = "text-white hover:text-white/80";
-                iconBadgeClass = "bg-white/25 text-white border-white/10";
-              }
-
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.05 }}
-                  className={`group flex flex-col h-full rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 ${bgClass}`}
-                >
-                  {/* Image Section */}
-                  <div className="relative h-56 w-full overflow-hidden shrink-0">
-                    <Image
-                      src={eo.image}
-                      alt={eo[lang]}
-                      fill
-                      sizes="(max-w-768px) 100vw, 33vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    {/* Glassmorphic Icon Badge */}
-                    <div className={`absolute top-4 right-4 rtl:left-4 rtl:right-auto w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-md shadow-sm border ${iconBadgeClass}`}>
-                      {getIcon(eo.icon, "w-5 h-5")}
-                    </div>
-                    {/* Dynamic Color Strip for White Card */}
-                    {cardType === 0 && (
-                      <div className="absolute bottom-0 left-0 w-full h-1" style={{ backgroundColor: eo.color }} />
-                    )}
-                  </div>
-
-                  {/* Content Section */}
-                  <div className="p-6 flex flex-col flex-grow text-start">
-                    <h3 className={`text-lg sm:text-xl font-extrabold font-['Montserrat',_sans-serif] mb-2 transition-colors duration-300 ${titleClass}`}>
-                      {eo[lang]}
-                    </h3>
-                    <p className={`font-light text-sm leading-relaxed mb-6 flex-grow ${descClass}`}>
-                      {lang === "ar" ? eo.descAr : eo.descEn}
-                    </p>
-                    
-                    {/* Action Link */}
-                    <div className={`flex items-center gap-2 text-sm font-bold mt-auto ${linkClass}`}>
-                      <span>{isRtl ? "تفاصيل الاختبار" : "Exam Details"}</span>
-                      <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ─────────────────────────────────────────────────────────────────
-          8. YOUR LEARNING JOURNEY (TIMELINE)
-      ───────────────────────────────────────────────────────────────── */}
-      <section className="py-24 bg-[#f8f9fc] relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-            className="max-w-3xl mx-auto space-y-4 mb-16"
-          >
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-[#002F6C]">
-              {isRtl ? "مسار التقدم والأداء" : "METHODOLOGY & PROGRESSION"}
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#002F6C] font-['Montserrat',_sans-serif] tracking-tight">
-              {isRtl ? "رحلتك التعليمية مع إي إتش السعودية" : "Your Learning Journey"}
-            </h2>
-            <p className="text-slate-500 font-light text-base">
-              {isRtl
-                ? "خطوات منظمة ومنهجية تضمن قياس التطور وتحقيق الأهداف المنشودة:"
-                : "Structured educational path to ensure development monitoring and objective attainment:"}
-            </p>
-          </motion.div>
-
-          {/* Timeline Grid */}
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 relative"
-          >
-            {learningJourney.map((step, i) => (
-              <motion.div
-                key={i}
-                variants={fadeInScale}
-                className={`border p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 group text-start relative overflow-hidden ${step.bgClass}`}
-              >
-                {/* Sliding Accent Border (Changes side from top to bottom on hover) */}
-                <div
-                  className="absolute left-0 w-full h-[4px] transition-all duration-300 ease-in-out top-0 group-hover:top-full group-hover:-translate-y-full"
-                  style={{ backgroundColor: step.barColor }}
-                />
-
-                <div
-                  className={`text-3xl font-black mb-4 font-['Montserrat',_sans-serif] transition-all duration-300 group-hover:scale-110 origin-left rtl:origin-right ${step.numColor}`}
-                >
-                  {step.step}
-                </div>
-                <h4 className="font-extrabold text-sm sm:text-base tracking-tight leading-snug relative z-10">
-                  {step.title[lang]}
-                </h4>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-
-        {/* Pinned at the bottom border of the section, rising upwards */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none">
-          <ThemeAccent />
-        </div>
-      </section>
-
-      {/* ─────────────────────────────────────────────────────────────────
-          9. LOCATIONS SECTION
-      ───────────────────────────────────────────────────────────────── */}
-      <section className="pt-14 pb-32 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-            className="max-w-3xl mx-auto space-y-4 mb-10"
-          >
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-[#002F6C]">
-              {isRtl ? "فروعنا ومقراتنا" : "OUR PRESENCE"}
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#002F6C] font-['Montserrat',_sans-serif] tracking-tight">
-              {isRtl ? "فروعنا ومواقع الخدمة" : "Our Locations"}
-            </h2>
-            <p className="text-slate-500 font-light text-base sm:text-lg">
-              {isRtl
-                ? "نقدم خدماتنا للدارسين، والمهنيين، والشركات، والمؤسسات الأكاديمية والتعليمية في مختلف مناطق المملكة:"
-                : "Serving learners, professionals, organizations, and educational institutions across Saudi Arabia:"}
+                ? "نقدم خدماتنا للدارسين، والمهنيين، والشركات في مراكزنا الحديثة المجهزة بأحدث التقنيات:"
+                : "Serving learners, professionals, and corporate organizations in our modern facilities equipped with smart classrooms:"}
             </p>
           </motion.div>
 
           {/* Locations Grid */}
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: { en: "Riyadh", ar: "الرياض" }, desc: { en: "Central Province & Capital Office", ar: "مقر المنطقة الوسطى والعاصمة" }, bg: "/riyadh_bg.png", path: "/contact", color: "#002F6C" },
-              { name: { en: "Jeddah", ar: "جدة" }, desc: { en: "Western Province Office", ar: "مكتب المنطقة الغربية" }, bg: "/jeddah_bg.png", path: "/contact", color: "#cf1430" },
-              { name: { en: "Dammam / Dhahran", ar: "الدمام / الظهران" }, desc: { en: "Eastern Province Office", ar: "مكتب المنطقة الشرقية" }, bg: "/dammam_bg.png", path: "/contact", color: "#002F6C" },
-            ].map((loc, i) => {
-              const cardType = i % 3;
-              let borderClass = "";
-              let footerBg = "";
-              let textClass = "";
-              let btnClass = "";
-              let iconBgClass = "";
-              let iconColorClass = "";
-
-              if (cardType === 0) {
-                borderClass = "border-slate-100 hover:border-primary/30";
-                footerBg = "bg-white";
-                textClass = "text-slate-500";
-                btnClass = "bg-[#002f6c] text-white hover:bg-[#cf1430]";
-                iconBgClass = "bg-[#002f6c]/10";
-                iconColorClass = "text-[#002f6c]";
-              } else if (cardType === 1) {
-                borderClass = "border-transparent";
-                footerBg = "bg-[#00d084]";
-                textClass = "text-white/90";
-                btnClass = "bg-white text-[#00d084] hover:bg-white/90";
-                iconBgClass = "bg-white/20";
-                iconColorClass = "text-white";
-              } else {
-                borderClass = "border-transparent";
-                footerBg = "bg-[#fcb900]";
-                textClass = "text-white/90";
-                btnClass = "bg-white text-[#fcb900] hover:bg-white/90";
-                iconBgClass = "bg-white/20";
-                iconColorClass = "text-white";
-              }
-
-              return (
-                <motion.div
-                  key={i}
-                  variants={fadeInScale}
-                  className={`group relative rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border ${borderClass}`}
-                >
-                  {/* City background */}
-                  <div className="relative h-60 overflow-hidden">
-                    <Image src={loc.bg} alt={loc.name.en} fill className="object-cover group-hover:scale-110 transition-transform duration-700 brightness-75" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="font-extrabold text-2xl text-white font-['Montserrat',_sans-serif] drop-shadow-md">{loc.name[lang]}</h3>
-                      <p className="text-white/80 text-sm font-light">{loc.desc[lang]}</p>
-                    </div>
-                    {/* Color accent top border for white card */}
-                    {cardType === 0 && (
-                      <div className="absolute top-0 left-0 right-0 h-1" style={{ backgroundColor: loc.color }} />
-                    )}
+              {
+                name: { en: "Riyadh Center", ar: "مركز الرياض" },
+                desc: { en: "Al Olaya District • Central Province Flagship Center", ar: "حي العليا • المركز الرئيسي للمنطقة الوسطى" },
+                bg: "/riyadh_bg.png",
+                path: "/contact",
+                color: "#002F6C"
+              },
+              {
+                name: { en: "Dammam & Dhahran", ar: "مركز الدمام والظهران" },
+                desc: { en: "Eastern Province Hub • Corporate & Individual Campus", ar: "المنطقة الشرقية • مركز الأفراد والشركات" },
+                bg: "/dammam_bg.png",
+                path: "/contact",
+                color: "#cf1430"
+              },
+              {
+                name: { en: "Western Province (Jeddah)", ar: "المنطقة الغربية (جدة)" },
+                desc: { en: "Regional Training & Placement Test Operations", ar: "خدمات التدريب الإقليمية واختبارات التحديد" },
+                bg: "/jeddah_bg.png",
+                path: "/contact",
+                color: "#002F6C"
+              },
+            ].map((loc, i) => (
+              <motion.div
+                key={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInScale}
+                className="group relative rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1.5 flex flex-col justify-between"
+              >
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100">
+                  <Image
+                    src={loc.bg}
+                    alt={loc.name[lang]}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 text-white text-start">
+                    <h3 className="text-xl font-bold font-['Montserrat',_sans-serif]">
+                      {loc.name[lang]}
+                    </h3>
+                    <p className="text-xs text-slate-200 mt-1 font-light">
+                      {loc.desc[lang]}
+                    </p>
                   </div>
+                </div>
 
-                  <div className={`p-6 flex justify-between items-center transition-colors duration-300 ${footerBg}`}>
-                    <div className="flex items-center gap-2">
-                      <div className={`w-8 h-8 rounded-xl flex items-center justify-center transition-colors ${iconBgClass} ${iconColorClass}`}>
-                        <MapPin className="w-4 h-4" />
-                      </div>
-                      <span className={`text-xs font-bold uppercase tracking-wider ${textClass}`}>{isRtl ? "تواصل معنا" : "Contact Branch"}</span>
-                    </div>
-                    <Link href={loc.path}
-                      className={`inline-flex items-center gap-1 px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 hover:scale-[1.05] ${btnClass}`}
-                    >
-                      {isRtl ? "تواصل" : "Visit"} <ChevronRight className="w-3 h-3" />
-                    </Link>
+                <div className="p-6 flex items-center justify-between border-t border-slate-100 bg-white">
+                  <div className="flex items-center gap-2 text-slate-500">
+                    <MapPin className="w-4 h-4 text-[#cf1430]" />
+                    <span className="text-xs font-bold">{isRtl ? "الموقع ومعلومات التواصل" : "Location & Contact"}</span>
                   </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </div>
+                  <Link
+                    href={loc.path}
+                    className="inline-flex items-center gap-1 px-4 py-2 rounded-xl text-xs font-bold text-white bg-[#002F6C] hover:bg-[#cf1430] transition-colors"
+                  >
+                    <span>{isRtl ? "زيارة الفرع" : "Visit Campus"}</span>
+                    <ChevronRight className="w-3.5 h-3.5 rtl:rotate-180" />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
 
-        {/* Pinned at the bottom border of the section, rising upwards */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none">
-          <ThemeAccent />
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────────
-          10. 70 YEARS CELEBRATION BAND (Redesigned with Authentic Stamp & Badge)
-      ───────────────────────────────────────────────────────────────── */}
+      {/* ── 9. 70 YEARS CELEBRATION STRATEGIC BAND ── */}
       <section className="py-16 bg-gradient-to-r from-[#001a3f] via-[#002F6C] to-[#001a3f] relative overflow-hidden border-y-2 border-[#f59e0b]/30">
-        {/* Subtle light effect */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#cf1430]/10 rounded-full blur-[100px] pointer-events-none" />
-
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={staggerContainer}
             className="flex flex-col lg:flex-row items-center justify-between gap-10"
           >
-            {/* Badge + text */}
             <motion.div variants={slideLeft} className="flex flex-col sm:flex-row items-center gap-8 text-center sm:text-start">
-              {/* Logo Seals Wrapper */}
               <div className="flex items-center bg-white p-4 rounded-2xl shadow-2xl shrink-0 border border-slate-100/10">
                 <div className="relative w-20 h-20 sm:w-24 sm:h-24">
                   <Image src="/ih_70years_v2.png" alt="Celebrating 70 Years of IH World" fill className="object-contain" />
                 </div>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-2 text-start">
                 <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-white bg-[#cf1430] shadow-sm">
                   {isRtl ? "تأسست عام ١٩٥٣" : "ESTABLISHED IN 1953"}
                 </span>
@@ -1610,26 +707,23 @@ export default function HomePage() {
                 <p className="text-blue-100 font-light text-sm sm:text-base max-w-xl">
                   {isRtl 
                     ? "شراكة دولية ممتدة تقدم أرقى مستويات جودة تدريس اللغة الإنجليزية في المملكة والعالم." 
-                    : "A historic partnership delivering the highest standards of English language training across the Kingdom and worldwide."}
+                    : "A historic global partnership delivering the highest standards of English language training across the Kingdom and worldwide."}
                 </p>
               </div>
             </motion.div>
 
-            {/* CTA */}
             <motion.div variants={fadeInScale} className="shrink-0">
               <Link href="/contact"
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-sm bg-[#cf1430] text-white hover:bg-[#a50f26] hover:scale-[1.03] active:scale-95 transition-all duration-300 shadow-lg shadow-[#cf1430]/30 group">
                 <span>{isRtl ? "تواصل معنا اليوم" : "Contact Us Today"}</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform duration-300 rtl:rotate-180" />
               </Link>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────────
-          11. BOTTOM GET STARTED CTA BANNER
-      ───────────────────────────────────────────────────────────────── */}
+      {/* ── 10. FINAL GET STARTED & CONVERSION BANNER ── */}
       <section className="py-24 relative overflow-hidden bg-[#001a3f] text-white">
         <Image src="/riyadh_bg.png" alt="Get started banner" fill className="object-cover object-center opacity-10" />
         <div className="absolute inset-0 bg-[#001a3f]/90 pointer-events-none" />
@@ -1637,40 +731,39 @@ export default function HomePage() {
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-8">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#cf1430] bg-[#cf1430]/10 mb-4">
-              {isRtl ? "ابدأ رحلتك اليوم" : "START TODAY"}
+              {isRtl ? "ابدأ رحلتك اليوم" : "START YOUR JOURNEY TODAY"}
             </span>
             <h2 className="text-3xl sm:text-5xl font-black text-white font-['Montserrat',_sans-serif] leading-tight mb-6">
-              {isRtl ? "ابدأ رحلتك التعليمية اليوم" : "Start Your Learning Journey Today"}
+              {isRtl ? "ارتقِ بطلاقتك اللغوية مع إنترناشونال هاوس" : "Elevate Your Language Fluency with IH Saudi Arabia"}
             </h2>
             <p className="text-base sm:text-lg font-light text-slate-300 leading-relaxed max-w-3xl mx-auto">
               {isRtl
-                ? "سواء كنت تسعى لتحسين لغتك الإنجليزية، أو تعلم لغة جديدة، أو تطوير القوى العاملة لمؤسستك، فإن إنترناشونال هاوس السعودية مستعدة لمساندتك."
-                : "Whether you are looking to improve your English, learn a new language, develop your workforce, prepare for international qualifications, or explore global learning opportunities, IH Saudi Arabia is ready to support your success."}
+                ? "سواء كنت ترغب في تحسين لغتك الإنجليزية، أو الحصول على شهادة دولية، أو تدريب موظفي شركتك، فإن خبرائنا مستعدون لمساعدتك في كل خطوة."
+                : "Whether you want to master English, gain an international Cambridge qualification, train your corporate team, or study abroad, our certified academic team is here to support you."}
             </p>
           </motion.div>
 
           {/* Quick Actions */}
           <div className="pt-6">
             <h4 className="font-extrabold text-[#cf1430] text-xs uppercase tracking-wider mb-6">
-              {isRtl ? "روابط وإجراءات سريعة" : "Quick Actions"}
+              {isRtl ? "روابط سريعة ومباشرة" : "Quick Action Gateways"}
             </h4>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/courses/placement-test" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-xs bg-[#cf1430] text-white hover:bg-[#a50f26] hover:scale-[1.02] transition-all duration-300">
-                {isRtl ? "احجز اختبار تحديد المستوى" : "Book a Placement Test"}
+              <Link href="/placement-test-booking" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-[#cf1430] text-white hover:bg-[#a50f26] hover:scale-[1.02] shadow-lg shadow-[#cf1430]/25 transition-all duration-300">
+                <Sparkles className="w-4 h-4" />
+                <span>{isRtl ? "احجز اختبار تحديد المستوى" : "Book a Placement Test"}</span>
               </Link>
-              <Link href="/courses" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-xs bg-white/10 border border-white/20 text-white hover:bg-white/20 hover:scale-[1.02] transition-all duration-300">
-                {isRtl ? "استكشف الدورات" : "Explore Courses"}
+              <Link href="/courses" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-white/10 border border-white/20 text-white hover:bg-white/20 hover:scale-[1.02] transition-all duration-300">
+                <BookOpen className="w-4 h-4" />
+                <span>{isRtl ? "استكشف كتالوج الدورات" : "Explore Courses"}</span>
               </Link>
-              <Link href="/contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-xs bg-white/10 border border-white/20 text-white hover:bg-white/20 hover:scale-[1.02] transition-all duration-300">
-                {isRtl ? "طلب مقترح للشركات" : "Request a Corporate Proposal"}
+              <Link href="/corporate-training-request-form" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-white/10 border border-white/20 text-white hover:bg-white/20 hover:scale-[1.02] transition-all duration-300">
+                <Briefcase className="w-4 h-4" />
+                <span>{isRtl ? "طلب مقترح للشركات" : "Request Corporate Proposal"}</span>
               </Link>
-              <Link href="/contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-xs bg-white/10 border border-white/20 text-white hover:bg-white/20 hover:scale-[1.02] transition-all duration-300">
-                <FileDown className="w-3.5 h-3.5" />
-                {isRtl ? "طلب بروشور" : "Request Brochure"}
-              </Link>
-              <Link href="/contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-xs bg-white/10 border border-white/20 text-white hover:bg-white/20 hover:scale-[1.02] transition-all duration-300">
+              <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-white/10 border border-white/20 text-white hover:bg-white/20 hover:scale-[1.02] transition-all duration-300">
                 <Mail className="w-3.5 h-3.5" />
-                {isRtl ? "تواصل معنا" : "Contact Us"}
+                <span>{isRtl ? "تواصل معنا" : "Contact Us"}</span>
               </Link>
             </div>
           </div>
