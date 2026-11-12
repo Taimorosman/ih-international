@@ -246,7 +246,7 @@ export default function HeroSlider() {
                   className="flex flex-wrap gap-4"
                 >
                   <MotionLink
-                    href="/courses/placement-test"
+                    href="/placement-test-booking"
                     whileHover={{ y: -4, boxShadow: "0 10px 25px rgba(245, 166, 35, 0.45)" }}
                     whileTap={{ scale: 0.98 }}
                     className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-bold text-sm bg-accent text-white hover:bg-accent-dark transition-all duration-300"
@@ -254,7 +254,7 @@ export default function HeroSlider() {
                     {lang === "ar" ? "احجز اختبار تحديد المستوى ←" : "Book a Placement Test →"}
                   </MotionLink>
                   <MotionLink
-                    href="/courses/english-for-companies"
+                    href="/courses"
                     whileHover={{ y: -4, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
                     whileTap={{ scale: 0.98 }}
                     className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-bold text-sm text-white bg-white/5 backdrop-blur-md border border-white/25 hover:border-white/40 transition-all duration-300"
