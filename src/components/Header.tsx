@@ -153,7 +153,7 @@ export default function Header() {
       label: t("nav.courses"),
       href: "/courses",
       desc: t("nav.courses.desc"),
-      align: "center",
+      align: "left",
       groups: [
         {
           heading: t("nav.courses.col1_heading"),
@@ -399,10 +399,12 @@ export default function Header() {
   ];
 
   /* ─── Helper for dropdown horizontal positioning ─── */
-  const getDropdownPlacement = (align: "left" | "center" | "right" = "center") => {
+  const getDropdownPlacement = (align: "left" | "center" | "right" = "center", is3Col = false) => {
     if (align === "left") {
       return {
-        className: isRTL ? "right-0" : "left-0",
+        className: isRTL
+          ? (is3Col ? "right-0 lg:-right-8 xl:right-0" : "right-0")
+          : (is3Col ? "left-0 lg:-left-8 xl:left-0" : "left-0"),
       };
     }
     if (align === "right") {
@@ -519,7 +521,8 @@ export default function Header() {
 
               {/* 2 to 9. The 8 Mega-Menu Dropdown Items */}
               {mainNavItems.map((item) => {
-                const placement = getDropdownPlacement(item.align);
+                const is3Col = item.groups?.length === 3;
+                const placement = getDropdownPlacement(item.align, is3Col);
 
                 return (
                   <div
@@ -555,7 +558,7 @@ export default function Header() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 6 }}
                           transition={{ duration: 0.18, ease: "easeOut" }}
-                          className={`absolute top-full mt-1.5 ${placement.className} ${item.groups.length === 3 ? "w-[960px] xl:w-[1060px]" : "w-[780px] xl:w-[850px]"} bg-white/98 backdrop-blur-xl border border-slate-100 shadow-[0_24px_56px_rgba(0,0,0,0.16)] rounded-3xl p-6 z-50 grid grid-cols-12 gap-6`}
+                          className={`absolute top-full mt-1.5 ${placement.className} ${item.groups.length === 3 ? "w-[920px] xl:w-[980px]" : "w-[780px] xl:w-[850px]"} max-w-[calc(100vw-24px)] bg-white/98 backdrop-blur-xl border border-slate-100 shadow-[0_24px_56px_rgba(0,0,0,0.16)] rounded-3xl p-6 z-50 grid grid-cols-12 gap-6`}
                           onMouseEnter={() => openMenu(item.label)}
                           onMouseLeave={closeMenu}
                         >
