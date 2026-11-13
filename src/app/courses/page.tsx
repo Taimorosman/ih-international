@@ -118,6 +118,110 @@ const content = {
         title: "Placement Testing & Academic Guidance",
         subtitle: "Every successful learning journey begins with the right placement.",
         desc: "Our academic team provides placement testing and professional guidance to help learners select the most appropriate course and learning pathway based on their current level and future goals. We evaluate speaking, listening, reading, and grammar to build a tailored plan for you."
+      },
+      arabic: {
+        id: "arabic-language",
+        title: "Arabic Language & Cultural Studies",
+        subtitle: "Learn Arabic with IH Saudi Arabia",
+        desc: "Designed for expatriates, corporate teams, and diplomatic personnel, our Arabic programs offer a comprehensive gateway to communicating effectively and understanding local customs in Saudi Arabia. We combine language instruction with cultural immersion experiences to ensure practical fluency.",
+        focusTitle: "Available Modules",
+        focusItems: [
+          "Modern Standard Arabic (MSA)",
+          "Saudi Spoken Dialect (Hejazi & Najdi)",
+          "Business Arabic for Corporate Meetings",
+          "Diplomatic & Executive Arabic"
+        ],
+        suitableTitle: "Target Audience",
+        suitableItems: ["Expatriates", "Corporate Teams", "Diplomats", "International Residents"],
+        levelsTitle: "Course Formats",
+        levelsItems: ["Group Classes", "1-to-1 Private Coaching", "In-Company Corporate", "Online Live Classes"],
+        cta: "Enquire for Arabic"
+      },
+      globalLanguages: {
+        id: "global-languages",
+        title: "Global Languages (French, Spanish, Chinese, etc.)",
+        subtitle: "Multilingual Programs with Certified Native-Level Instructors",
+        desc: "Broaden your professional horizons with accredited global language courses. Whether preparing for academic study, international business expansion, or global travel, our CEFR-aligned courses build conversational confidence and cultural fluency.",
+        focusTitle: "Languages & Certifications",
+        focusItems: [
+          "French Language (DELF / DALF & Business French)",
+          "Spanish Language (DELE Preparation & Conversational)",
+          "Mandarin Chinese (HSK Exam Prep & Business Mandarin)",
+          "CEFR Standard Curriculum (A1 to C2)"
+        ],
+        cta: "Enquire for Global Languages"
+      },
+      studyAbroad: {
+        id: "study-abroad",
+        title: "Study Abroad",
+        subtitle: "Personalized International Study & Cultural Experiences",
+        desc: "Connect with the worldwide International House network across 50+ countries. We provide end-to-end guidance for students and professionals seeking immersive study abroad experiences, language immersion, summer camps, and university pathways in the UK, USA, Canada, Europe, and beyond.",
+        focusTitle: "Program Highlights",
+        focusItems: [
+          "50+ Countries across IH Global Network",
+          "Summer & Winter Language Immersions",
+          "University Foundation & Preparation",
+          "Full Visa & Accommodation Support"
+        ],
+        cta: "Explore Study Abroad"
+      },
+      culturalLearning: {
+        id: "cultural-learning",
+        title: "Cultural Learning & International Experiences",
+        subtitle: "Bridging Traditions and Global Communities",
+        desc: "Effective communication goes beyond language vocabulary. Our cultural workshops prepare international professionals to operate smoothly in the Kingdom and help Saudi students navigate cultural nuances during their international journeys.",
+        focusTitle: "Workshops & Experiences",
+        focusItems: [
+          "Saudi Cultural Onboarding for Expats",
+          "Cross-Cultural Corporate Workflows",
+          "Pre-Departure International Briefings",
+          "Bilingual Exchange & Cultural Events"
+        ],
+        cta: "Enquire About Cultural Learning"
+      },
+      additionalLanguages: {
+        id: "additional-world-languages",
+        title: "Additional World Languages",
+        subtitle: "German, Italian, Japanese, Korean, Turkish",
+        desc: "Broaden your linguistic portfolio with in-demand world languages delivered by certified instructors. Master grammar, conversational speaking, pronunciation, and cultural etiquette aligned with international CEFR standards.",
+        languages: [
+          {
+            id: "german",
+            name: "German (Deutsch)",
+            img: "/lang_german.png",
+            desc: "For higher education, engineering careers, and Goethe-Zertifikat preparation in Germany, Austria, and Switzerland.",
+            levels: "A1 to C1 • Interactive & Business"
+          },
+          {
+            id: "italian",
+            name: "Italian (Italiano)",
+            img: "/lang_italian.png",
+            desc: "For art, design, culinary arts, fashion industries, and CILS / CELI qualification preparation.",
+            levels: "A1 to B2 • Conversational & Culture"
+          },
+          {
+            id: "japanese",
+            name: "Japanese (日本語)",
+            img: "/lang_japanese.png",
+            desc: "JLPT preparation, business culture, travel Japanese, and multimedia language immersion.",
+            levels: "N5 to N2 • Scripts & Speaking"
+          },
+          {
+            id: "korean",
+            name: "Korean (한국어)",
+            img: "/lang_korean.png",
+            desc: "Hangul literacy, TOPIK exam preparation, pop culture fluency, and corporate communication.",
+            levels: "Levels 1 to 4 • Modern & Practical"
+          },
+          {
+            id: "turkish",
+            name: "Turkish (Türkçe)",
+            img: "/lang_turkish.png",
+            desc: "TÖMER preparation, travel, commerce, and academic exchange with Turkish universities.",
+            levels: "A1 to C1 • Fluency & Grammar"
+          }
+        ],
+        cta: "Register for World Languages"
       }
     },
     cta: {
@@ -218,6 +322,110 @@ const content = {
         title: "تحديد المستوى والتوجيه الأكاديمي",
         subtitle: "كل رحلة تعليمية ناجحة تبدأ بالتحديد الصحيح للمستوى",
         desc: "يقدم فريقنا الأكاديمي اختبارات تحديد المستوى والتوجيه المهني لمساعدة المتعلمين على اختيار الدورة التدريبية ومسار التعلم الأكثر ملاءمة بناءً على مستواهم الحالي وأهدافهم المستقبلية. نقوم بتقييم التحدث والاستماع والقراءة والقواعد لبناء مسار مخصص لك."
+      },
+      arabic: {
+        id: "arabic-language",
+        title: "اللغة العربية والدراسات الثقافية",
+        subtitle: "تعلم العربية مع الهاوس الدولي السعودية",
+        desc: "تم تصميم برامج اللغة العربية للمغتربين وفرق الشركات وأعضاء السلك الدبلوماسي والمقيمين، لتوفر مدخلاً شاملاً للتواصل الفعال وفهم العادات والتقاليد المحلية في المملكة. نجمع بين التعليم اللغوي وخبرات الانغماس الثقافي لضمان الطلاقة العملية.",
+        focusTitle: "المسارات المتاحة",
+        focusItems: [
+          "العربية الفصحى الحديثة (MSA)",
+          "اللهجة السعودية الحجازية والنجدية للتواصل اليومي",
+          "العربية للأعمال للشركات والمفاوضات",
+          "العربية التنفيذية والدبلوماسية"
+        ],
+        suitableTitle: "الفئات المستهدفة",
+        suitableItems: ["المغتربون", "فرق الشركات", "الدبلوماسيون", "المقيمون الدوليون"],
+        levelsTitle: "طرق التدريب",
+        levelsItems: ["دورات جماعية", "تدريب فردي خاص (1-to-1)", "تدريب الشركات الداخلي", "حصص حية أونلاين"],
+        cta: "استفسر عن دورات العربية"
+      },
+      globalLanguages: {
+        id: "global-languages",
+        title: "اللغات العالمية (الفرنسية، الإسبانية، الصينية، إلخ)",
+        subtitle: "برامج متعددة اللغات مع مدربين معتمدين",
+        desc: "نقدم في الهاوس الدولي برامج لغات عالمية معتمدة يدرسها نخبة من المتحدثين الأصليين المتخصصين. سواء كنت تستعد للدراسة الأكاديمية أو التوسع التجاري الدولي أو السفر، تمنحك دوراتنا المتوافقة مع معايير CEFR طلاقة حقيقية.",
+        focusTitle: "اللغات والشهادات المعتمدة",
+        focusItems: [
+          "اللغة الفرنسية (التحضير لـ DELF / DALF والفرنسية للأعمال)",
+          "اللغة الإسبانية (التحضير لـ DELE والمحادثة العامة)",
+          "اللغة الصينية الماندرين (التحضير لـ HSK والصينية للأعمال)",
+          "مناهج معيارية دولية من المستوى A1 إلى C2"
+        ],
+        cta: "استفسر عن اللغات العالمية"
+      },
+      studyAbroad: {
+        id: "study-abroad",
+        title: "الدراسة والابتعاث بالخارج",
+        subtitle: "دراسة دولية مخصصة وتجارب انغماس ثقافي",
+        desc: "تواصل مع شبكة الهاوس الدولي المنتشرة في أكثر من 50 دولة حول العالم. نقدم إرشاداً شاملاً ومتكاملاً للطلاب والمهنيين الباحثين عن برامج دراسية صيفية ودورات مكثفة والتحضير للجامعات في بريطانيا وأمريكا وكندا وأوروبا.",
+        focusTitle: "مميزات البرنامج",
+        focusItems: [
+          "أكثر من 50 دولة عبر شبكة IH العالمية",
+          "برامج انغماس لغوي صيفية وشتوية",
+          "إعداد السنة التحضيرية والقبولات الجامعية",
+          "دعم كامل للتأشيرات والسكن والإقامة"
+        ],
+        cta: "استكشف برامج الابتعاث"
+      },
+      culturalLearning: {
+        id: "cultural-learning",
+        title: "التعلم الثقافي والتجارب الدولية",
+        subtitle: "جسر يربط التقاليد والمجتمعات العالمية",
+        desc: "يتجاوز التواصل الفعال مجرد مفردات اللغة وقواعدها. تجهز ورش العمل الثقافية لدينا المهنيين الدوليين للعمل والعيش بسلاسة في المملكة، كما تساعد الطلاب المبتعثين على استيعاب الاختلافات الثقافية أثناء رحلاتهم.",
+        focusTitle: "ورش العمل والتجارب",
+        focusItems: [
+          "التهيئة الثقافية السعودية للمغتربين",
+          "التواصل بين الثقافات في بيئات العمل للشركات",
+          "جلسات إرشادية للمبتعثين قبل المغادرة",
+          "فعاليات التبادل اللغوي والأنشطة المجتمعية"
+        ],
+        cta: "استفسر عن التعلم الثقافي"
+      },
+      additionalLanguages: {
+        id: "additional-world-languages",
+        title: "لغات عالمية إضافية",
+        subtitle: "الألمانية، الإيطالية، اليابانية، الكورية، التركية",
+        desc: "وسّع آفاقك الشخصية والمهنية عبر تعلم 5 من أكثر لغات العالم طلباً مع مدربين معتمدين. دورات متخصصة تشمل القواعد والمحادثة والنطق والعمق الثقافي متوافقة مع أرقى المعايير الدولية.",
+        languages: [
+          {
+            id: "german",
+            name: "الألمانية (Deutsch)",
+            img: "/lang_german.png",
+            desc: "للتعليم العالي وفرص الهندسة والتحضير لاختبارات معهد جوته في ألمانيا والنمسا وسويسرا.",
+            levels: "A1 إلى C1 • تفاعلي وللأعمال"
+          },
+          {
+            id: "italian",
+            name: "الإيطالية (Italiano)",
+            img: "/lang_italian.png",
+            desc: "لقطاعات الفنون والتصميم والطهي والأزياء والتحضير لمؤهلات CILS و CELI.",
+            levels: "A1 إلى B2 • محادثة وثقافة"
+          },
+          {
+            id: "japanese",
+            name: "اليابانية (日本語)",
+            img: "/lang_japanese.png",
+            desc: "التحضير لاختبار JLPT وثقافة الأعمال وسياحة اليابان وتعلم الكتابة والنطق.",
+            levels: "N5 إلى N2 • كتابة ومحادثة"
+          },
+          {
+            id: "korean",
+            name: "الكورية (한국어)",
+            img: "/lang_korean.png",
+            desc: "تعلم الحروف الكورية (هانغل) والتحضير لاختبار TOPIK والتواصل المهني والثقافي.",
+            levels: "المستويات 1 إلى 4 • حديث وعملي"
+          },
+          {
+            id: "turkish",
+            name: "التركية (Türkçe)",
+            img: "/lang_turkish.png",
+            desc: "التحضير لاختبار TÖMER وفرص التجارة والسياحة والتبادل الأكاديمي مع الجامعات التركية.",
+            levels: "A1 إلى C1 • طلاقة وقواعد"
+          }
+        ],
+        cta: "سجل في اللغات العالمية"
       }
     },
     cta: {
@@ -417,11 +625,22 @@ export default function CoursesPage() {
       "general-english",
       "business-english",
       "technical-professional",
+      "technical-english",
       "exam-preparation",
       "young-learners",
       "online-hybrid",
       "private-tuition",
-      "placement-testing"
+      "placement-testing",
+      "arabic-language",
+      "global-languages",
+      "study-abroad-section",
+      "cultural-learning",
+      "additional-world-languages",
+      "german",
+      "italian",
+      "japanese",
+      "korean",
+      "turkish"
     ];
 
     sections.forEach((id) => {
@@ -452,16 +671,41 @@ export default function CoursesPage() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
   };
 
-  const menuItems = [
-    { id: "general-english", label: t.sections.general.title, icon: <BookOpen className="w-4 h-4" /> },
-    { id: "business-english", label: t.sections.business.title, icon: <Briefcase className="w-4 h-4" /> },
-    { id: "technical-professional", label: t.sections.technical.title, icon: <Wrench className="w-4 h-4" /> },
-    { id: "exam-preparation", label: t.sections.exams.title, icon: <GraduationCap className="w-4 h-4" /> },
-    { id: "young-learners", label: t.sections.young.title, icon: <Sparkles className="w-4 h-4" /> },
-    { id: "online-hybrid", label: t.sections.online.title, icon: <Laptop className="w-4 h-4" /> },
-    { id: "private-tuition", label: t.sections.private.title, icon: <UserCheck className="w-4 h-4" /> },
-    { id: "placement-testing", label: t.sections.guidance.title, icon: <ClipboardCheck className="w-4 h-4" /> },
+  const menuGroups = [
+    {
+      title: isRtl ? "برامج اللغات (الإنجليزية)" : "Language Programs",
+      items: [
+        { id: "general-english", label: t.sections.general.title, icon: <BookOpen className="w-4 h-4" /> },
+        { id: "business-english", label: t.sections.business.title, icon: <Briefcase className="w-4 h-4" /> },
+        { id: "technical-professional", label: t.sections.technical.title, icon: <Wrench className="w-4 h-4" /> },
+        { id: "online-hybrid", label: t.sections.online.title, icon: <Laptop className="w-4 h-4" /> },
+        { id: "young-learners", label: t.sections.young.title, icon: <Sparkles className="w-4 h-4" /> },
+        { id: "exam-preparation", label: t.sections.exams.title, icon: <GraduationCap className="w-4 h-4" /> },
+        { id: "private-tuition", label: t.sections.private.title, icon: <UserCheck className="w-4 h-4" /> },
+      ]
+    },
+    {
+      title: isRtl ? "اللغات العالمية" : "Global Languages",
+      items: [
+        { id: "arabic-language", label: t.sections.arabic.title, icon: <BookOpen className="w-4 h-4" /> },
+        { id: "global-languages", label: t.sections.globalLanguages.title, icon: <Languages className="w-4 h-4" /> },
+        { id: "study-abroad-section", label: t.sections.studyAbroad.title, icon: <Compass className="w-4 h-4" /> },
+        { id: "cultural-learning", label: t.sections.culturalLearning.title, icon: <Globe className="w-4 h-4" /> },
+      ]
+    },
+    {
+      title: isRtl ? "لغات عالمية إضافية" : "Additional World Languages",
+      items: [
+        { id: "german", label: isRtl ? "الألمانية (Deutsch)" : "German (Deutsch)", icon: <Globe className="w-4 h-4" /> },
+        { id: "italian", label: isRtl ? "الإيطالية (Italiano)" : "Italian (Italiano)", icon: <Globe className="w-4 h-4" /> },
+        { id: "japanese", label: isRtl ? "اليابانية (日本語)" : "Japanese (日本語)", icon: <Globe className="w-4 h-4" /> },
+        { id: "korean", label: isRtl ? "الكورية (한국어)" : "Korean (한국어)", icon: <Globe className="w-4 h-4" /> },
+        { id: "turkish", label: isRtl ? "التركية (Türkçe)" : "Turkish (Türkçe)", icon: <Globe className="w-4 h-4" /> },
+      ]
+    }
   ];
+
+  const flatMenuItems = menuGroups.flatMap((g) => g.items);
 
   return (
     <div className="bg-slate-50 min-h-screen pt-20 lg:pt-28">
@@ -572,79 +816,64 @@ export default function CoursesPage() {
           
           {/* Sticky Sidebar Navigation (Desktop) */}
           <aside className="hidden lg:block w-72 shrink-0">
-            <div className="sticky top-28 bg-white border border-slate-200 rounded-3xl p-5 shadow-sm">
+            <div className="sticky top-28 bg-white border border-slate-200 rounded-3xl p-5 shadow-sm max-h-[calc(100vh-140px)] overflow-y-auto">
               <h3 className="text-sm font-bold text-[#002f6c] font-['Montserrat',_sans-serif] uppercase tracking-wider mb-4 px-2">
-                {isRtl ? "تصفح البرامج" : "Browse Programs"}
+                {isRtl ? "فهرس الدورات والبرامج" : "Courses Directory"}
               </h3>
-              <nav className="flex flex-col gap-1">
-                {menuItems.map((item) => {
-                  const isActive = activeTab === item.id;
-                  return (
-                    <button
-                      key={item.id}
-                      onClick={() => scrollToSection(item.id)}
-                      className={`flex items-center gap-3 w-full px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-300 text-start group ${
-                        isActive
-                          ? "bg-[#002f6c] text-white shadow-md shadow-[#002f6c]/10"
-                          : "text-slate-600 hover:text-[#002f6c] hover:bg-slate-50"
-                      }`}
-                    >
-                      <span className={`shrink-0 transition-colors ${isActive ? "text-white" : "text-slate-400 group-hover:text-[#002f6c]"}`}>
-                        {item.icon}
+              
+              <div className="space-y-4">
+                {menuGroups.map((group, gIdx) => (
+                  <div key={gIdx} className={gIdx > 0 ? "pt-3 border-t border-slate-100" : ""}>
+                    <div className="text-[11px] font-black uppercase tracking-wider text-[#002f6c]/70 px-2 pb-1.5 flex items-center justify-between">
+                      <span>{group.title}</span>
+                      <span className="text-[10px] font-bold px-1.5 py-0.2 rounded bg-slate-100 text-slate-500">
+                        {group.items.length}
                       </span>
-                      <span className="truncate">{item.label}</span>
-                      {isActive && (
-                        <motion.span
-                          layoutId="sidebarActiveIndicator"
-                          className={`ms-auto shrink-0 ${isRtl ? "rotate-180" : ""}`}
-                        >
-                          <ChevronRight className="w-4 h-4 text-white/80" />
-                        </motion.span>
-                      )}
-                    </button>
-                  );
-                })}
-              </nav>
-
-              {/* Global & Additional World Languages links */}
-              <div className="pt-4 mt-4 border-t border-slate-100 space-y-1">
-                <div className="text-[10px] font-black uppercase tracking-wider text-slate-400 px-2 pb-1">
-                  {isRtl ? "اللغات العالمية" : "Global & World Languages"}
-                </div>
-                <Link
-                  href="/languages-programs"
-                  className="flex items-center gap-2.5 w-full px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-[#002f6c] hover:bg-slate-50 transition-all text-start"
-                >
-                  <Globe className="w-4 h-4 text-slate-400 shrink-0" />
-                  <span className="truncate">{isRtl ? "اللغات العالمية" : "Global Languages"}</span>
-                </Link>
-                <Link
-                  href="/languages-programs#additional"
-                  className="flex items-center gap-2.5 w-full px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-[#002f6c] hover:bg-slate-50 transition-all text-start"
-                >
-                  <Languages className="w-4 h-4 text-slate-400 shrink-0" />
-                  <span className="truncate">{isRtl ? "لغات عالمية إضافية" : "Additional World Languages"}</span>
-                </Link>
-                <Link
-                  href="/study-abroad"
-                  className="flex items-center gap-2.5 w-full px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-[#002f6c] hover:bg-slate-50 transition-all text-start"
-                >
-                  <Compass className="w-4 h-4 text-slate-400 shrink-0" />
-                  <span className="truncate">{isRtl ? "الدراسة والابتعاث بالخارج" : "Study Abroad"}</span>
-                </Link>
+                    </div>
+                    <nav className="flex flex-col gap-0.5">
+                      {group.items.map((item) => {
+                        const isActive = activeTab === item.id;
+                        return (
+                          <button
+                            key={item.id}
+                            onClick={() => scrollToSection(item.id)}
+                            className={`flex items-center gap-2.5 w-full px-3 py-2 rounded-xl text-xs font-semibold transition-all duration-200 text-start group ${
+                              isActive
+                                ? "bg-[#002f6c] text-white shadow-sm"
+                                : "text-slate-600 hover:text-[#002f6c] hover:bg-slate-50"
+                            }`}
+                          >
+                            <span className={`shrink-0 transition-colors ${isActive ? "text-white" : "text-slate-400 group-hover:text-[#002f6c]"}`}>
+                              {item.icon}
+                            </span>
+                            <span className="truncate">{item.label}</span>
+                            {isActive && (
+                              <motion.span
+                                layoutId="sidebarActiveIndicator"
+                                className={`ms-auto shrink-0 ${isRtl ? "rotate-180" : ""}`}
+                              >
+                                <ChevronRight className="w-3.5 h-3.5 text-white/80" />
+                              </motion.span>
+                            )}
+                          </button>
+                        );
+                      })}
+                    </nav>
+                  </div>
+                ))}
               </div>
             </div>
           </aside>
 
           {/* Sticky Tab Bar (Mobile & Tablet) */}
           <div className="lg:hidden sticky top-16 z-30 bg-slate-50/95 backdrop-blur-md py-3 -mx-4 px-4 overflow-x-auto border-b border-slate-200 flex gap-2 select-none scrollbar-none">
-            {menuItems.map((item) => {
+            {flatMenuItems.map((item) => {
               const isActive = activeTab === item.id;
               return (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all shrink-0 ${
+                  className={`flex items-center gap-2 px-3.5 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all shrink-0 ${
                     isActive
                       ? "bg-[#002f6c] text-white shadow-md shadow-[#002f6c]/15"
                       : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-50"
@@ -807,6 +1036,7 @@ export default function CoursesPage() {
             </motion.div>
 
             {/* 3. Technical & Professional English */}
+            <div id="technical-english" className="scroll-mt-28" />
             <motion.div
               id="technical-professional"
               initial="hidden"
@@ -1183,6 +1413,378 @@ export default function CoursesPage() {
               </div>
             </motion.div>
 
+            {/* ═════════════════════════════════════════════════════════════ */}
+            {/* ─── COLUMN 2: GLOBAL LANGUAGES ─── */}
+            {/* ═════════════════════════════════════════════════════════════ */}
+            <div className="pt-10 pb-4 border-b-2 border-slate-200">
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#002f6c]/10 text-[#002f6c] text-xs font-bold uppercase tracking-wider mb-2">
+                <Globe className="w-3.5 h-3.5" />
+                {isRtl ? "المحور الثاني: اللغات العالمية" : "Pillar 2: Global Languages"}
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-[#002f6c] font-['Montserrat',_sans-serif]">
+                {isRtl ? "برامج اللغات العالمية والدراسات الثقافية" : "Global Languages & Cultural Programs"}
+              </h2>
+            </div>
+
+            {/* 9. Arabic Language & Cultural Studies */}
+            <div id="arabic" className="scroll-mt-28" />
+            <motion.div
+              id="arabic-language"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeInUp}
+              className="bg-[#002f6c]/5 border border-[#002f6c]/20 border-l-4 border-l-[#002f6c] rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-[#002f6c]/10 transition-all duration-300 p-6 sm:p-8 lg:p-10 scroll-mt-28"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div className="lg:col-span-5 relative h-64 sm:h-80 rounded-2xl overflow-hidden shadow-sm border border-slate-200">
+                  <Image
+                    src="/lang_arabic.png"
+                    alt={t.sections.arabic.title}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 400px"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                </div>
+                <div className="lg:col-span-7 text-start flex flex-col justify-between h-full">
+                  <div>
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#002f6c]/10 text-[#002f6c] text-xs font-bold uppercase mb-4">
+                      <BookOpen className="w-3.5 h-3.5" />
+                      {isRtl ? "تعلم العربية مع IH" : "Learn Arabic with IH"}
+                    </span>
+                    <h2 className="text-3xl font-black text-[#002f6c] font-['Montserrat',_sans-serif] leading-tight mb-2">
+                      {t.sections.arabic.title}
+                    </h2>
+                    <h4 className="text-lg font-bold text-slate-500 mb-4">
+                      {t.sections.arabic.subtitle}
+                    </h4>
+                    <p className="text-slate-600 font-light leading-relaxed mb-6">
+                      {t.sections.arabic.desc}
+                    </p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8 border-t border-slate-200/50 pt-6">
+                      <div>
+                        <h5 className="text-sm font-bold text-slate-800 uppercase tracking-wider mb-3">
+                          {t.sections.arabic.focusTitle}
+                        </h5>
+                        <ul className="space-y-1.5">
+                          {t.sections.arabic.focusItems.map((item) => (
+                            <li key={item} className="flex items-center gap-2 text-sm text-slate-600 font-light">
+                              <Check className="w-4 h-4 text-[#002f6c] shrink-0" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="text-sm font-bold text-slate-800 uppercase tracking-wider mb-3">
+                          {t.sections.arabic.levelsTitle}
+                        </h5>
+                        <div className="flex flex-wrap gap-1.5">
+                          {t.sections.arabic.levelsItems.map((lvl) => (
+                            <span key={lvl} className="px-2.5 py-1 bg-white hover:bg-slate-100 transition-colors text-slate-700 text-xs font-semibold rounded-lg border border-slate-200">
+                              {lvl}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <a
+                    href="#register-section"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setForm((prev) => ({ ...prev, course: "arabic" }));
+                      scrollToSection("register-section");
+                    }}
+                    className="inline-flex items-center justify-center gap-2 self-start px-6 py-3 bg-[#002f6c] hover:bg-[#cf1430] text-white text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group"
+                  >
+                    {t.sections.arabic.cta}
+                    <ArrowRight className={`w-4 h-4 transition-transform group-hover:translate-x-1 ${isRtl ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* 10. Global Languages (French, Spanish, Chinese, etc.) */}
+            <motion.div
+              id="global-languages"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeInUp}
+              className="bg-[#00d084]/5 border border-[#00d084]/20 border-l-4 border-l-[#00d084] rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-[#00d084]/10 transition-all duration-300 p-6 sm:p-8 lg:p-10 scroll-mt-28"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div className="lg:col-span-7 text-start flex flex-col justify-between h-full order-2 lg:order-1">
+                  <div>
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00d084]/15 text-[#008a55] text-xs font-bold uppercase mb-4">
+                      <Languages className="w-3.5 h-3.5" />
+                      {isRtl ? "اللغات العالمية (الفرنسية، الإسبانية، الصينية)" : "Global Languages"}
+                    </span>
+                    <h2 className="text-3xl font-black text-[#008a55] font-['Montserrat',_sans-serif] leading-tight mb-2">
+                      {t.sections.globalLanguages.title}
+                    </h2>
+                    <h4 className="text-lg font-bold text-slate-500 mb-4">
+                      {t.sections.globalLanguages.subtitle}
+                    </h4>
+                    <p className="text-slate-600 font-light leading-relaxed mb-6">
+                      {t.sections.globalLanguages.desc}
+                    </p>
+
+                    <div className="mb-8 border-t border-slate-200/50 pt-6">
+                      <h5 className="text-sm font-bold text-slate-800 uppercase tracking-wider mb-3">
+                        {t.sections.globalLanguages.focusTitle}
+                      </h5>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {t.sections.globalLanguages.focusItems.map((item) => (
+                          <div key={item} className="flex items-center gap-2 text-sm text-slate-700 font-semibold p-2.5 bg-white border border-slate-150 rounded-xl">
+                            <Check className="w-4 h-4 text-[#00ab6c] shrink-0" />
+                            {item}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-3">
+                    <a
+                      href="#register-section"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setForm((prev) => ({ ...prev, course: "global-languages" }));
+                        scrollToSection("register-section");
+                      }}
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#002f6c] hover:bg-[#cf1430] text-white text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group"
+                    >
+                      {t.sections.globalLanguages.cta}
+                      <ArrowRight className={`w-4 h-4 transition-transform group-hover:translate-x-1 ${isRtl ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
+                    </a>
+                    <Link
+                      href="/languages-programs"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white hover:bg-slate-50 text-slate-700 text-sm font-bold rounded-xl border border-slate-200 shadow-sm transition-all"
+                    >
+                      {isRtl ? "عرض تفاصيل البرامج" : "Detailed Curriculum"}
+                      <ArrowRight className={`w-4 h-4 ${isRtl ? "rotate-180" : ""}`} />
+                    </Link>
+                  </div>
+                </div>
+                <div className="lg:col-span-5 relative h-64 sm:h-80 rounded-2xl overflow-hidden shadow-sm order-1 lg:order-2 border border-slate-200">
+                  <Image
+                    src="/lang_french.png"
+                    alt={t.sections.globalLanguages.title}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 400px"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* 11. Study Abroad */}
+            <div id="study-abroad" className="scroll-mt-28" />
+            <motion.div
+              id="study-abroad-section"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeInUp}
+              className="bg-[#fcb900]/5 border border-[#fcb900]/20 border-l-4 border-l-[#fcb900] rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-[#fcb900]/10 transition-all duration-300 p-6 sm:p-8 lg:p-10 scroll-mt-28"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div className="lg:col-span-5 relative h-64 sm:h-80 rounded-2xl overflow-hidden shadow-sm border border-slate-200">
+                  <Image
+                    src="/dest_london.png"
+                    alt={t.sections.studyAbroad.title}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 400px"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                </div>
+                <div className="lg:col-span-7 text-start flex flex-col justify-between h-full">
+                  <div>
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#fcb900]/15 text-[#b27d00] text-xs font-bold uppercase mb-4">
+                      <Compass className="w-3.5 h-3.5" />
+                      {isRtl ? "الدراسة والابتعاث بالخارج" : "Personalized International Study"}
+                    </span>
+                    <h2 className="text-3xl font-black text-[#b27d00] font-['Montserrat',_sans-serif] leading-tight mb-2">
+                      {t.sections.studyAbroad.title}
+                    </h2>
+                    <h4 className="text-lg font-bold text-slate-500 mb-4">
+                      {t.sections.studyAbroad.subtitle}
+                    </h4>
+                    <p className="text-slate-600 font-light leading-relaxed mb-6">
+                      {t.sections.studyAbroad.desc}
+                    </p>
+
+                    <div className="mb-8 border-t border-slate-200/50 pt-6">
+                      <h5 className="text-sm font-bold text-slate-800 uppercase tracking-wider mb-3">
+                        {t.sections.studyAbroad.focusTitle}
+                      </h5>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {t.sections.studyAbroad.focusItems.map((item) => (
+                          <div key={item} className="flex items-center gap-2 text-sm text-slate-600 font-light">
+                            <Check className="w-4 h-4 text-[#d99e00] shrink-0" />
+                            {item}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-3">
+                    <Link
+                      href="/study-abroad"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#002f6c] hover:bg-[#cf1430] text-white text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group"
+                    >
+                      {t.sections.studyAbroad.cta}
+                      <ArrowRight className={`w-4 h-4 transition-transform group-hover:translate-x-1 ${isRtl ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* 12. Cultural Learning & International Experiences */}
+            <div id="cultural" className="scroll-mt-28" />
+            <motion.div
+              id="cultural-learning"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeInUp}
+              className="bg-[#9b51e0]/5 border border-[#9b51e0]/20 border-l-4 border-l-[#9b51e0] rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-[#9b51e0]/10 transition-all duration-300 p-6 sm:p-8 lg:p-10 scroll-mt-28"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div className="lg:col-span-7 text-start flex flex-col justify-between h-full order-2 lg:order-1">
+                  <div>
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#9b51e0]/15 text-[#65259e] text-xs font-bold uppercase mb-4">
+                      <Sparkles className="w-3.5 h-3.5" />
+                      {isRtl ? "تجارب السفر والتبادل الثقافي" : "Cultural Experiences & Travel"}
+                    </span>
+                    <h2 className="text-3xl font-black text-[#65259e] font-['Montserrat',_sans-serif] leading-tight mb-2">
+                      {t.sections.culturalLearning.title}
+                    </h2>
+                    <h4 className="text-lg font-bold text-slate-500 mb-4">
+                      {t.sections.culturalLearning.subtitle}
+                    </h4>
+                    <p className="text-slate-600 font-light leading-relaxed mb-6">
+                      {t.sections.culturalLearning.desc}
+                    </p>
+
+                    <div className="mb-8 border-t border-slate-200/50 pt-6">
+                      <h5 className="text-sm font-bold text-slate-800 uppercase tracking-wider mb-3">
+                        {t.sections.culturalLearning.focusTitle}
+                      </h5>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {t.sections.culturalLearning.focusItems.map((item) => (
+                          <div key={item} className="flex items-center gap-2 text-sm text-slate-600 font-light">
+                            <Check className="w-4 h-4 text-[#8038c3] shrink-0" />
+                            {item}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <a
+                    href="#register-section"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setForm((prev) => ({ ...prev, course: "cultural" }));
+                      scrollToSection("register-section");
+                    }}
+                    className="inline-flex items-center justify-center gap-2 self-start px-6 py-3 bg-[#002f6c] hover:bg-[#cf1430] text-white text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group"
+                  >
+                    {t.sections.culturalLearning.cta}
+                    <ArrowRight className={`w-4 h-4 transition-transform group-hover:translate-x-1 ${isRtl ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
+                  </a>
+                </div>
+                <div className="lg:col-span-5 relative h-64 sm:h-80 rounded-2xl overflow-hidden shadow-sm order-1 lg:order-2 border border-slate-200">
+                  <Image
+                    src="/values_mission.png"
+                    alt={t.sections.culturalLearning.title}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 400px"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* ═════════════════════════════════════════════════════════════ */}
+            {/* ─── COLUMN 3: ADDITIONAL WORLD LANGUAGES ─── */}
+            {/* ═════════════════════════════════════════════════════════════ */}
+            <div id="additional-world-languages" className="pt-10 pb-4 border-b-2 border-slate-200 scroll-mt-28">
+              <div id="additional" className="scroll-mt-28" />
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#cf1430]/10 text-[#cf1430] text-xs font-bold uppercase tracking-wider mb-2">
+                <Languages className="w-3.5 h-3.5" />
+                {isRtl ? "المحور الثالث: لغات عالمية إضافية" : "Pillar 3: Additional World Languages"}
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-[#002f6c] font-['Montserrat',_sans-serif]">
+                {t.sections.additionalLanguages.title}
+              </h2>
+              <p className="text-slate-600 font-light mt-2 max-w-3xl leading-relaxed">
+                {t.sections.additionalLanguages.desc}
+              </p>
+            </div>
+
+            {/* Grid of the 5 Additional World Languages */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {t.sections.additionalLanguages.languages.map((langItem) => (
+                <motion.div
+                  key={langItem.id}
+                  id={langItem.id}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-50px" }}
+                  variants={fadeInUp}
+                  className="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:border-red-500/30 transition-all duration-300 flex flex-col justify-between scroll-mt-28 group"
+                >
+                  <div>
+                    <div className="relative aspect-[16/10] bg-slate-100 overflow-hidden">
+                      <Image
+                        src={langItem.img}
+                        alt={langItem.name}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                      <div className="absolute bottom-3 start-3 px-3 py-1 rounded-lg bg-black/60 backdrop-blur-md text-white text-xs font-bold">
+                        {langItem.name}
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-[#002f6c] mb-2 group-hover:text-[#cf1430] transition-colors">
+                        {langItem.name}
+                      </h3>
+                      <div className="text-xs font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md inline-block mb-3">
+                        {langItem.levels}
+                      </div>
+                      <p className="text-slate-600 text-xs sm:text-sm font-light leading-relaxed">
+                        {langItem.desc}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="p-6 pt-0 border-t border-slate-100 mt-4">
+                    <a
+                      href="#register-section"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setForm((prev) => ({ ...prev, course: langItem.id }));
+                        scrollToSection("register-section");
+                      }}
+                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#002f6c] hover:bg-[#cf1430] text-white text-xs font-bold rounded-xl transition-all shadow-sm"
+                    >
+                      {isRtl ? `التسجيل في دورة ${langItem.name}` : `Register for ${langItem.name}`}
+                      <ArrowRight className={`w-3.5 h-3.5 ${isRtl ? "rotate-180" : ""}`} />
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
           </div>
         </div>
       </div>
@@ -1475,14 +2077,28 @@ export default function CoursesPage() {
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-gray-800 bg-slate-50/50 focus:outline-none focus:border-blue-500 appearance-none cursor-pointer"
                     >
                       <option value="">{isRtl ? "اختر الدورة المفضلة" : "Select preferred course"}</option>
-                      <option value="general">{isRtl ? "اللغة الإنجليزية العامة" : "General English"}</option>
-                      <option value="business">{isRtl ? "اللغة الإنجليزية للأعمال" : "Business English"}</option>
-                      <option value="ielts">{isRtl ? "التحضير لاختبار آيلتس" : "IELTS Preparation"}</option>
-                      <option value="young-learners">{isRtl ? "برامج الصغار والشباب" : "Young Learners Program"}</option>
-                      <option value="online">{isRtl ? "التعلم عبر الإنترنت والهجين" : "Online & Hybrid Learning"}</option>
-                      <option value="private">{isRtl ? "الدروس الخصوصية والتدريب الفردي" : "Private Tuition"}</option>
-                      <option value="arabic">{isRtl ? "تعلم العربية مع IH" : "Learn Arabic with IH"}</option>
-                      <option value="esp">{isRtl ? "إنجليزية لأغراض خاصة (ESP)" : "English for Specific Purposes (ESP)"}</option>
+                      <optgroup label={isRtl ? "برامج اللغات (الإنجليزية)" : "Language Programs (English)"}>
+                        <option value="general">{isRtl ? "اللغة الإنجليزية العامة" : "General English"}</option>
+                        <option value="business">{isRtl ? "اللغة الإنجليزية للأعمال" : "Business English"}</option>
+                        <option value="technical">{isRtl ? "اللغة الإنجليزية الفنية والتخصصية" : "Technical & Professional English"}</option>
+                        <option value="online">{isRtl ? "التعلم عبر الإنترنت والهجين" : "Online & Hybrid Learning"}</option>
+                        <option value="young-learners">{isRtl ? "برامج الصغار والشباب" : "Young Learners Program"}</option>
+                        <option value="ielts">{isRtl ? "التحضير للاختبارات الدولية (IELTS / Cambridge)" : "International Exam Preparation"}</option>
+                        <option value="private">{isRtl ? "الدروس الخصوصية والتدريب الفردي" : "Private Tuition & Coaching"}</option>
+                      </optgroup>
+                      <optgroup label={isRtl ? "اللغات العالمية" : "Global Languages"}>
+                        <option value="arabic">{isRtl ? "اللغة العربية والدراسات الثقافية" : "Arabic Language & Cultural Studies"}</option>
+                        <option value="global-languages">{isRtl ? "اللغات العالمية (الفرنسية، الإسبانية، الصينية)" : "Global Languages (French, Spanish, Chinese)"}</option>
+                        <option value="study-abroad">{isRtl ? "الدراسة والابتعاث بالخارج" : "Study Abroad Programs"}</option>
+                        <option value="cultural">{isRtl ? "التعلم الثقافي والتجارب الدولية" : "Cultural Learning & Experiences"}</option>
+                      </optgroup>
+                      <optgroup label={isRtl ? "لغات عالمية إضافية" : "Additional World Languages"}>
+                        <option value="german">{isRtl ? "الألمانية (Deutsch)" : "German (Deutsch)"}</option>
+                        <option value="italian">{isRtl ? "الإيطالية (Italiano)" : "Italian (Italiano)"}</option>
+                        <option value="japanese">{isRtl ? "اليابانية (日本語)" : "Japanese (日本語)"}</option>
+                        <option value="korean">{isRtl ? "الكورية (한국어)" : "Korean (한국어)"}</option>
+                        <option value="turkish">{isRtl ? "التركية (Türkçe)" : "Turkish (Türkçe)"}</option>
+                      </optgroup>
                     </select>
                   </div>
                 </div>

@@ -8,7 +8,8 @@ import {
   BookOpen, Briefcase, Wrench, Award, Users, Laptop,
   ClipboardCheck, ArrowRight, Eye, Target, Heart, Rocket,
   Star, Shield, GraduationCap, TrendingUp, FileText,
-  Layers, MapPin, Compass, Sparkles, Lightbulb, HelpCircle
+  Layers, MapPin, Compass, Sparkles, Lightbulb, HelpCircle,
+  Languages
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
@@ -147,37 +148,47 @@ export default function Header() {
       }
     },
 
-    // 2. COURSES
+    // 2. COURSES (Exact 3-Column Architecture from Official Curriculum)
     {
       label: t("nav.courses"),
       href: "/courses",
       desc: t("nav.courses.desc"),
-      align: "left",
+      align: "center",
       groups: [
         {
-          heading: lang === "ar" ? "برامج اللغة الإنجليزية" : "Core English Programs",
+          heading: t("nav.courses.col1_heading"),
           items: [
-            { label: t("nav.courses.general"), href: "/courses#general-english", icon: BookOpen, desc: lang === "ar" ? "تأسيس الطلاقة والدقة اللغوية" : "Fluency, vocabulary & speaking" },
-            { label: t("nav.courses.business"), href: "/courses#business-english", icon: Briefcase, desc: lang === "ar" ? "للتواصل المؤسسي والمهني" : "Meetings, negotiations & reports" },
-            { label: t("nav.courses.technical"), href: "/courses#technical-professional", icon: Wrench, desc: lang === "ar" ? "للصناعات والمجالات المتخصصة" : "Engineering, aviation, healthcare" },
-            { label: t("nav.courses.exam_prep"), href: "/courses#exam-preparation", icon: Award, desc: lang === "ar" ? "تحضير مكثف لـ IELTS وكامبريدج" : "IELTS & Cambridge exam prep" },
-            { label: t("nav.courses.young_learners_sub"), href: "/courses#young-learners", icon: Users, desc: lang === "ar" ? "برامج الصغار واليافعين" : "Interactive kids & teens tracks" },
+            { label: t("nav.courses.general"), href: "/courses#general-english", icon: BookOpen, desc: t("nav.courses.general_sub") },
+            { label: t("nav.courses.business"), href: "/courses#business-english", icon: Briefcase, desc: t("nav.courses.business_sub") },
+            { label: t("nav.courses.technical"), href: "/courses#technical-english", icon: Wrench, desc: t("nav.courses.technical_sub") },
+            { label: t("nav.courses.online_hybrid"), href: "/courses#online-hybrid", icon: Laptop, desc: t("nav.courses.online_sub") },
+            { label: t("nav.courses.young_learners_sub"), href: "/courses#young-learners", icon: Users, desc: t("nav.courses.young_sub") },
           ],
         },
         {
-          heading: lang === "ar" ? "بيئات التعلم والتوجيه" : "Flexible Learning & Testing",
+          heading: t("nav.courses.col2_heading"),
           items: [
-            { label: t("nav.courses.online_hybrid"), href: "/courses#online-hybrid", icon: Laptop, desc: lang === "ar" ? "فصول افتراضية مرنة ومدمجة" : "Interactive virtual classrooms" },
-            { label: t("nav.courses.private_tuition"), href: "/courses#private-tuition", icon: Star, desc: lang === "ar" ? "تدريب فردي وتنفيذي مخصص" : "1-on-1 personalized coaching" },
-            { label: t("nav.courses.placement_testing"), href: "/courses#placement-testing", icon: ClipboardCheck, desc: lang === "ar" ? "تحديد المستوى بدقة وإرشاد أكاديمي" : "Free CEFR placement assessment" },
-            { label: t("nav.courses.start_learning"), href: "/registration-form", icon: Rocket, desc: lang === "ar" ? "سجل الآن وانضم إلى IH السعودية" : "Register today & start learning", badge: "REGISTER" },
+            { label: t("nav.courses.arabic_title"), href: "/courses#arabic-language", icon: BookOpen, desc: t("nav.courses.arabic_sub") },
+            { label: t("nav.courses.global_lang_title"), href: "/courses#global-languages", icon: Languages, desc: t("nav.courses.global_lang_sub") },
+            { label: t("nav.courses.study_abroad_title"), href: "/study-abroad", icon: Compass, desc: t("nav.courses.study_abroad_sub") },
+            { label: t("nav.courses.cultural_learning_title"), href: "/courses#cultural-learning", icon: Sparkles, desc: t("nav.courses.cultural_learning_sub") },
+          ],
+        },
+        {
+          heading: t("nav.courses.col3_heading"),
+          items: [
+            { label: t("nav.courses.german"), href: "/courses#german", icon: Globe, desc: t("nav.courses.german_sub") },
+            { label: t("nav.courses.italian"), href: "/courses#italian", icon: Globe, desc: t("nav.courses.italian_sub") },
+            { label: t("nav.courses.japanese"), href: "/courses#japanese", icon: Globe, desc: t("nav.courses.japanese_sub") },
+            { label: t("nav.courses.korean"), href: "/courses#korean", icon: Globe, desc: t("nav.courses.korean_sub") },
+            { label: t("nav.courses.turkish"), href: "/courses#turkish", icon: Globe, desc: t("nav.courses.turkish_sub") },
           ],
         }
       ],
       bottomBar: {
         title: lang === "ar" ? "استكشف جميع المسارات والدورات التعليمية" : "Explore All Courses & Learning Pathways",
-        desc: lang === "ar" ? "انتقل إلى كتالوج الدورات الشامل للاطلاع على كافة البرامج والمسارات" : "View the full catalog of English language programs and cohort schedules",
-        btnText: lang === "ar" ? "استكشف دوراتنا" : "Explore our courses",
+        desc: lang === "ar" ? "انتقل إلى كتالوج الدورات الشامل للاطلاع على كافة البرامج والمسارات" : "View the full catalog of language programs, world languages & schedules",
+        btnText: lang === "ar" ? "استكشف جميع الدورات" : "Explore all courses",
         href: "/courses"
       }
     },
@@ -544,12 +555,12 @@ export default function Header() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 6 }}
                           transition={{ duration: 0.18, ease: "easeOut" }}
-                          className={`absolute top-full mt-1.5 ${placement.className} w-[780px] xl:w-[850px] bg-white/98 backdrop-blur-xl border border-slate-100 shadow-[0_24px_56px_rgba(0,0,0,0.16)] rounded-3xl p-6 z-50 grid grid-cols-12 gap-6`}
+                          className={`absolute top-full mt-1.5 ${placement.className} ${item.groups.length === 3 ? "w-[960px] xl:w-[1060px]" : "w-[780px] xl:w-[850px]"} bg-white/98 backdrop-blur-xl border border-slate-100 shadow-[0_24px_56px_rgba(0,0,0,0.16)] rounded-3xl p-6 z-50 grid grid-cols-12 gap-6`}
                           onMouseEnter={() => openMenu(item.label)}
                           onMouseLeave={closeMenu}
                         >
                           {/* Subgroups Columns */}
-                          <div className={`${item.promo ? "col-span-8" : "col-span-12"} grid grid-cols-2 gap-5 text-start`}>
+                          <div className={`${item.promo ? "col-span-8" : "col-span-12"} grid ${item.groups.length === 3 ? "grid-cols-3 gap-5" : "grid-cols-2 gap-5"} text-start`}>
                             {item.groups.map((group, gIdx) => (
                               <div key={gIdx} className="space-y-3">
                                 <h4 className="text-[10.5px] font-black tracking-wider uppercase text-[#002f6c] border-b border-slate-100 pb-1.5">
