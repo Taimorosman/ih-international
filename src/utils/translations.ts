@@ -69,7 +69,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     "nav.courses.exam_prep": "International Examination Preparation",
     "nav.courses.private_tuition": "Private Tuition & Executive Coaching",
     "nav.courses.placement_testing": "Placement Testing & Academic Guidance",
-    "nav.courses.start_learning": "Start Learning with IH Saudi Arabia",
+    "nav.courses.start_learning": "Register To Start Learning with IH Saudi Arabia",
 
     "nav.languages.desc": "Explore World Languages & Cultural Programs",
     "nav.languages.arabic": "Arabic Language & Cultural Studies",
@@ -449,7 +449,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     "nav.courses.exam_prep": "التحضير للاختبارات الدولية",
     "nav.courses.private_tuition": "الدروس الخصوصية والتدريب التنفيذي",
     "nav.courses.placement_testing": "اختبار التصنيف والتوجيه الأكاديمي",
-    "nav.courses.start_learning": "ابدأ التعلم مع IH السعودية",
+    "nav.courses.start_learning": "سجل لتبدأ التعلم مع IH السعودية",
 
     "nav.languages.desc": "استكشف اللغات العالمية والبرامج الثقافية",
     "nav.languages.arabic": "اللغة العربية والدراسات الثقافية",

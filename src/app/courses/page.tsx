@@ -225,7 +225,7 @@ const content = {
       }
     },
     cta: {
-      title: "Start Learning with IH Saudi Arabia",
+      title: "Register To Start Learning with IH Saudi Arabia",
       subtitle: "Whether you are taking your first steps in English, preparing for an international examination, developing workplace communication skills, or supporting your child's educational success, IH Saudi Arabia offers a learning pathway designed for you.",
       placement: "Book a Placement Test",
       explore: "Explore Learning Options",
@@ -429,7 +429,7 @@ const content = {
       }
     },
     cta: {
-      title: "ابدأ التعلم مع الهاوس الدولي السعودية",
+      title: "سجل لتبدأ التعلم مع الهاوس الدولي السعودية",
       subtitle: "سواء كنت تخطو خطواتك الأولى في اللغة الإنجليزية، أو تستعد لامتحان دولي، أو تطور مهارات التواصل في مكان العمل، أو تدعم النجاح التعليمي لطفلك، فإن الهاوس الدولي السعودية يقدم مساراً تعليمياً مصمماً خصيصاً لك.",
       placement: "احجز اختبار تحديد المستوى",
       explore: "استكشف خيارات التعلم",
