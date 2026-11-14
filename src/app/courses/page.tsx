@@ -183,42 +183,192 @@ const content = {
         id: "additional-world-languages",
         title: "Additional World Languages",
         subtitle: "German, Italian, Japanese, Korean, Turkish",
-        desc: "Broaden your linguistic portfolio with in-demand world languages delivered by certified instructors. Master grammar, conversational speaking, pronunciation, and cultural etiquette aligned with international CEFR standards.",
+        desc: "Broaden your linguistic portfolio with accredited world language courses delivered by certified native-level educators. Each program is structured around international frameworks (CEFR / JLPT / TOPIK / TÖMER), providing practical communication skills, structured progression, and cultural competence.",
         languages: [
           {
             id: "german",
             name: "German (Deutsch)",
+            nativeName: "Deutsch",
+            badge: "German Language Program",
+            title: "German Language Programs (Deutsch)",
+            subtitle: "Study, Career Advancement & Goethe-Zertifikat Preparation",
+            desc: "Our German programs provide structured training from complete beginner (A1) to advanced proficiency (C1). Whether preparing for university study in Germany, Austria, or Switzerland, seeking engineering and healthcare career opportunities, or aiming for Goethe-Institut certifications, our communicative curriculum delivers real conversational confidence.",
             img: "/lang_german.png",
-            desc: "For higher education, engineering careers, and Goethe-Zertifikat preparation in Germany, Austria, and Switzerland.",
-            levels: "A1 to C1 • Interactive & Business"
+            theme: {
+              bg: "bg-[#fcb900]/5",
+              border: "border-[#fcb900]/20",
+              borderLeft: "border-l-[#fcb900]",
+              badgeBg: "bg-[#fcb900]/15",
+              badgeText: "text-[#b27d00]",
+              titleText: "text-[#b27d00]",
+              bullet: "text-[#d99e00]"
+            },
+            suitableTitle: "Suitable For",
+            suitableItems: [
+              "University applicants (DAAD / Studienkolleg)",
+              "Engineering, healthcare & IT professionals",
+              "Business professionals dealing with DACH markets",
+              "Travelers & language enthusiasts"
+            ],
+            levelsTitle: "Available CEFR Levels",
+            levelsItems: ["Beginner (A1)", "Elementary (A2)", "Intermediate (B1)", "Upper Intermediate (B2)", "Advanced (C1)"],
+            focusTitle: "Areas of Focus",
+            focusItems: [
+              "Speaking Fluency & Natural Pronunciation",
+              "Core Grammar, Case System & Sentence Structure",
+              "Professional & Academic Writing Skills",
+              "Goethe-Zertifikat & TestDaF Exam Preparation",
+              "German Workplace & Cultural Etiquette"
+            ],
+            cta: "Register for German"
           },
           {
             id: "italian",
             name: "Italian (Italiano)",
+            nativeName: "Italiano",
+            badge: "Italian Language Program",
+            title: "Italian Language Programs (Italiano)",
+            subtitle: "Master the Language of Art, Fashion, Cuisine & Business",
+            desc: "Italian language courses combine practical communication with rich cultural immersion. Designed for students pursuing degrees in fashion, architecture, design, and culinary arts in Italy, corporate executives trading with Italian manufacturers, and learners preparing for CILS or CELI qualifications.",
             img: "/lang_italian.png",
-            desc: "For art, design, culinary arts, fashion industries, and CILS / CELI qualification preparation.",
-            levels: "A1 to B2 • Conversational & Culture"
+            theme: {
+              bg: "bg-[#00d084]/5",
+              border: "border-[#00d084]/20",
+              borderLeft: "border-l-[#00d084]",
+              badgeBg: "bg-[#00d084]/15",
+              badgeText: "text-[#008a55]",
+              titleText: "text-[#008a55]",
+              bullet: "text-[#00ab6c]"
+            },
+            suitableTitle: "Suitable For",
+            suitableItems: [
+              "Design, architecture & fashion students",
+              "Culinary arts & luxury hospitality professionals",
+              "Commercial teams trading with Italian partners",
+              "Travelers & Italian culture lovers"
+            ],
+            levelsTitle: "Available CEFR Levels",
+            levelsItems: ["Beginner (A1)", "Elementary (A2)", "Intermediate (B1)", "Upper Intermediate (B2)", "Advanced (C1)"],
+            focusTitle: "Areas of Focus",
+            focusItems: [
+              "Interactive Conversation & Listening Comprehension",
+              "Grammar Essentials & Expressive Vocabulary",
+              "Commercial Italian for Fashion & Luxury Goods",
+              "CILS & CELI International Exam Strategies",
+              "Italian Heritage, Gastronomy & Social Customs"
+            ],
+            cta: "Register for Italian"
           },
           {
             id: "japanese",
             name: "Japanese (日本語)",
+            nativeName: "日本語",
+            badge: "Japanese Language Program",
+            title: "Japanese Language Programs (日本語)",
+            subtitle: "Hiragana, Katakana, Kanji & JLPT Proficiency Pathways",
+            desc: "Step into Japanese with certified instructors who balance linguistic accuracy with cultural nuance. Learners progress systematically from Hiragana and Katakana writing systems to conversational fluency, business etiquette (Keigo), and JLPT preparation for academic and corporate success.",
             img: "/lang_japanese.png",
-            desc: "JLPT preparation, business culture, travel Japanese, and multimedia language immersion.",
-            levels: "N5 to N2 • Scripts & Speaking"
+            theme: {
+              bg: "bg-[#cf1430]/5",
+              border: "border-[#cf1430]/20",
+              borderLeft: "border-l-[#cf1430]",
+              badgeBg: "bg-[#cf1430]/15",
+              badgeText: "text-[#a81a1a]",
+              titleText: "text-[#a81a1a]",
+              bullet: "text-[#cf1430]"
+            },
+            suitableTitle: "Suitable For",
+            suitableItems: [
+              "Scholarship applicants (MEXT) & university study",
+              "Automotive, robotics, tech & gaming professionals",
+              "Anime, manga & Japanese pop culture enthusiasts",
+              "Diplomatic staff & international business delegates"
+            ],
+            levelsTitle: "Official JLPT Levels",
+            levelsItems: ["JLPT N5 (Foundations)", "JLPT N4 (Basic Conversation)", "JLPT N3 (Intermediate)", "JLPT N2 (Business Japanese)"],
+            focusTitle: "Areas of Focus",
+            focusItems: [
+              "Hiragana, Katakana & Practical Kanji Literacy",
+              "Everyday Conversational & Situational Japanese",
+              "Honorifics & Business Protocol (Keigo 敬語)",
+              "JLPT Standardized Test Preparation",
+              "Japanese Etiquette, Traditions & Modern Culture"
+            ],
+            cta: "Register for Japanese"
           },
           {
             id: "korean",
             name: "Korean (한국어)",
+            nativeName: "한국어",
+            badge: "Korean Language Program",
+            title: "Korean Language Programs (한국어)",
+            subtitle: "Master Hangeul, Contemporary Communication & TOPIK Exams",
+            desc: "Korean language training structured for rapid communicative progress. Learn the logical Hangeul alphabet in your first week, build conversational fluency for travel and K-culture media, and prepare for academic scholarships (GKS) or business partnerships with global Korean enterprises.",
             img: "/lang_korean.png",
-            desc: "Hangul literacy, TOPIK exam preparation, pop culture fluency, and corporate communication.",
-            levels: "Levels 1 to 4 • Modern & Practical"
+            theme: {
+              bg: "bg-[#046bd2]/5",
+              border: "border-[#046bd2]/20",
+              borderLeft: "border-l-[#046bd2]",
+              badgeBg: "bg-[#046bd2]/15",
+              badgeText: "text-[#034e9a]",
+              titleText: "text-[#034e9a]",
+              bullet: "text-[#046bd2]"
+            },
+            suitableTitle: "Suitable For",
+            suitableItems: [
+              "Global Korea Scholarship (GKS) & university candidates",
+              "Corporate professionals partnering with Korean firms",
+              "K-Drama, K-Pop & modern entertainment enthusiasts",
+              "Travelers & cultural exchange participants"
+            ],
+            levelsTitle: "Official TOPIK Framework",
+            levelsItems: ["Level 1 (Introductory)", "Level 2 (Elementary)", "Level 3 (Intermediate)", "Level 4 (Advanced Working)"],
+            focusTitle: "Areas of Focus",
+            focusItems: [
+              "Complete Hangeul (한글) Reading & Writing Mastery",
+              "Practical Everyday Conversation & Pronunciation",
+              "TOPIK I & II Examination Preparation",
+              "Business Korean & Corporate Meeting Vocabulary",
+              "Korean Honorifics (Jondaenmal) & Social Norms"
+            ],
+            cta: "Register for Korean"
           },
           {
             id: "turkish",
             name: "Turkish (Türkçe)",
+            nativeName: "Türkçe",
+            badge: "Turkish Language Program",
+            title: "Turkish Language Programs (Türkçe)",
+            subtitle: "Practical Communication for Education, Business, Real Estate & TÖMER",
+            desc: "Develop authentic Turkish fluency with qualified native-level instructors. Our courses emphasize natural speaking skills, vowel harmony, and structured grammar, preparing learners for Türkiye Bursları university entrance, international commerce, property investment, or tourism.",
             img: "/lang_turkish.png",
-            desc: "TÖMER preparation, travel, commerce, and academic exchange with Turkish universities.",
-            levels: "A1 to C1 • Fluency & Grammar"
+            theme: {
+              bg: "bg-[#9b51e0]/5",
+              border: "border-[#9b51e0]/20",
+              borderLeft: "border-l-[#9b51e0]",
+              badgeBg: "bg-[#9b51e0]/15",
+              badgeText: "text-[#65259e]",
+              titleText: "text-[#65259e]",
+              bullet: "text-[#8038c3]"
+            },
+            suitableTitle: "Suitable For",
+            suitableItems: [
+              "Students applying for Turkish Universities (Türkiye Bursları)",
+              "Real estate investors, traders & logistics specialists",
+              "Medical tourism travelers & healthcare coordinators",
+              "Tourism & cultural exchange enthusiasts"
+            ],
+            levelsTitle: "Available CEFR / TÖMER Levels",
+            levelsItems: ["Beginner (A1)", "Elementary (A2)", "Intermediate (B1)", "Upper Intermediate (B2)", "Advanced (C1)"],
+            focusTitle: "Areas of Focus",
+            focusItems: [
+              "Spoken Fluency, Pronunciation & Vowel Harmony",
+              "Turkish Suffixes, Grammar & Vocabulary Building",
+              "TÖMER Official Language Certification Prep",
+              "Commercial Turkish for Trade & Real Estate",
+              "Turkish Culture, Hospitality & Everyday Idioms"
+            ],
+            cta: "Register for Turkish"
           }
         ],
         cta: "Register for World Languages"
@@ -387,42 +537,192 @@ const content = {
         id: "additional-world-languages",
         title: "لغات عالمية إضافية",
         subtitle: "الألمانية، الإيطالية، اليابانية، الكورية، التركية",
-        desc: "وسّع آفاقك الشخصية والمهنية عبر تعلم 5 من أكثر لغات العالم طلباً مع مدربين معتمدين. دورات متخصصة تشمل القواعد والمحادثة والنطق والعمق الثقافي متوافقة مع أرقى المعايير الدولية.",
+        desc: "وسّع آفاقك الشخصية والمهنية عبر تعلم 5 من أكثر لغات العالم طلباً مع مدربين معتمدين. صُممت جميع البرامج وفق الأطر الدولية المعتمدة (CEFR / JLPT / TOPIK / TÖMER)، لتوفر مهارات اتصال عملية، وتقدماً منظماً، ونتائج تعليمية متوافقة عالمياً.",
         languages: [
           {
             id: "german",
             name: "الألمانية (Deutsch)",
+            nativeName: "Deutsch",
+            badge: "برنامج اللغة الألمانية",
+            title: "برامج اللغة الألمانية (Deutsch)",
+            subtitle: "الدراسة، التقدم المهني والتحضير لاختبارات جوته (Goethe)",
+            desc: "توفر برامج اللغة الألمانية لدينا تدريباً منظماً من مستوى المبتدئ الكامل (A1) حتى الإتقان المتقدم (C1). سواء كنت تستعد للدراسة الجامعية في ألمانيا أو النمسا أو سويسرا، أو تبحث عن فرص عمل في الهندسة والقطاع الطبي، أو تهدف للحصول على شهادات معهد جوته، فإن منهجنا التواصلي يمنحك ثقة حقيقية في المحادثة.",
             img: "/lang_german.png",
-            desc: "للتعليم العالي وفرص الهندسة والتحضير لاختبارات معهد جوته في ألمانيا والنمسا وسويسرا.",
-            levels: "A1 إلى C1 • تفاعلي وللأعمال"
+            theme: {
+              bg: "bg-[#fcb900]/5",
+              border: "border-[#fcb900]/20",
+              borderLeft: "border-l-[#fcb900]",
+              badgeBg: "bg-[#fcb900]/15",
+              badgeText: "text-[#b27d00]",
+              titleText: "text-[#b27d00]",
+              bullet: "text-[#d99e00]"
+            },
+            suitableTitle: "الفئات المستهدفة",
+            suitableItems: [
+              "المتقدمون للجامعات الألمانية وبرامج (DAAD / Studienkolleg)",
+              "مهندسو التقنية والأطباء والكوادر الصحية",
+              "مسؤولو الأعمال والشركات المتعاملة مع الأسواق الألمانية",
+              "محبو السفر والتعلم الذاتي للغات"
+            ],
+            levelsTitle: "المستويات المتاحة (CEFR)",
+            levelsItems: ["مبتدئ (A1)", "ابتدائي (A2)", "متوسط (B1)", "فوق المتوسط (B2)", "متقدم (C1)"],
+            focusTitle: "محاور المنهج والتدريب",
+            focusItems: [
+              "طلاقة المحادثة والنطق الألماني السليم",
+              "قواعد اللغة الألمانية وتركيب الجمل وحالات الإعراب",
+              "مهارات الكتابة الأكاديمية والمهنية",
+              "التحضير لاختبارات جوته المعتمدة و TestDaF",
+              "آداب بيئة العمل والثقافة المؤسسية الألمانية"
+            ],
+            cta: "سجل في دورة الألمانية"
           },
           {
             id: "italian",
             name: "الإيطالية (Italiano)",
+            nativeName: "Italiano",
+            badge: "برنامج اللغة الإيطالية",
+            title: "برامج اللغة الإيطالية (Italiano)",
+            subtitle: "إتقان لغة الفنون، الأزياء، التصميم والتجارة الدولية",
+            desc: "تجمع دورات اللغة الإيطالية بين مهارات التواصل العملي والانغماس الثقافي الممتع. مصممة للطلاب الراغبين في دراسة التصميم والأزياء والهندسة المعمارية وفنون الطهي في إيطاليا، ولرجال الأعمال المتعاملين مع الشركات الإيطالية، وللراغبين في شهادات CILS و CELI الدولية.",
             img: "/lang_italian.png",
-            desc: "لقطاعات الفنون والتصميم والطهي والأزياء والتحضير لمؤهلات CILS و CELI.",
-            levels: "A1 إلى B2 • محادثة وثقافة"
+            theme: {
+              bg: "bg-[#00d084]/5",
+              border: "border-[#00d084]/20",
+              borderLeft: "border-l-[#00d084]",
+              badgeBg: "bg-[#00d084]/15",
+              badgeText: "text-[#008a55]",
+              titleText: "text-[#008a55]",
+              bullet: "text-[#00ab6c]"
+            },
+            suitableTitle: "الفئات المستهدفة",
+            suitableItems: [
+              "طلاب التصميم، الهندسة المعمارية وعالم الأزياء",
+              "محترفو فنون الطهي والضيافة الراقية",
+              "فرق التجارة والشركات المتعاملة مع المصانع الإيطالية",
+              "عشاق الثقافة الإيطالية والسياحة"
+            ],
+            levelsTitle: "المستويات المتاحة (CEFR)",
+            levelsItems: ["مبتدئ (A1)", "ابتدائي (A2)", "متوسط (B1)", "فوق المتوسط (B2)", "متقدم (C1)"],
+            focusTitle: "محاور المنهج والتدريب",
+            focusItems: [
+              "المحادثة التفاعلية والاستماع اليومي الحي",
+              "القواعد الأساسية وتراكيب المفردات التعبيرية",
+              "الإيطالية للأعمال في مجالات الأزياء والتجارة",
+              "استراتيجيات التحضير لاختبارات CILS و CELI",
+              "العادات والتقاليد الثقافية الإيطالية والمصطلحات الدارجة"
+            ],
+            cta: "سجل في دورة الإيطالية"
           },
           {
             id: "japanese",
             name: "اليابانية (日本語)",
+            nativeName: "日本語",
+            badge: "برنامج اللغة اليابانية",
+            title: "برامج اللغة اليابانية (日本語)",
+            subtitle: "الهيراغانا، الكاتاكانا، الكانجي ومسار شهادة JLPT",
+            desc: "انطلق في رحلة تعلم اليابانية مع مدربين معتمدين يوازنون بين الدقة اللغوية والعمق الثقافي. يتدرج المتدرب من إتقان كتابة الهيراغانا والكاتاكانا وحروف الكانجي الأساسية، وصولاً إلى طلاقة المحادثة، بروتوكول الأعمال الياباني (كيغو Keigo)، والتحضير لاختبار JLPT الرسمي.",
             img: "/lang_japanese.png",
-            desc: "التحضير لاختبار JLPT وثقافة الأعمال وسياحة اليابان وتعلم الكتابة والنطق.",
-            levels: "N5 إلى N2 • كتابة ومحادثة"
+            theme: {
+              bg: "bg-[#cf1430]/5",
+              border: "border-[#cf1430]/20",
+              borderLeft: "border-l-[#cf1430]",
+              badgeBg: "bg-[#cf1430]/15",
+              badgeText: "text-[#a81a1a]",
+              titleText: "text-[#a81a1a]",
+              bullet: "text-[#cf1430]"
+            },
+            suitableTitle: "الفئات المستهدفة",
+            suitableItems: [
+              "المتقدمون للمنح اليابانية (MEXT) والدراسة الجامعية",
+              "محترفو صناعات الروبوتات، السيارات والتقنية",
+              "محبو الأنمي، المانجا والثقافة اليابانية المعاصرة",
+              "أعضاء السلك الدبلوماسي ووفود التجارة الدولية"
+            ],
+            levelsTitle: "المستويات الرسمية (JLPT)",
+            levelsItems: ["مستوى N5 (التأسيسي)", "مستوى N4 (محادثة أساسية)", "مستوى N3 (متوسط)", "مستوى N2 (يابانية الأعمال)"],
+            focusTitle: "محاور المنهج والتدريب",
+            focusItems: [
+              "إتقان قراءة وكتابة الهيراغانا والكاتاكانا والكانجي",
+              "المحادثة اليومية والمواقف الحياتية الواقعية",
+              "أسلوب التخاطب المهني والأعمال (Keigo 敬語)",
+              "استراتيجيات اجتياز اختبار JLPT القياسي",
+              "الآداب والبروتوكول الاجتماعي وثقافة العمل اليابانية"
+            ],
+            cta: "سجل في دورة اليابانية"
           },
           {
             id: "korean",
             name: "الكورية (한국어)",
+            nativeName: "한국어",
+            badge: "برنامج اللغة الكورية",
+            title: "برامج اللغة الكورية (한국어)",
+            subtitle: "إتقان أبجدية الهانغل، التواصل المعاصر واختبارات TOPIK",
+            desc: "تدريب كوري مبني على التفاعل العملي السريع. تعلم حروف الهانغل (Hangeul) المنطقية في أسبوعك الأول، وابنِ طلاقة المحادثة للسفر ومتابعة الإنتاج الإعلامي والثقافي الكوري، واستعد للمنح الدراسية الحكومية (GKS) أو الشراكات التجارية مع كبرى الشركات الكورية.",
             img: "/lang_korean.png",
-            desc: "تعلم الحروف الكورية (هانغل) والتحضير لاختبار TOPIK والتواصل المهني والثقافي.",
-            levels: "المستويات 1 إلى 4 • حديث وعملي"
+            theme: {
+              bg: "bg-[#046bd2]/5",
+              border: "border-[#046bd2]/20",
+              borderLeft: "border-l-[#046bd2]",
+              badgeBg: "bg-[#046bd2]/15",
+              badgeText: "text-[#034e9a]",
+              titleText: "text-[#034e9a]",
+              bullet: "text-[#046bd2]"
+            },
+            suitableTitle: "الفئات المستهدفة",
+            suitableItems: [
+              "المتقدمون لمنحة الحكومة الكورية (GKS) والجامعات",
+              "الموظفون والشركات المتعاملة مع المؤسسات الكورية",
+              "محبو الدراما، الموسيقى والإعلام الكوري المعاصر",
+              "محبو السفر والتبادل الثقافي الدولي"
+            ],
+            levelsTitle: "الإطار المعتمد لاختبار TOPIK",
+            levelsItems: ["المستوى 1 (تمهيدي الهانغل)", "المستوى 2 (ابتدائي)", "المستوى 3 (متوسط)", "المستوى 4 (متقدم للأعمال)"],
+            focusTitle: "محاور المنهج والتدريب",
+            focusItems: [
+              "الإتقان التام لقراءة وكتابة أبجدية الهانغل (한글)",
+              "المحادثة اليومية وتطبيق قواعد النطق الصحيحة",
+              "التدريب المكثف لاختبارات TOPIK I & II الرسمية",
+              "المصطلحات الكورية للأعمال والاجتماعات",
+              "قواعد الاحترام والتخاطب اللبق (Jondaenmal)"
+            ],
+            cta: "سجل في دورة الكورية"
           },
           {
             id: "turkish",
             name: "التركية (Türkçe)",
+            nativeName: "Türkçe",
+            badge: "برنامج اللغة التركية",
+            title: "برامج اللغة التركية (Türkçe)",
+            subtitle: "تواصل عملي للدراسة، الاستثمار، السياحة واختبار TÖMER",
+            desc: "اكتسب طلاقة تركية حقيقية مع مدربين ناطقين باللغة التركية كلغة أم. تركز دوراتنا على التحدث الطبيعي، والتوافق الصوتي، والقواعد المتدرجة، مما يهيئ الدارسين للدراسة الجامعية في تركيا (Türkiye Bursları)، أو الاستثمار التجاري والعقاري، أو السياحة العلاجية والترفيهية.",
             img: "/lang_turkish.png",
-            desc: "التحضير لاختبار TÖMER وفرص التجارة والسياحة والتبادل الأكاديمي مع الجامعات التركية.",
-            levels: "A1 إلى C1 • طلاقة وقواعد"
+            theme: {
+              bg: "bg-[#9b51e0]/5",
+              border: "border-[#9b51e0]/20",
+              borderLeft: "border-l-[#9b51e0]",
+              badgeBg: "bg-[#9b51e0]/15",
+              badgeText: "text-[#65259e]",
+              titleText: "text-[#65259e]",
+              bullet: "text-[#8038c3]"
+            },
+            suitableTitle: "الفئات المستهدفة",
+            suitableItems: [
+              "الطلاب المتقدمون للمنح والجامعات التركية (Türkiye Bursları)",
+              "المستثمرون في العقارات والتجارة والاستيراد",
+              "رواد السياحة العلاجية ومحبو السفر لتركيا",
+              "الراغبون في تعزيز التواصل الثقافي والشخصي"
+            ],
+            levelsTitle: "المستويات المتاحة (CEFR / TÖMER)",
+            levelsItems: ["مبتدئ (A1)", "ابتدائي (A2)", "متوسط (B1)", "فوق المتوسط (B2)", "متقدم (C1)"],
+            focusTitle: "محاور المنهج والتدريب",
+            focusItems: [
+              "طلاقة التحدث والنطق وقواعد التوافق الصوتي",
+              "اللواحق التركية وتركيب الجمل وتنمية المفردات",
+              "التحضير لاختبار شهادة التومر الرسمية (TÖMER)",
+              "التركية التجارية لقطاعات التجارة والعقارات",
+              "الثقافة والآداب الاجتماعية والتعبيرات التركية الدارجة"
+            ],
+            cta: "سجل في دورة التركية"
           }
         ],
         cta: "سجل في اللغات العالمية"
@@ -1730,56 +2030,128 @@ export default function CoursesPage() {
               </p>
             </div>
 
-            {/* Grid of the 5 Additional World Languages */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Quick Language Navigation Filter Pills */}
+            <div className="flex flex-wrap gap-2.5 my-8">
               {t.sections.additionalLanguages.languages.map((langItem) => (
+                <button
+                  key={langItem.id}
+                  onClick={() => scrollToSection(langItem.id)}
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white border border-slate-200 hover:border-[#002f6c] hover:bg-slate-50 text-xs sm:text-sm font-bold text-slate-700 transition-all shadow-sm group"
+                >
+                  <Globe className="w-4 h-4 text-[#002f6c] group-hover:scale-110 transition-transform" />
+                  <span>{langItem.name}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Comprehensive Detail Blocks for Each of the 5 World Languages */}
+            <div className="space-y-16">
+              {t.sections.additionalLanguages.languages.map((langItem, idx) => (
                 <motion.div
                   key={langItem.id}
                   id={langItem.id}
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ once: true, margin: "-50px" }}
+                  viewport={{ once: true, margin: "-100px" }}
                   variants={fadeInUp}
-                  className="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:border-red-500/30 transition-all duration-300 flex flex-col justify-between scroll-mt-28 group"
+                  className={`${langItem.theme.bg} border ${langItem.theme.border} border-l-4 ${langItem.theme.borderLeft} rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 p-6 sm:p-8 lg:p-10 scroll-mt-28`}
                 >
-                  <div>
-                    <div className="relative aspect-[16/10] bg-slate-100 overflow-hidden">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    {/* Image Column */}
+                    <div className={`lg:col-span-5 relative h-64 sm:h-80 rounded-2xl overflow-hidden shadow-sm border border-slate-200 ${idx % 2 === 1 ? "lg:order-2" : ""}`}>
                       <Image
                         src={langItem.img}
                         alt={langItem.name}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 1024px) 100vw, 400px"
+                        className="object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                      <div className="absolute bottom-3 start-3 px-3 py-1 rounded-lg bg-black/60 backdrop-blur-md text-white text-xs font-bold">
-                        {langItem.name}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                      <div className="absolute bottom-4 start-4 px-3.5 py-1.5 rounded-xl bg-black/60 backdrop-blur-md text-white text-xs font-bold flex items-center gap-2">
+                        <Globe className="w-3.5 h-3.5 text-white/80" />
+                        <span>{langItem.nativeName}</span>
                       </div>
                     </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold text-[#002f6c] mb-2 group-hover:text-[#cf1430] transition-colors">
-                        {langItem.name}
-                      </h3>
-                      <div className="text-xs font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md inline-block mb-3">
-                        {langItem.levels}
+
+                    {/* Content Column */}
+                    <div className={`lg:col-span-7 text-start flex flex-col justify-between h-full ${idx % 2 === 1 ? "lg:order-1" : ""}`}>
+                      <div>
+                        <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full ${langItem.theme.badgeBg} ${langItem.theme.badgeText} text-xs font-bold uppercase mb-4`}>
+                          <Languages className="w-3.5 h-3.5" />
+                          {langItem.badge}
+                        </span>
+
+                        <h2 className={`text-3xl font-black ${langItem.theme.titleText} font-['Montserrat',_sans-serif] leading-tight mb-2`}>
+                          {langItem.title}
+                        </h2>
+                        <h4 className="text-lg font-bold text-slate-500 mb-4">
+                          {langItem.subtitle}
+                        </h4>
+                        <p className="text-slate-600 font-light leading-relaxed mb-6">
+                          {langItem.desc}
+                        </p>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6 border-t border-slate-200/50 pt-6">
+                          {/* Suitable For */}
+                          <div>
+                            <h5 className="text-sm font-bold text-slate-800 uppercase tracking-wider mb-3">
+                              {langItem.suitableTitle}
+                            </h5>
+                            <ul className="space-y-1.5">
+                              {langItem.suitableItems.map((item) => (
+                                <li key={item} className="flex items-center gap-2 text-sm text-slate-600 font-light">
+                                  <Check className={`w-4 h-4 ${langItem.theme.bullet} shrink-0`} />
+                                  {item}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          {/* Levels */}
+                          <div>
+                            <h5 className="text-sm font-bold text-slate-800 uppercase tracking-wider mb-3">
+                              {langItem.levelsTitle}
+                            </h5>
+                            <div className="flex flex-wrap gap-1.5">
+                              {langItem.levelsItems.map((lvl) => (
+                                <span key={lvl} className="px-2.5 py-1 bg-white hover:bg-slate-100 transition-colors text-slate-700 text-xs font-semibold rounded-lg border border-slate-200">
+                                  {lvl}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Focus / Modules Area */}
+                        <div className="mb-8 border-t border-slate-200/50 pt-6">
+                          <h5 className="text-sm font-bold text-slate-800 uppercase tracking-wider mb-3">
+                            {langItem.focusTitle}
+                          </h5>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            {langItem.focusItems.map((item) => (
+                              <div key={item} className="flex items-center gap-2 text-sm text-slate-600 font-light">
+                                <Check className={`w-4 h-4 ${langItem.theme.bullet} shrink-0`} />
+                                {item}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                       </div>
-                      <p className="text-slate-600 text-xs sm:text-sm font-light leading-relaxed">
-                        {langItem.desc}
-                      </p>
+
+                      {/* Register Button */}
+                      <a
+                        href="#register-section"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setForm((prev) => ({ ...prev, course: langItem.id }));
+                          scrollToSection("register-section");
+                        }}
+                        className="inline-flex items-center justify-center gap-2 self-start px-6 py-3 bg-[#002f6c] hover:bg-[#cf1430] text-white text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group"
+                      >
+                        {langItem.cta}
+                        <ArrowRight className={`w-4 h-4 transition-transform group-hover:translate-x-1 ${isRtl ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
+                      </a>
                     </div>
-                  </div>
-                  <div className="p-6 pt-0 border-t border-slate-100 mt-4">
-                    <a
-                      href="#register-section"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setForm((prev) => ({ ...prev, course: langItem.id }));
-                        scrollToSection("register-section");
-                      }}
-                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#002f6c] hover:bg-[#cf1430] text-white text-xs font-bold rounded-xl transition-all shadow-sm"
-                    >
-                      {isRtl ? `التسجيل في دورة ${langItem.name}` : `Register for ${langItem.name}`}
-                      <ArrowRight className={`w-3.5 h-3.5 ${isRtl ? "rotate-180" : ""}`} />
-                    </a>
                   </div>
                 </motion.div>
               ))}
